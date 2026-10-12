@@ -55,7 +55,7 @@ export default function Home() {
       <MachineGrid onSelectMachine={(id) => setSelectedMachineId(id)} />
 
       {/* Turnkey Granulation Suite Process Flow */}
-      <GranulationSuite />
+      <GranulationSuite onSelectMachine={(id) => setSelectedMachineId(id)} />
 
       {/* Cinematic Media Container Signature */}
       <CinematicBanner />
