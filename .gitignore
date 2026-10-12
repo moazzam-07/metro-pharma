@@ -36,6 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# test scripts and snapshots in root
+/*.png
+test_live.py
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
