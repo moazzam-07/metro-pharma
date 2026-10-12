@@ -1,0 +1,4 @@
+tempdata/
+.agents/
+scrape_website.py
+build_catalog.py
