@@ -25,26 +25,26 @@
 }
 
 :root {
-  /* Minimalist Neo-Brutalist Theme */
-  --background: #f9f9fa;
-  --foreground: #000000;
+  /* Refined Precision Engineering Industrial Theme */
+  --background: #ffffff;
+  --foreground: #18181b;
   --card: #ffffff;
-  --card-foreground: #000000;
+  --card-foreground: #18181b;
   --popover: #ffffff;
-  --popover-foreground: #000000;
-  --primary: #990099;
+  --popover-foreground: #18181b;
+  --primary: #701a75;
   --primary-foreground: #ffffff;
-  --secondary: #000000;
-  --secondary-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
   --muted: #f4f4f5;
-  --muted-foreground: #52525b;
-  --accent: #990099;
+  --muted-foreground: #71717a;
+  --accent: #701a75;
   --accent-foreground: #ffffff;
-  --destructive: #e11d48;
-  --border: #000000;
-  --input: #000000;
-  --ring: #990099;
-  --radius: 0.5rem;
+  --destructive: #ef4444;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #701a75;
+  --radius: 0.75rem;
 }
 
 .dark {

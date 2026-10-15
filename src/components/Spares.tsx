@@ -31,23 +31,22 @@ export function Spares() {
   ];
 
   return (
-    <section className="py-20 sm:py-24 relative scroll-mt-28" id="spares">
+    <section className="py-20 sm:py-28 relative scroll-mt-28 bg-white" id="spares">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
-        <div className="bg-white border-2 border-black rounded-xl p-7 sm:p-12 shadow-[6px_6px_0px_#000] relative">
+        <div className="border border-zinc-200/90 rounded-2xl p-7 sm:p-12 bg-zinc-50/50 shadow-xs relative">
           
           {/* Section Header */}
           <div className="max-w-3xl mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#fef08a] border-2 border-black shadow-[2px_2px_0px_#000] text-xs font-mono font-bold text-black mb-4">
-              <Wrench className="w-3.5 h-3.5 text-black" />
-              <span>SPARE PARTS &amp; TOOLING</span>
+            <div className="text-xs font-mono font-medium text-[#701a75] uppercase tracking-wider mb-2">
+              Spare Parts &amp; Tooling Support
             </div>
             
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-black leading-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
               Replacement Screens, Sieves &amp; Change Parts
             </h2>
             
-            <p className="text-zinc-800 text-base sm:text-lg leading-relaxed font-medium">
-              We fabricate and supply replacement sifter screens, perforated mill sieves, silicone gaskets, and spray nozzles tailored to your machine models and batch tooling requirements.
+            <p className="text-zinc-600 text-base sm:text-lg leading-relaxed">
+              We fabricate and stock precision replacement sifter screens, perforated mill sieves, certified sanitary gaskets, and spray nozzles tailored to your machine models and tooling specs.
             </p>
           </div>
 
@@ -57,30 +56,30 @@ export function Spares() {
               return (
                 <div
                   key={idx}
-                  className="bg-[#f4f4f5] border-2 border-black rounded-xl p-6 flex flex-col justify-between shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_#000] transition-all duration-150"
+                  className="bg-white border border-zinc-200/80 rounded-xl p-6 flex flex-col justify-between hover:border-zinc-300 hover:shadow-xs transition-all"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-[#fef08a] text-black flex items-center justify-center border-2 border-black shadow-[1.5px_1.5px_0px_#000]">
-                        <IconComp className="w-5 h-5 text-black" />
+                      <div className="w-10 h-10 rounded-lg bg-zinc-100 text-[#701a75] flex items-center justify-center border border-zinc-200">
+                        <IconComp className="w-5 h-5" />
                       </div>
-                      <span className="text-[11px] font-mono font-bold text-black bg-white px-2.5 py-0.5 rounded border-2 border-black">
+                      <span className="text-[11px] font-mono font-medium text-zinc-600 bg-zinc-100 px-2 py-0.5 rounded border border-zinc-200">
                         {item.tag}
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-heading font-black text-black mb-2 leading-snug">
+                    <h3 className="text-base font-heading font-semibold text-zinc-900 mb-2 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="text-xs text-zinc-700 leading-relaxed mb-6 font-medium">
+                    <p className="text-xs text-zinc-600 leading-relaxed mb-6">
                       {item.desc}
                     </p>
                   </div>
 
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-black hover:text-[#990099] transition-colors pt-3 border-t-2 border-black"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#701a75] hover:text-[#86198f] transition-colors pt-3 border-t border-zinc-100"
                   >
                     <span>Inquire Spare Part</span>
                     <ArrowRight className="w-3.5 h-3.5" />

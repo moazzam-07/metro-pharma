@@ -130,38 +130,33 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
   };
 
   return (
-    <section className="pt-28 sm:pt-36 pb-24 sm:pb-32 relative scroll-mt-28" id="granulation">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+    <section className="pt-20 sm:pt-28 pb-20 sm:pb-28 relative scroll-mt-24" id="granulation">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#fef08a] border-2 border-black shadow-[2px_2px_0px_#000] text-xs font-mono font-bold text-black mb-5">
-            <Workflow className="w-3.5 h-3.5 text-black" />
-            <span>SOLID DOSAGE PROCESS FLOW · 7 STAGES</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-black leading-[1.12] mb-5">
+        <div className="max-w-3xl mb-10">
+          <span className="text-xs font-semibold text-[#701a75] uppercase tracking-wider block mb-2">
+            Integrated Process Architecture
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold tracking-tight text-zinc-950 mb-3">
             The 7-Stage Granulation Line
           </h2>
-          <p className="text-zinc-800 text-base sm:text-lg leading-relaxed font-medium">
-            How our solid dosage equipment connects across each stage of wet granulation—from raw powder screening to drying, milling, blending, and automated pan coating.
+          <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">
+            How Metro Pharma equipment connects across wet granulation—from raw powder screening to high-shear mixing, cone de-lumping, fluidized drying, and automated pan coating.
           </p>
         </div>
 
-        {/* Quick Stage Jump Ribbon - Wrapped Multi-Pill Grid */}
-        <div className="mb-12 sm:mb-14">
-          <div className="text-xs font-mono font-bold uppercase tracking-wider text-black mb-3 flex items-center gap-2">
-            <Layers className="w-3.5 h-3.5 text-[#990099]" />
-            <span>Process Stages (Click to view equipment)</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+        {/* Quick Stage Jump Ribbon - Clean, Subtle Pills */}
+        <div className="mb-10 sm:mb-12">
+          <div className="flex flex-wrap items-center gap-2">
             {GRANULATION_PIPELINE.map((stage) => (
               <button
                 key={stage.step}
                 type="button"
                 onClick={() => scrollToStage(stage.step)}
-                className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer bg-white hover:bg-[#fef08a] border-2 border-black text-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
+                className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer bg-zinc-100/80 hover:bg-zinc-200/80 text-zinc-700 hover:text-zinc-950"
               >
-                <span className="w-5 h-5 rounded bg-black text-white group-hover:bg-[#990099] font-mono font-bold text-[11px] flex items-center justify-center transition-colors">
+                <span className="w-4.5 h-4.5 rounded bg-white text-zinc-700 font-mono font-bold text-[10px] flex items-center justify-center border border-zinc-200/80">
                   {stage.step}
                 </span>
                 <span>{stage.name}</span>
@@ -171,65 +166,65 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
         </div>
 
         {/* Downward Stacked Scrolling Cards */}
-        <div className="relative space-y-8 sm:space-y-12">
+        <div className="relative space-y-6 sm:space-y-8">
           {GRANULATION_PIPELINE.map((stage, idx) => (
             <div
               key={stage.step}
               id={`stage-${stage.step}`}
-              className="relative md:sticky rounded-xl border-2 border-black bg-white shadow-[6px_6px_0px_#000] p-6 sm:p-10 lg:p-12 transition-all duration-300 scroll-mt-28"
+              className="relative md:sticky rounded-2xl border border-zinc-200/90 bg-white shadow-sm p-6 sm:p-8 lg:p-10 transition-all duration-300 scroll-mt-24"
               style={{
-                top: `calc(90px + ${idx * 14}px)`,
+                top: `calc(84px + ${idx * 14}px)`,
                 zIndex: idx + 10,
               }}
             >
               {/* Top Meta Strip */}
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-black pb-5 mb-8">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-100 pb-4 mb-6">
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="px-3 py-1 rounded bg-[#fef08a] text-black border-2 border-black text-xs font-bold font-mono shadow-[1.5px_1.5px_0px_#000]">
+                  <span className="px-2.5 py-0.5 rounded-md bg-[#701a75]/10 text-[#701a75] text-xs font-semibold font-mono">
                     STAGE {stage.step} OF 07
                   </span>
-                  <span className="px-3 py-1 rounded bg-white text-black border-2 border-black text-xs font-bold font-mono">
+                  <span className="px-2.5 py-0.5 rounded-md bg-zinc-100 text-zinc-700 text-xs font-medium">
                     {stage.stageTag}
                   </span>
                 </div>
-                <div className="text-xs sm:text-sm font-mono font-medium text-zinc-700">
-                  Equipment: <strong className="text-black font-extrabold">{stage.machine}</strong>
+                <div className="text-xs text-zinc-500">
+                  Equipment: <strong className="text-zinc-900 font-semibold">{stage.machine}</strong>
                 </div>
               </div>
 
               {/* Card Body: 2 Columns */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                 
                 {/* Left Column: Specifications & Narrative */}
                 <div className="lg:col-span-7 flex flex-col justify-between">
                   <div>
                     {/* Headline */}
-                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-black tracking-tight mb-3">
+                    <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-950 tracking-tight mb-2">
                       {stage.name}
                     </h3>
 
                     {/* Machine Title */}
-                    <div className="text-sm sm:text-base font-bold text-[#990099] mb-4 flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#990099] border border-black"></span>
+                    <div className="text-sm font-semibold text-[#701a75] mb-3 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#701a75]"></span>
                       <span>{stage.machine}</span>
                     </div>
 
                     {/* Narrative Description */}
-                    <p className="text-zinc-800 text-sm sm:text-base leading-relaxed mb-8 font-medium">
+                    <p className="text-zinc-600 text-sm leading-relaxed mb-6 font-normal">
                       {stage.desc}
                     </p>
 
                     {/* Critical Parameter Matrix */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mb-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
                       {stage.parameters.map((param, i) => (
                         <div 
                           key={i} 
-                          className="bg-[#f4f4f5] border-2 border-black rounded-lg p-3 shadow-[2px_2px_0px_#000]"
+                          className="bg-zinc-50/80 border border-zinc-200/70 rounded-xl p-3"
                         >
-                          <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-600 mb-1">
+                          <div className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400 mb-0.5">
                             {param.label}
                           </div>
-                          <div className="text-sm font-mono font-black text-black">
+                          <div className="text-xs font-bold text-zinc-900">
                             {param.value}
                           </div>
                         </div>
@@ -242,40 +237,40 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                     <button
                       type="button"
                       onClick={() => onSelectMachine?.(stage.machineId)}
-                      className="inline-flex items-center gap-2 bg-[#990099] hover:bg-[#800080] text-white text-xs sm:text-sm font-bold px-5 py-3 rounded-lg border-2 border-black shadow-[3px_3px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+                      className="inline-flex items-center gap-2 bg-[#701a75] hover:bg-[#58135c] text-white text-xs font-semibold px-4.5 py-2.5 rounded-lg transition-all cursor-pointer shadow-xs active:scale-[0.98]"
                     >
-                      <span>Inspect Machine Specs</span>
-                      <ArrowUpRight className="w-4 h-4 ml-0.5" />
+                      <span>Inspect Machine Specifications</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 </div>
 
                 {/* Right Column: Transparent Machine Showcase Pedestal */}
                 <div className="lg:col-span-5">
-                  <div className="relative bg-[#f4f4f5] rounded-xl border-2 border-black p-6 sm:p-8 flex flex-col items-center justify-center min-h-[300px] sm:min-h-[340px] shadow-[4px_4px_0px_#000] group">
+                  <div className="relative bg-zinc-50/60 rounded-xl border border-zinc-200/70 p-6 flex flex-col items-center justify-center min-h-[260px] sm:min-h-[290px] group">
                     
                     {/* Top Feature Pill */}
                     <div className="self-start mb-2">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-white border-2 border-black text-[11px] font-mono font-bold text-black shadow-[1.5px_1.5px_0px_#000]">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-white border border-zinc-200/80 text-[11px] font-medium text-zinc-700 shadow-2xs">
                         {stage.highlight}
                       </span>
                     </div>
 
                     {/* Machinery Cutout */}
-                    <div className="relative w-full h-[220px] sm:h-[260px] my-2 flex items-center justify-center">
+                    <div className="relative w-full h-[180px] sm:h-[220px] my-2 flex items-center justify-center">
                       <Image
                         src={stage.image}
                         alt={stage.machine}
                         fill
-                        className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
-                        sizes="(max-width: 768px) 100vw, 400px"
+                        className="object-contain drop-shadow-sm group-hover:scale-102 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, 380px"
                       />
                     </div>
 
                     {/* Metallurgy Tag */}
                     <div className="self-end mt-2">
-                      <span className="inline-flex items-center gap-1 text-[11px] font-mono font-bold text-black bg-white px-2 py-0.5 rounded border border-black">
-                        <span>SS 316L Ra &lt; 0.38 µm</span>
+                      <span className="text-[11px] text-zinc-400 font-medium">
+                        SS 316L Ra &lt; 0.38 µm
                       </span>
                     </div>
                   </div>
@@ -287,17 +282,17 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
         </div>
 
         {/* Turnkey Compliance Strip */}
-        <div className="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-4 border-t-2 border-black pt-8">
-          <div className="flex items-center gap-3 text-xs sm:text-sm text-black font-bold bg-white rounded-lg p-4 border-2 border-black shadow-[3px_3px_0px_#000]">
-            <CheckCircle2 className="w-4 h-4 text-[#990099] shrink-0" />
+        <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-zinc-200/80 pt-6">
+          <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-700 font-medium bg-zinc-50/70 rounded-xl p-4 border border-zinc-200/60">
+            <CheckCircle2 className="w-4 h-4 text-[#701a75] shrink-0" />
             <span>Clean In Place (CIP / WIP) washdown piping</span>
           </div>
-          <div className="flex items-center gap-3 text-xs sm:text-sm text-black font-bold bg-white rounded-lg p-4 border-2 border-black shadow-[3px_3px_0px_#000]">
-            <CheckCircle2 className="w-4 h-4 text-[#990099] shrink-0" />
+          <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-700 font-medium bg-zinc-50/70 rounded-xl p-4 border border-zinc-200/60">
+            <CheckCircle2 className="w-4 h-4 text-[#701a75] shrink-0" />
             <span>21 CFR Part 11 compliant SCADA / PLC options</span>
           </div>
-          <div className="flex items-center gap-3 text-xs sm:text-sm text-black font-bold bg-white rounded-lg p-4 border-2 border-black shadow-[3px_3px_0px_#000]">
-            <ShieldCheck className="w-4 h-4 text-[#990099] shrink-0" />
+          <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-700 font-medium bg-zinc-50/70 rounded-xl p-4 border border-zinc-200/60">
+            <ShieldCheck className="w-4 h-4 text-[#701a75] shrink-0" />
             <span>Closed-loop powder transfer valves</span>
           </div>
         </div>

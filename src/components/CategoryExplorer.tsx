@@ -27,28 +27,27 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
   const activeLine = explorerLines.find((l) => l.id === activeId) || explorerLines[0];
 
   return (
-    <section className="py-20 sm:py-24 relative scroll-mt-28" id="explorer">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+    <section className="py-16 sm:py-24 relative scroll-mt-24" id="explorer">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-[#fef08a] border-2 border-black shadow-[2px_2px_0px_#000] text-xs font-mono font-bold text-black mb-4">
-            <Layers className="w-3.5 h-3.5 text-black" />
-            <span>EQUIPMENT CATEGORIES</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-black leading-tight mb-4">
-            Machinery for Solid Dosage &amp; Liquid Lines
+        <div className="max-w-3xl mb-10">
+          <span className="text-xs font-semibold text-[#701a75] uppercase tracking-wider block mb-2">
+            Formulation &amp; Processing Lines
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold tracking-tight text-zinc-950 mb-3">
+            Equipment for Solid Dosage &amp; Liquid Lines
           </h2>
-          <p className="text-zinc-800 text-base sm:text-lg leading-relaxed font-medium">
-            Select an equipment line to view standard capacities, contact metallurgy, and technical parameters.
+          <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">
+            Select an equipment line to review standard batch capacities, contact metallurgy, and technical specifications.
           </p>
         </div>
 
-        {/* Clinical Neo-brutalist Container */}
-        <div className="bg-white border-2 border-black rounded-xl p-6 sm:p-10 lg:p-12 shadow-[6px_6px_0px_#000] relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* Clean Container */}
+        <div className="bg-white border border-zinc-200/90 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-xs relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left Nav List */}
-            <div className="lg:col-span-6 flex flex-col gap-2">
+            <div className="lg:col-span-6 flex flex-col gap-1.5">
               {explorerLines.map((line) => {
                 const isActive = line.id === activeId;
                 return (
@@ -57,24 +56,20 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
                     onMouseEnter={() => setActiveId(line.id)}
                     onClick={() => onSelectMachine(line.id)}
                     type="button"
-                    className={`flex items-center justify-between p-3.5 sm:p-4 rounded-lg transition-all text-left w-full border-2 cursor-pointer ${
+                    className={`flex items-center justify-between p-3.5 rounded-xl transition-all text-left w-full border cursor-pointer ${
                       isActive
-                        ? "bg-[#fef08a] border-black text-black shadow-[3px_3px_0px_#000] translate-x-1"
-                        : "bg-white border-black/20 text-black hover:border-black hover:bg-slate-50"
+                        ? "bg-zinc-100/90 border-zinc-200/90 text-zinc-950 font-semibold shadow-xs"
+                        : "bg-transparent border-transparent text-zinc-700 hover:bg-zinc-50/80"
                     }`}
                   >
-                    <span
-                      className={`text-sm sm:text-base font-heading tracking-tight transition-all ${
-                        isActive ? "font-extrabold text-black" : "font-bold text-zinc-800"
-                      }`}
-                    >
+                    <span className="text-sm font-medium tracking-tight">
                       {line.title}
                     </span>
                     <span
-                      className={`text-[11px] font-mono px-2.5 py-0.5 rounded border transition-all ${
+                      className={`text-[11px] px-2.5 py-0.5 rounded-md border transition-all ${
                         isActive
-                          ? "bg-white text-black border-2 border-black font-bold shadow-[1px_1px_0px_#000]"
-                          : "bg-slate-100 text-black border border-black/30 font-medium"
+                          ? "bg-white text-zinc-900 border-zinc-200 font-semibold"
+                          : "bg-zinc-100/60 text-zinc-500 border-zinc-200/60 font-normal"
                       }`}
                     >
                       {line.badge}
@@ -86,19 +81,19 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
 
             {/* Right Machine Preview Stage */}
             <div className="lg:col-span-6">
-              <div className="bg-[#f4f4f5] border-2 border-black rounded-xl p-6 sm:p-8 flex flex-col justify-between min-h-[460px] relative shadow-[4px_4px_0px_#000] transition-all">
+              <div className="bg-zinc-50/60 border border-zinc-200/80 rounded-xl p-6 sm:p-8 flex flex-col justify-between min-h-[440px] relative transition-all">
                 <div className="flex items-center justify-between">
-                  <span className="bg-white border-2 border-black px-3 py-1 rounded-md text-xs font-mono font-bold text-black shadow-[2px_2px_0px_#000]">
+                  <span className="bg-white border border-zinc-200/90 px-3 py-1 rounded-md text-xs font-semibold text-zinc-800 shadow-2xs">
                     {activeLine.badge}
                   </span>
-                  <span className="text-xs font-mono font-bold text-black bg-[#fef08a] px-2.5 py-1 rounded border-2 border-black flex items-center gap-1.5 shadow-[1.5px_1.5px_0px_#000]">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#990099]" />
+                  <span className="text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2.5 py-0.5 rounded flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                     <span>cGMP Compliant</span>
                   </span>
                 </div>
 
                 {/* Machine Image */}
-                <div className="relative w-full h-[240px] my-5 flex items-center justify-center">
+                <div className="relative w-full h-[220px] my-4 flex items-center justify-center">
                   <Image
                     src={activeMachine.image}
                     alt={activeMachine.name}
@@ -109,29 +104,29 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
                 </div>
 
                 {/* Machine Details & Action */}
-                <div className="pt-4 border-t-2 border-black">
-                  <h3 className="text-xl sm:text-2xl font-heading font-black text-black mb-1.5">
+                <div className="pt-4 border-t border-zinc-200/80">
+                  <h3 className="text-xl font-heading font-bold text-zinc-950 mb-1.5">
                     {activeMachine.name}
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-700 mb-5 leading-relaxed font-medium">
+                  <p className="text-xs sm:text-sm text-zinc-600 mb-5 leading-relaxed font-normal">
                     {activeMachine.description}
                   </p>
 
                   <div className="flex items-center justify-between">
-                    <div className="flex gap-5 text-xs">
+                    <div className="flex gap-6 text-xs">
                       <div>
-                        <span className="block text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-500">
+                        <span className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-400">
                           Capacity
                         </span>
-                        <span className="font-mono font-extrabold text-black">
+                        <span className="font-semibold text-zinc-900">
                           {activeMachine.capacity}
                         </span>
                       </div>
                       <div>
-                        <span className="block text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-500">
+                        <span className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-400">
                           Metallurgy
                         </span>
-                        <span className="font-mono font-extrabold text-black">
+                        <span className="font-semibold text-zinc-900">
                           SS 316 / 316L
                         </span>
                       </div>
@@ -139,10 +134,10 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
 
                     <button
                       type="button"
-                      className="inline-flex items-center gap-1.5 bg-[#990099] hover:bg-[#800080] text-white text-xs font-bold px-4 py-2 rounded-lg border-2 border-black shadow-[3px_3px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none cursor-pointer transition-all"
+                      className="inline-flex items-center gap-1.5 bg-[#701a75] hover:bg-[#58135c] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors cursor-pointer shadow-xs active:scale-[0.98]"
                       onClick={() => onSelectMachine(activeMachine.id)}
                     >
-                      <span>Inspect Specs</span>
+                      <span>Inspect Specifications</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>

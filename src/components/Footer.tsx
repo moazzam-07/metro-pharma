@@ -1,17 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
 import { COMPANY_INFO } from "@/data/machinery";
 
 export function Footer() {
   return (
-    <footer className="border-t-4 border-black bg-white text-black pt-16 pb-12">
-      <div className="max-w-[1280px] mx-auto px-6">
+    <footer className="border-t border-zinc-200 bg-zinc-950 text-zinc-400 pt-16 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
           {/* Brand info */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <div className="inline-block bg-white px-3.5 py-2 rounded-lg border-2 border-black shadow-[3px_3px_0px_#000]">
-                <div className="relative w-[140px] h-[30px]">
+              <div className="inline-block bg-white px-3 py-1.5 rounded-lg border border-zinc-800">
+                <div className="relative w-[130px] h-[28px]">
                   <Image
                     src="/assets/logo/logo.png"
                     alt="Metro Pharma"
@@ -21,48 +20,48 @@ export function Footer() {
                 </div>
               </div>
             </div>
-            <p className="text-[14px] text-zinc-700 max-w-[360px] leading-relaxed mb-6 font-medium">
-              Manufacturer of cGMP solid dosage and liquid processing machinery in SS 316L. Based in Vasai East, Mumbai since 2005.
+            <p className="text-sm text-zinc-400 max-w-[360px] leading-relaxed mb-6">
+              Manufacturer of cGMP solid dosage, liquid, and ointment processing machinery in SS 316L. Based in Vasai East, Mumbai since 2005.
             </p>
-            <div className="text-[13px] text-zinc-800 leading-relaxed font-medium">
-              <span className="font-mono font-black text-black">Works &amp; Headquarters:</span><br />
+            <div className="text-xs text-zinc-400 leading-relaxed font-mono">
+              <span className="text-zinc-200 font-medium">Works &amp; Headquarters:</span><br />
               {COMPANY_INFO.address}
             </div>
           </div>
 
           {/* Machinery Col */}
           <div>
-            <div className="text-[12px] font-mono font-bold uppercase tracking-wider text-black mb-4 border-b-2 border-black pb-1 inline-block">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-200 mb-4">
               Machinery
             </div>
-            <ul className="space-y-2.5 text-[14px] text-zinc-700 font-medium">
+            <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   Vibro Sifters
                 </a>
               </li>
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   Multi Mills
                 </a>
               </li>
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   Colloid Mills
                 </a>
               </li>
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   Fluid Bed Dryers
                 </a>
               </li>
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   Metro Coaters
                 </a>
               </li>
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   RMG Granulators
                 </a>
               </li>
@@ -71,32 +70,32 @@ export function Footer() {
 
           {/* Industries Col */}
           <div>
-            <div className="text-[12px] font-mono font-bold uppercase tracking-wider text-black mb-4 border-b-2 border-black pb-1 inline-block">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-200 mb-4">
               Industries
             </div>
-            <ul className="space-y-2.5 text-[14px] text-zinc-700 font-medium">
+            <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   Pharmaceuticals
                 </a>
               </li>
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   Food &amp; Beverages
                 </a>
               </li>
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   Fine Chemicals
                 </a>
               </li>
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   Cosmetics &amp; Creams
                 </a>
               </li>
               <li>
-                <a href="#machinery" className="hover:text-[#990099] transition-colors">
+                <a href="#machinery" className="text-zinc-400 hover:text-white transition-colors">
                   Nutraceuticals
                 </a>
               </li>
@@ -105,28 +104,28 @@ export function Footer() {
 
           {/* Corporate Col */}
           <div>
-            <div className="text-[12px] font-mono font-bold uppercase tracking-wider text-black mb-4 border-b-2 border-black pb-1 inline-block">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-200 mb-4">
               Corporate
             </div>
-            <ul className="space-y-2.5 text-[14px] text-zinc-700 font-medium">
+            <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="#heritage" className="hover:text-[#990099] transition-colors">
+                <a href="#heritage" className="text-zinc-400 hover:text-white transition-colors">
                   About Metro Pharma
                 </a>
               </li>
               <li>
-                <a href="#spares" className="hover:text-[#990099] transition-colors">
+                <a href="#spares" className="text-zinc-400 hover:text-white transition-colors">
                   Spares &amp; Screens
                 </a>
               </li>
               <li>
-                <a href="#granulation" className="hover:text-[#990099] transition-colors">
+                <a href="#granulation" className="text-zinc-400 hover:text-white transition-colors">
                   Turnkey Granulation
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#990099] transition-colors">
-                  Request Consultation
+                <a href="#contact" className="text-zinc-400 hover:text-white transition-colors">
+                  Request Quotation
                 </a>
               </li>
               <li>
@@ -134,10 +133,10 @@ export function Footer() {
                   href={COMPANY_INFO.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-black hover:text-[#990099] font-mono font-bold transition-colors"
+                  className="inline-flex items-center gap-1.5 text-zinc-300 hover:text-white font-mono text-xs transition-colors"
                 >
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 border border-black animate-pulse"></span>
-                  WhatsApp Support
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  WhatsApp Desk
                 </a>
               </li>
             </ul>
@@ -145,18 +144,17 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between text-[13px] text-zinc-800 gap-4 font-medium">
+        <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
           <div>
             &copy; 2005–2026 Metro Pharma Machines. All rights reserved.
           </div>
-          <div className="flex flex-wrap gap-3 text-xs">
-            <span className="px-2.5 py-1 rounded bg-[#fef08a] text-black border-2 border-black font-mono font-bold shadow-[1.5px_1.5px_0px_#000]">cGMP Certified</span>
-            <span className="px-2.5 py-1 rounded bg-white text-black border-2 border-black font-mono font-bold shadow-[1.5px_1.5px_0px_#000]">ISO 9001 Compliant</span>
-            <span className="px-2.5 py-1 rounded bg-white text-black border-2 border-black font-mono font-bold shadow-[1.5px_1.5px_0px_#000]">Made in India</span>
+          <div className="flex flex-wrap gap-2 text-xs font-mono">
+            <span className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">cGMP Certified</span>
+            <span className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">ISO 9001 Compliant</span>
+            <span className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">SS 316L Contact</span>
           </div>
         </div>
       </div>
     </footer>
   );
 }
-

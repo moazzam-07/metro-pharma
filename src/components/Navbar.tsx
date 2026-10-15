@@ -47,24 +47,17 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
     <>
       <header
         className={cn(
-          "fixed top-4 left-0 right-0 z-50 mx-auto max-w-6xl transition-all duration-300 px-4",
-          isScrolled ? "top-2 md:top-3" : "top-4 md:top-5"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-white/95 backdrop-blur-md border-b",
+          isScrolled ? "border-zinc-200/90 shadow-xs py-3" : "border-zinc-200/60 py-4"
         )}
       >
-        <div
-          className={cn(
-            "flex items-center justify-between rounded-xl border-2 border-black bg-white transition-all duration-200",
-            isScrolled
-              ? "py-2 px-4 sm:px-6 shadow-[5px_5px_0px_#000]"
-              : "py-2.5 px-5 sm:px-7 shadow-[4px_4px_0px_#000]"
-          )}
-        >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
           {/* Brand Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 hover:opacity-90 active:scale-[0.98] transition-all cursor-pointer"
+            className="flex items-center gap-3 hover:opacity-90 transition-opacity cursor-pointer"
           >
-            <div className="relative w-[130px] h-[30px]">
+            <div className="relative w-[140px] sm:w-[155px] h-[32px]">
               <Image
                 src="/assets/logo/logo.png"
                 alt="Metro Pharma Logo"
@@ -73,18 +66,15 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
                 priority
               />
             </div>
-            <span className="hidden sm:inline-block text-[10px] font-mono font-bold uppercase tracking-wider text-black bg-[#fef08a] px-2 py-0.5 rounded border-2 border-black shadow-[1.5px_1.5px_0px_#000]">
-              Est. 2005
-            </span>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3 py-1.5 text-sm font-bold text-black hover:text-[#990099] hover:bg-slate-100 rounded-lg transition-colors"
+                className="text-sm font-medium text-zinc-600 hover:text-zinc-950 transition-colors"
               >
                 {link.name}
               </a>
@@ -92,28 +82,25 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
           </nav>
 
           {/* Action Tools */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3">
             {/* Search Trigger */}
             <button
               type="button"
               onClick={onOpenSearch}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border-2 border-black bg-white hover:bg-slate-100 text-xs font-bold text-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
+              className="p-2 rounded-lg text-zinc-500 hover:text-zinc-950 hover:bg-zinc-100 transition-colors cursor-pointer"
               title="Search equipment"
+              aria-label="Search equipment"
             >
-              <Search className="w-3.5 h-3.5 text-black" />
-              <span className="hidden sm:inline">Search</span>
-              <kbd className="hidden md:inline-block rounded bg-slate-100 px-1.5 py-0.5 text-[10px] text-black border border-black font-mono">
-                ⌘K
-              </kbd>
+              <Search className="w-4 h-4" />
             </button>
 
             {/* Request Quote Button */}
             <button
               type="button"
               onClick={onOpenQuote}
-              className="inline-flex items-center gap-2 bg-[#990099] hover:bg-[#800080] text-white text-xs font-bold px-4 py-2 rounded-lg border-2 border-black shadow-[3px_3px_0px_#000] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-2 bg-[#701a75] hover:bg-[#58135c] text-white text-xs font-semibold px-4.5 py-2.5 rounded-lg transition-all duration-150 cursor-pointer shadow-xs hover:shadow-sm active:scale-[0.98]"
             >
-              <span>Request RFQ</span>
+              <span>Request Quotation</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
 
@@ -121,7 +108,7 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-lg text-black hover:bg-slate-100 border-2 border-black shadow-[2px_2px_0px_#000] transition-colors"
+              className="lg:hidden p-2 rounded-lg text-zinc-700 hover:bg-zinc-100 transition-colors"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -131,26 +118,26 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
 
         {/* Mobile Dropdown Panel */}
         {mobileOpen && (
-          <div className="lg:hidden mt-2 rounded-xl bg-white border-2 border-black p-5 shadow-[6px_6px_0px_#000]">
-            <nav className="flex flex-col gap-2">
+          <div className="lg:hidden border-t border-zinc-200 bg-white px-6 py-6 shadow-xl">
+            <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="px-3 py-2 text-sm font-bold text-black hover:text-[#990099] hover:bg-slate-50 rounded-lg transition-colors"
+                  className="py-2 text-base font-medium text-zinc-800 hover:text-[#701a75] transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
-              <div className="pt-3 border-t-2 border-black mt-2 flex flex-col gap-2">
+              <div className="pt-4 border-t border-zinc-100 mt-2">
                 <button
                   type="button"
                   onClick={() => {
                     setMobileOpen(false);
                     onOpenQuote();
                   }}
-                  className="w-full text-center bg-[#990099] hover:bg-[#800080] text-white text-sm font-bold py-2.5 rounded-lg border-2 border-black shadow-[3px_3px_0px_#000] transition-all cursor-pointer"
+                  className="w-full text-center bg-[#701a75] hover:bg-[#58135c] text-white text-sm font-semibold py-3 rounded-lg transition-colors cursor-pointer shadow-xs"
                 >
                   Request Technical Quotation
                 </button>

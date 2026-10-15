@@ -37,38 +37,38 @@ export function SearchModal({ isOpen, onClose, onSelectMachine }: SearchModalPro
     : [];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-[12vh] px-4">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-[14vh] px-4">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm"
+        className="fixed inset-0 bg-zinc-950/40 backdrop-blur-xs"
         onClick={onClose}
       />
 
       {/* Search Dialog Box */}
-      <div className="relative z-10 w-full max-w-[620px] bg-white border-2 border-black rounded-xl shadow-[8px_8px_0px_#000] overflow-hidden">
-        <div className="flex items-center gap-3 px-5 py-4 border-b-2 border-black bg-[#f4f4f5]">
-          <Search className="w-5 h-5 text-black" />
+      <div className="relative z-10 w-full max-w-[560px] bg-white border border-zinc-200 rounded-xl shadow-2xl overflow-hidden">
+        <div className="flex items-center gap-3 px-4 py-3.5 border-b border-zinc-100 bg-white">
+          <Search className="w-4 h-4 text-zinc-400 shrink-0" />
           <input
             type="text"
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search machines, models, capacities, or specs..."
-            className="w-full text-[16px] font-mono text-black placeholder:text-zinc-500 outline-none bg-transparent"
+            className="w-full text-sm text-zinc-900 placeholder:text-zinc-400 outline-none bg-transparent"
           />
-          <kbd className="text-[11px] bg-[#fef08a] border-2 border-black px-2 py-0.5 rounded text-black font-mono font-bold shadow-[1px_1px_0px_#000]">
+          <kbd className="text-[10px] bg-zinc-100 border border-zinc-200 px-1.5 py-0.5 rounded text-zinc-500 font-mono">
             ESC
           </kbd>
         </div>
 
         {/* Results */}
-        <div className="max-h-[380px] overflow-y-auto p-2">
+        <div className="max-h-[360px] overflow-y-auto p-2">
           {query.trim() === "" ? (
-            <div className="p-8 text-center text-[14px] font-mono text-zinc-600">
+            <div className="p-8 text-center text-xs font-mono text-zinc-400">
               Type to search all 15 pharmaceutical machines, models, and specifications...
             </div>
           ) : matches.length === 0 ? (
-            <div className="p-8 text-center text-[14px] font-mono text-zinc-600">
+            <div className="p-8 text-center text-xs font-mono text-zinc-400">
               No machines found matching &ldquo;{query}&rdquo;.
             </div>
           ) : (
@@ -79,17 +79,17 @@ export function SearchModal({ isOpen, onClose, onSelectMachine }: SearchModalPro
                   onSelectMachine(m.id);
                   onClose();
                 }}
-                className="group flex items-center justify-between p-3.5 rounded-lg hover:bg-[#fef08a] border-2 border-transparent hover:border-black cursor-pointer transition-all mb-1"
+                className="group flex items-center justify-between p-3 rounded-lg hover:bg-zinc-50 cursor-pointer transition-colors"
               >
                 <div>
-                  <div className="text-[15px] font-bold text-black transition-colors">
+                  <div className="text-sm font-medium text-zinc-900 group-hover:text-[#701a75] transition-colors">
                     {m.name}
                   </div>
-                  <div className="text-[12px] font-mono text-zinc-700">
+                  <div className="text-xs text-zinc-500 font-mono">
                     {m.categoryLabel} · {m.capacity}
                   </div>
                 </div>
-                <span className="text-[14px] font-bold text-black group-hover:translate-x-1 transition-transform">
+                <span className="text-xs text-zinc-400 group-hover:text-[#701a75] group-hover:translate-x-0.5 transition-all">
                   &rarr;
                 </span>
               </div>
@@ -100,4 +100,3 @@ export function SearchModal({ isOpen, onClose, onSelectMachine }: SearchModalPro
     </div>
   );
 }
-
