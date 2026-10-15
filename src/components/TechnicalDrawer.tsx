@@ -39,26 +39,26 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
       />
 
       {/* Drawer Panel */}
-      <div className="relative z-10 w-full max-w-[680px] h-full bg-white border-l border-slate-200 shadow-2xl overflow-y-auto p-6 sm:p-10 flex flex-col">
+      <div className="relative z-10 w-full max-w-[680px] h-full bg-white border-l-4 border-black shadow-[-8px_0px_0px_#000] overflow-y-auto p-6 sm:p-10 flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between pb-5 border-b border-slate-200 mb-6">
+        <div className="flex items-center justify-between pb-5 border-b-2 border-black mb-6">
           <div>
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[12px] uppercase tracking-wider text-[#990099] font-bold bg-fuchsia-50 border border-fuchsia-200/80 px-2.5 py-0.5 rounded">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-black font-bold bg-[#fef08a] border-2 border-black px-2.5 py-0.5 rounded shadow-[1px_1px_0px_#000]">
                 {machine.categoryLabel}
               </span>
-              <span className="text-[12px] uppercase tracking-wider text-slate-700 font-bold bg-slate-100 border border-slate-200 px-2.5 py-0.5 rounded">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-black font-bold bg-white border-2 border-black px-2.5 py-0.5 rounded">
                 {machine.badge}
               </span>
             </div>
-            <h2 className="font-serif font-medium text-[26px] sm:text-[32px] tracking-tight text-slate-900">
+            <h2 className="font-heading font-black text-[26px] sm:text-[32px] tracking-tight text-black">
               {machine.name}
             </h2>
           </div>
           <button
             onClick={onClose}
             type="button"
-            className="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-900 hover:text-white border border-slate-200 flex items-center justify-center transition-colors cursor-pointer text-slate-700"
+            className="w-10 h-10 rounded-lg bg-white hover:bg-[#fef08a] border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none flex items-center justify-center transition-all cursor-pointer text-black"
             aria-label="Close drawer"
           >
             <X className="w-5 h-5" />
@@ -66,7 +66,7 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
         </div>
 
         {/* Media Preview Box */}
-        <div className="relative w-full h-[260px] min-h-[260px] shrink-0 bg-slate-50/90 rounded-2xl border border-slate-200 p-6 flex items-center justify-center mb-6">
+        <div className="relative w-full h-[260px] min-h-[260px] shrink-0 bg-[#f4f4f5] rounded-xl border-2 border-black shadow-[3px_3px_0px_#000] p-6 flex items-center justify-center mb-6">
           <Image
             src={machine.image}
             alt={machine.name}
@@ -79,56 +79,56 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
         {/* Content sections */}
         <div className="space-y-6 flex-1">
           <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-wider text-slate-900 mb-1.5">
+            <h4 className="text-[12px] font-mono font-bold uppercase tracking-wider text-black mb-1.5">
               Engineering Overview
             </h4>
-            <p className="text-[14px] text-slate-700 leading-relaxed font-normal">
+            <p className="text-[14px] text-zinc-800 leading-relaxed font-medium">
               {machine.description}
             </p>
           </div>
 
           <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-wider text-slate-900 mb-1.5">
+            <h4 className="text-[12px] font-mono font-bold uppercase tracking-wider text-black mb-1.5">
               Working Principle
             </h4>
-            <p className="text-[14px] text-slate-700 leading-relaxed font-normal">
+            <p className="text-[14px] text-zinc-800 leading-relaxed font-medium">
               {machine.workingPrinciple}
             </p>
           </div>
 
           <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-wider text-slate-900 mb-1.5">
+            <h4 className="text-[12px] font-mono font-bold uppercase tracking-wider text-black mb-1.5">
               Material of Construction
             </h4>
-            <p className="text-[14px] text-slate-700 leading-relaxed font-normal">
+            <p className="text-[14px] text-zinc-800 leading-relaxed font-medium">
               {machine.moc}
             </p>
           </div>
 
           {/* Specs Table */}
           <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-wider text-slate-900 mb-3">
+            <h4 className="text-[12px] font-mono font-bold uppercase tracking-wider text-black mb-3">
               Technical Specification Matrix
             </h4>
-            <div className="border border-slate-200 rounded-xl overflow-hidden">
-              <table className="w-full text-[14px] border-collapse bg-white">
+            <div className="border-2 border-black rounded-lg overflow-hidden shadow-[2px_2px_0px_#000]">
+              <table className="w-full text-[14px] border-collapse bg-white font-mono">
                 <tbody>
-                  <tr className="border-b border-slate-200 bg-slate-50/50">
-                    <td className="py-2.5 px-4 text-slate-600 font-semibold w-2/5">Capacity Range</td>
-                    <td className="py-2.5 px-4 text-slate-900 font-bold">{machine.capacity}</td>
+                  <tr className="border-b-2 border-black bg-[#f4f4f5]">
+                    <td className="py-2.5 px-4 text-zinc-700 font-bold w-2/5">Capacity Range</td>
+                    <td className="py-2.5 px-4 text-black font-extrabold">{machine.capacity}</td>
                   </tr>
-                  <tr className="border-b border-slate-200">
-                    <td className="py-2.5 px-4 text-slate-600 font-semibold">Available Sizes</td>
-                    <td className="py-2.5 px-4 text-slate-800">{machine.sizes}</td>
+                  <tr className="border-b-2 border-black">
+                    <td className="py-2.5 px-4 text-zinc-700 font-bold">Available Sizes</td>
+                    <td className="py-2.5 px-4 text-black">{machine.sizes}</td>
                   </tr>
-                  <tr className="border-b border-slate-200 bg-slate-50/50">
-                    <td className="py-2.5 px-4 text-slate-600 font-semibold">Power Supply</td>
-                    <td className="py-2.5 px-4 text-slate-800">{machine.power}</td>
+                  <tr className="border-b-2 border-black bg-[#f4f4f5]">
+                    <td className="py-2.5 px-4 text-zinc-700 font-bold">Power Supply</td>
+                    <td className="py-2.5 px-4 text-black">{machine.power}</td>
                   </tr>
                   {machine.specs.map((spec, i) => (
-                    <tr key={i} className={`border-b border-slate-200 ${i % 2 === 1 ? 'bg-slate-50/50' : ''}`}>
-                      <td className="py-2.5 px-4 text-slate-600 font-semibold">{spec.label}</td>
-                      <td className="py-2.5 px-4 text-slate-800">{spec.value}</td>
+                    <tr key={i} className={`border-b-2 border-black ${i % 2 === 1 ? 'bg-[#f4f4f5]' : ''}`}>
+                      <td className="py-2.5 px-4 text-zinc-700 font-bold">{spec.label}</td>
+                      <td className="py-2.5 px-4 text-black">{spec.value}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -138,13 +138,13 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
 
           {/* Salient Features */}
           <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-wider text-slate-900 mb-2">
+            <h4 className="text-[12px] font-mono font-bold uppercase tracking-wider text-black mb-2">
               Salient Engineering Features
             </h4>
-            <ul className="space-y-2 text-[14px] text-slate-700">
+            <ul className="space-y-2 text-[14px] text-zinc-800 font-medium">
               {machine.keyFeatures.map((feat, i) => (
                 <li key={i} className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#990099] mt-2 shrink-0"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#990099] border border-black mt-1.5 shrink-0"></span>
                   <span>{feat}</span>
                 </li>
               ))}
@@ -153,11 +153,11 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
         </div>
 
         {/* Bottom CTA */}
-        <div className="pt-6 border-t border-slate-200 mt-8">
+        <div className="pt-6 border-t-2 border-black mt-8">
           <button
             onClick={() => onRequestQuote(machine.name)}
             type="button"
-            className="w-full bg-[#990099] hover:bg-[#800080] text-white font-semibold text-[15px] py-3.5 rounded-xl transition-all cursor-pointer shadow-md shadow-[#990099]/20"
+            className="w-full bg-[#990099] hover:bg-[#800080] text-white font-black text-[15px] py-3.5 rounded-lg border-2 border-black shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
           >
             Request Specific Quote for this Machine &rarr;
           </button>

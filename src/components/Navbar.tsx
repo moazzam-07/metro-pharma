@@ -53,10 +53,10 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
       >
         <div
           className={cn(
-            "flex items-center justify-between rounded-2xl border shadow-sm transition-all duration-300 bg-white/95 backdrop-blur-xl",
+            "flex items-center justify-between rounded-xl border-2 border-black bg-white transition-all duration-200",
             isScrolled
-              ? "py-2.5 px-4 sm:px-6 shadow-[0_8px_30px_rgba(15,23,42,0.06)] border-slate-300"
-              : "py-3 px-5 sm:px-7 border-slate-200"
+              ? "py-2 px-4 sm:px-6 shadow-[5px_5px_0px_#000]"
+              : "py-2.5 px-5 sm:px-7 shadow-[4px_4px_0px_#000]"
           )}
         >
           {/* Brand Logo */}
@@ -73,7 +73,7 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
                 priority
               />
             </div>
-            <span className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+            <span className="hidden sm:inline-block text-[10px] font-mono font-bold uppercase tracking-wider text-black bg-[#fef08a] px-2 py-0.5 rounded border-2 border-black shadow-[1.5px_1.5px_0px_#000]">
               Est. 2005
             </span>
           </Link>
@@ -84,7 +84,7 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3.5 py-1.5 text-sm font-semibold text-slate-700 hover:text-[#990099] hover:bg-fuchsia-50/50 rounded-lg transition-colors"
+                className="px-3 py-1.5 text-sm font-bold text-black hover:text-[#990099] hover:bg-slate-100 rounded-lg transition-colors"
               >
                 {link.name}
               </a>
@@ -97,12 +97,12 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
             <button
               type="button"
               onClick={onOpenSearch}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs font-medium text-slate-600 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border-2 border-black bg-white hover:bg-slate-100 text-xs font-bold text-black shadow-[2px_2px_0px_#000] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all cursor-pointer"
               title="Search equipment"
             >
-              <Search className="w-3.5 h-3.5 text-slate-500" />
+              <Search className="w-3.5 h-3.5 text-black" />
               <span className="hidden sm:inline">Search</span>
-              <kbd className="hidden md:inline-block rounded bg-white px-1.5 py-0.5 text-[10px] text-slate-400 border border-slate-200 font-mono">
+              <kbd className="hidden md:inline-block rounded bg-slate-100 px-1.5 py-0.5 text-[10px] text-black border border-black font-mono">
                 ⌘K
               </kbd>
             </button>
@@ -111,7 +111,7 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
             <button
               type="button"
               onClick={onOpenQuote}
-              className="inline-flex items-center gap-2 bg-[#990099] hover:bg-[#800080] text-white text-xs font-semibold px-4.5 py-2 rounded-xl transition-all duration-200 shadow-sm shadow-[#990099]/20 hover:shadow-[#990099]/30 active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-2 bg-[#990099] hover:bg-[#800080] text-white text-xs font-bold px-4 py-2 rounded-lg border-2 border-black shadow-[3px_3px_0px_#000] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all cursor-pointer"
             >
               <span>Request RFQ</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -121,7 +121,7 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+              className="lg:hidden p-2 rounded-lg text-black hover:bg-slate-100 border-2 border-black shadow-[2px_2px_0px_#000] transition-colors"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -131,26 +131,26 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
 
         {/* Mobile Dropdown Panel */}
         {mobileOpen && (
-          <div className="lg:hidden mt-2 rounded-2xl bg-white border border-slate-200 p-5 shadow-xl">
+          <div className="lg:hidden mt-2 rounded-xl bg-white border-2 border-black p-5 shadow-[6px_6px_0px_#000]">
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="px-3 py-2 text-sm font-semibold text-slate-800 hover:text-[#990099] hover:bg-fuchsia-50/50 rounded-lg transition-colors"
+                  className="px-3 py-2 text-sm font-bold text-black hover:text-[#990099] hover:bg-slate-50 rounded-lg transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
-              <div className="pt-3 border-t border-slate-100 mt-2 flex flex-col gap-2">
+              <div className="pt-3 border-t-2 border-black mt-2 flex flex-col gap-2">
                 <button
                   type="button"
                   onClick={() => {
                     setMobileOpen(false);
                     onOpenQuote();
                   }}
-                  className="w-full text-center bg-[#990099] hover:bg-[#800080] text-white text-sm font-semibold py-2.5 rounded-xl transition-colors shadow-sm shadow-[#990099]/20"
+                  className="w-full text-center bg-[#990099] hover:bg-[#800080] text-white text-sm font-bold py-2.5 rounded-lg border-2 border-black shadow-[3px_3px_0px_#000] transition-all cursor-pointer"
                 >
                   Request Technical Quotation
                 </button>

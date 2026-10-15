@@ -25,26 +25,26 @@
 }
 
 :root {
-  /* Authentic Metro Pharma Brand Palette */
-  --background: #fdfcfe;
-  --foreground: #0f172a;
+  /* Minimalist Neo-Brutalist Theme */
+  --background: #f9f9fa;
+  --foreground: #000000;
   --card: #ffffff;
-  --card-foreground: #0f172a;
+  --card-foreground: #000000;
   --popover: #ffffff;
-  --popover-foreground: #0f172a;
+  --popover-foreground: #000000;
   --primary: #990099;
   --primary-foreground: #ffffff;
-  --secondary: #1e1b2e;
+  --secondary: #000000;
   --secondary-foreground: #ffffff;
-  --muted: #f5f3f7;
-  --muted-foreground: #475569;
-  --accent: #800080;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --accent: #990099;
   --accent-foreground: #ffffff;
-  --destructive: #dc2626;
-  --border: #e4e2e8;
-  --input: #cbd5e1;
+  --destructive: #e11d48;
+  --border: #000000;
+  --input: #000000;
   --ring: #990099;
-  --radius: 1rem;
+  --radius: 0.5rem;
 }
 
 .dark {
