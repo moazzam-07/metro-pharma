@@ -35,8 +35,8 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
           </p>
         </div>
 
-        {/* Filter Pills Bar */}
-        <div className="flex items-center gap-2 flex-wrap mb-10">
+        {/* Filter Pills Bar - Swipeable track on mobile, wrapping on sm+ */}
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar touch-scroll flex-nowrap sm:flex-wrap mb-8 sm:mb-10 pb-1.5 snap-x">
           {CATEGORIES.map((cat) => {
             const isActive = cat.key === activeCategory;
             return (
@@ -44,7 +44,7 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
                 key={cat.key}
                 onClick={() => setActiveCategory(cat.key)}
                 type="button"
-                className={`text-xs font-medium px-3.5 py-2 rounded-lg border transition-all cursor-pointer ${
+                className={`shrink-0 snap-start text-xs font-medium px-3.5 py-2.5 rounded-lg border transition-all cursor-pointer active:scale-[0.98] min-h-[38px] ${
                   isActive
                     ? "bg-[#701a75] text-white border-[#701a75] shadow-xs"
                     : "bg-white text-zinc-600 border-zinc-200/90 hover:bg-zinc-50 hover:text-zinc-950"

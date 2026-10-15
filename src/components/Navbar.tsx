@@ -108,7 +108,7 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-lg text-zinc-700 hover:bg-zinc-100 transition-colors"
+              className="lg:hidden w-11 h-11 rounded-xl text-zinc-800 hover:bg-zinc-100 active:bg-zinc-200 transition-colors flex items-center justify-center cursor-pointer"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -118,26 +118,27 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
 
         {/* Mobile Dropdown Panel */}
         {mobileOpen && (
-          <div className="lg:hidden border-t border-zinc-200 bg-white px-6 py-6 shadow-xl">
-            <nav className="flex flex-col gap-3">
+          <div className="lg:hidden border-t border-zinc-200/80 bg-white/98 backdrop-blur-xl px-5 py-5 shadow-2xl animate-in slide-in-from-top-2 duration-150">
+            <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="py-2 text-base font-medium text-zinc-800 hover:text-[#701a75] transition-colors"
+                  className="px-3.5 py-3 rounded-xl text-base font-medium text-zinc-900 active:bg-zinc-100 transition-colors flex items-center justify-between"
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  <ArrowRight className="w-4 h-4 text-zinc-400" />
                 </a>
               ))}
-              <div className="pt-4 border-t border-zinc-100 mt-2">
+              <div className="pt-3 border-t border-zinc-100 mt-2">
                 <button
                   type="button"
                   onClick={() => {
                     setMobileOpen(false);
                     onOpenQuote();
                   }}
-                  className="w-full text-center bg-[#701a75] hover:bg-[#58135c] text-white text-sm font-semibold py-3 rounded-lg transition-colors cursor-pointer shadow-xs"
+                  className="w-full text-center bg-[#701a75] hover:bg-[#58135c] text-white text-sm font-semibold py-3.5 rounded-xl transition-all cursor-pointer shadow-xs active:scale-[0.98]"
                 >
                   Request Technical Quotation
                 </button>

@@ -40,13 +40,13 @@ export function CinematicBanner() {
               </div>
             </div>
 
-            <div className="flex items-center justify-center gap-3.5 flex-wrap">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full sm:w-auto">
               <button
                 type="button"
                 onClick={() => {
                   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-2 bg-[#701a75] hover:bg-[#86198f] text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-lg shadow-sm hover:shadow transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 bg-[#701a75] hover:bg-[#86198f] text-white text-xs sm:text-sm font-semibold px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all cursor-pointer min-h-[46px] active:scale-[0.98]"
               >
                 <span>Submit Technical URS</span>
                 <ArrowRight className="w-4 h-4 ml-0.5" />
@@ -56,7 +56,7 @@ export function CinematicBanner() {
                 href={COMPANY_INFO.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-lg border border-zinc-700/80 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white text-xs sm:text-sm font-semibold px-5 py-3.5 rounded-lg border border-zinc-700/80 transition-all cursor-pointer min-h-[46px] active:scale-[0.98]"
               >
                 <MessageSquare className="w-4 h-4 text-emerald-400" />
                 <span>Chat with Design Desk</span>

@@ -35,8 +35,8 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
   return (
     <section className="py-20 sm:py-28 relative scroll-mt-28 bg-white" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
-        <div className="border border-zinc-200/90 rounded-2xl p-8 sm:p-12 lg:p-14 bg-white shadow-xs relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="border border-zinc-200/90 rounded-2xl p-5 sm:p-10 lg:p-14 bg-white shadow-xs relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             
             {/* Left Column: Direct Engineering Contact Desk */}
             <div className="lg:col-span-5 flex flex-col justify-between">
@@ -45,7 +45,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                   Direct Factory Engineering Desk
                 </div>
                 
-                <h2 className="text-3xl sm:text-4xl font-heading font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
+                <h2 className="text-2xl sm:text-4xl font-heading font-semibold tracking-tight text-zinc-900 leading-tight mb-4">
                   Request Equipment Specs &amp; Quotation
                 </h2>
                 
@@ -128,7 +128,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                   <button
                     onClick={() => setSubmitted(false)}
                     type="button"
-                    className="bg-[#701a75] hover:bg-[#86198f] text-white text-xs font-semibold px-6 py-2.5 rounded-lg shadow-sm transition-all cursor-pointer"
+                    className="bg-[#701a75] hover:bg-[#86198f] text-white text-xs font-semibold px-6 py-3 rounded-lg shadow-sm transition-all cursor-pointer min-h-[44px] active:scale-[0.98]"
                   >
                     Send Another Request
                   </button>
@@ -144,10 +144,12 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                         id="name"
                         type="text"
                         required
+                        autoComplete="name"
+                        enterKeyHint="next"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Dr. Rajesh Sharma"
-                        className="w-full bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
+                        className="w-full min-h-[46px] bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm sm:text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
                       />
                     </div>
 
@@ -159,10 +161,12 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                         id="company"
                         type="text"
                         required
+                        autoComplete="organization"
+                        enterKeyHint="next"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="Apex Pharma Laboratories"
-                        className="w-full bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
+                        className="w-full min-h-[46px] bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm sm:text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
                       />
                     </div>
                   </div>
@@ -176,10 +180,12 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                         id="email"
                         type="email"
                         required
+                        autoComplete="email"
+                        enterKeyHint="next"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="rajesh@apexpharma.com"
-                        className="w-full bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
+                        className="w-full min-h-[46px] bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm sm:text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
                       />
                     </div>
 
@@ -191,10 +197,13 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                         id="phone"
                         type="tel"
                         required
+                        autoComplete="tel"
+                        inputMode="tel"
+                        enterKeyHint="next"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 98765 43210"
-                        className="w-full bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
+                        className="w-full min-h-[46px] bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm sm:text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
                       />
                     </div>
                   </div>
@@ -208,7 +217,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                       required
                       value={formData.machine}
                       onChange={(e) => setFormData({ ...formData, machine: e.target.value })}
-                      className="w-full bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm text-zinc-900 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
+                      className="w-full min-h-[46px] bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm sm:text-sm text-zinc-900 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
                     >
                       <option value="">Select equipment...</option>
                       {MACHINES.map((m) => (
@@ -226,10 +235,11 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                     <input
                       id="batch"
                       type="text"
+                      enterKeyHint="next"
                       value={formData.batchSize}
                       onChange={(e) => setFormData({ ...formData, batchSize: e.target.value })}
                       placeholder="e.g. 500 kg/hr or 150 kg per batch"
-                      className="w-full bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
+                      className="w-full min-h-[46px] bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm sm:text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all"
                     />
                   </div>
 
@@ -240,19 +250,20 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                     <textarea
                       id="notes"
                       rows={3}
+                      enterKeyHint="done"
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       placeholder="Mesh size, flameproof ATEX motor, CIP washdown, containment requirements..."
-                      className="w-full bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all resize-y"
+                      className="w-full bg-white border border-zinc-300 rounded-lg px-3.5 py-2.5 text-sm sm:text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-[#701a75] focus:ring-1 focus:ring-[#701a75] transition-all resize-y"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-3.5 text-sm font-semibold bg-[#701a75] hover:bg-[#86198f] text-white rounded-lg shadow-sm hover:shadow transition-all cursor-pointer disabled:opacity-50"
+                    className="w-full min-h-[48px] py-3.5 text-sm font-semibold bg-[#701a75] hover:bg-[#86198f] text-white rounded-lg shadow-sm hover:shadow transition-all cursor-pointer disabled:opacity-50 active:scale-[0.98]"
                   >
-                    {loading ? "Transmitting Specification Request..." : "Submit Technical RFQ &amp; Proposal Request"}
+                    {loading ? "Transmitting Specification Request..." : "Submit Technical RFQ & Proposal Request"}
                   </button>
                 </form>
               )}

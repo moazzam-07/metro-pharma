@@ -144,15 +144,15 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
           </p>
         </div>
 
-        {/* Quick Stage Jump Ribbon - Clean, Subtle Pills */}
-        <div className="mb-10 sm:mb-12">
-          <div className="flex flex-wrap items-center gap-2">
+        {/* Quick Stage Jump Ribbon - Swipeable on mobile, wrapping on sm+ */}
+        <div className="mb-8 sm:mb-12">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar touch-scroll flex-nowrap sm:flex-wrap pb-2 snap-x">
             {GRANULATION_PIPELINE.map((stage) => (
               <button
                 key={stage.step}
                 type="button"
                 onClick={() => scrollToStage(stage.step)}
-                className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer bg-zinc-100/80 hover:bg-zinc-200/80 text-zinc-700 hover:text-zinc-950"
+                className="shrink-0 snap-start group inline-flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-all cursor-pointer bg-zinc-100/80 hover:bg-zinc-200/80 text-zinc-700 hover:text-zinc-950 active:scale-[0.98]"
               >
                 <span className="w-4.5 h-4.5 rounded bg-white text-zinc-700 font-mono font-bold text-[10px] flex items-center justify-center border border-zinc-200/80">
                   {stage.step}
@@ -169,7 +169,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
             <div
               key={stage.step}
               id={`stage-${stage.step}`}
-              className="relative md:sticky rounded-2xl border border-zinc-200/90 bg-white shadow-sm p-6 sm:p-8 lg:p-10 transition-all duration-300 scroll-mt-24"
+              className="relative md:sticky rounded-2xl border border-zinc-200/90 bg-white shadow-sm p-5 sm:p-8 lg:p-10 transition-all duration-300 scroll-mt-24"
               style={{
                 top: `calc(84px + ${idx * 14}px)`,
                 zIndex: idx + 10,
@@ -213,7 +213,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                     </p>
 
                     {/* Critical Parameter Matrix */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mb-6">
                       {stage.parameters.map((param, i) => (
                         <div 
                           key={i} 
@@ -235,7 +235,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                     <button
                       type="button"
                       onClick={() => onSelectMachine?.(stage.machineId)}
-                      className="inline-flex items-center gap-2 bg-[#701a75] hover:bg-[#58135c] text-white text-xs font-semibold px-4.5 py-2.5 rounded-lg transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#701a75] hover:bg-[#58135c] text-white text-xs font-semibold px-4.5 py-3 rounded-lg transition-all cursor-pointer shadow-xs active:scale-[0.98] min-h-[44px]"
                     >
                       <span>Inspect Machine Specifications</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />

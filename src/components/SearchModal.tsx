@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { MACHINES } from "@/data/machinery";
 
 interface SearchModalProps {
@@ -37,7 +37,7 @@ export function SearchModal({ isOpen, onClose, onSelectMachine }: SearchModalPro
     : [];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-[14vh] px-4">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-[8vh] sm:pt-[14vh] px-3 sm:px-4">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-zinc-950/40 backdrop-blur-xs"
@@ -46,17 +46,25 @@ export function SearchModal({ isOpen, onClose, onSelectMachine }: SearchModalPro
 
       {/* Search Dialog Box */}
       <div className="relative z-10 w-full max-w-[560px] bg-white border border-zinc-200 rounded-xl shadow-2xl overflow-hidden">
-        <div className="flex items-center gap-3 px-4 py-3.5 border-b border-zinc-100 bg-white">
+        <div className="flex items-center gap-3 px-4 py-3 sm:py-3.5 border-b border-zinc-100 bg-white">
           <Search className="w-4 h-4 text-zinc-400 shrink-0" />
           <input
             type="text"
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search machines, models, capacities, or specs..."
-            className="w-full text-sm text-zinc-900 placeholder:text-zinc-400 outline-none bg-transparent"
+            placeholder="Search machines, models, specs..."
+            className="w-full text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 outline-none bg-transparent"
           />
-          <kbd className="text-[10px] bg-zinc-100 border border-zinc-200 px-1.5 py-0.5 rounded text-zinc-500 font-mono">
+          <button
+            type="button"
+            onClick={onClose}
+            className="sm:hidden w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-500 active:scale-95"
+            aria-label="Close search dialog"
+          >
+            <X className="w-4 h-4" />
+          </button>
+          <kbd className="hidden sm:inline-block text-[10px] bg-zinc-100 border border-zinc-200 px-1.5 py-0.5 rounded text-zinc-500 font-mono">
             ESC
           </kbd>
         </div>

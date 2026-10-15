@@ -46,27 +46,27 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
         <div className="bg-white border border-zinc-200/90 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-xs relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Left Nav List */}
-            <div className="lg:col-span-6 flex flex-col gap-1.5">
+            {/* Left Nav List: Horizontal swipeable on mobile, vertical stack on desktop */}
+            <div className="lg:col-span-6 flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 pb-2 lg:pb-0 no-scrollbar touch-scroll snap-x">
               {explorerLines.map((line) => {
                 const isActive = line.id === activeId;
                 return (
                   <button
                     key={line.id}
                     onMouseEnter={() => setActiveId(line.id)}
-                    onClick={() => onSelectMachine(line.id)}
+                    onClick={() => setActiveId(line.id)}
                     type="button"
-                    className={`flex items-center justify-between p-3.5 rounded-xl transition-all text-left w-full border cursor-pointer ${
+                    className={`flex items-center justify-between p-3 sm:p-3.5 rounded-xl transition-all text-left shrink-0 lg:shrink lg:w-full border cursor-pointer snap-start active:scale-[0.98] ${
                       isActive
                         ? "bg-zinc-100/90 border-zinc-200/90 text-zinc-950 font-semibold shadow-xs"
-                        : "bg-transparent border-transparent text-zinc-700 hover:bg-zinc-50/80"
+                        : "bg-white lg:bg-transparent border-zinc-200/70 lg:border-transparent text-zinc-700 hover:bg-zinc-50/80"
                     }`}
                   >
-                    <span className="text-sm font-medium tracking-tight">
+                    <span className="text-xs sm:text-sm font-medium tracking-tight whitespace-nowrap lg:whitespace-normal mr-3">
                       {line.title}
                     </span>
                     <span
-                      className={`text-[11px] px-2.5 py-0.5 rounded-md border transition-all ${
+                      className={`text-[10px] sm:text-[11px] px-2 sm:px-2.5 py-0.5 rounded-md border transition-all ${
                         isActive
                           ? "bg-white text-zinc-900 border-zinc-200 font-semibold"
                           : "bg-zinc-100/60 text-zinc-500 border-zinc-200/60 font-normal"
@@ -111,7 +111,7 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
                     {activeMachine.description}
                   </p>
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex gap-6 text-xs">
                       <div>
                         <span className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-400">
@@ -133,7 +133,7 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
 
                     <button
                       type="button"
-                      className="inline-flex items-center gap-1.5 bg-[#701a75] hover:bg-[#58135c] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors cursor-pointer shadow-xs active:scale-[0.98]"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-[#701a75] hover:bg-[#58135c] text-white text-xs font-semibold px-4.5 py-2.5 rounded-lg transition-colors cursor-pointer shadow-xs active:scale-[0.98]"
                       onClick={() => onSelectMachine(activeMachine.id)}
                     >
                       <span>Inspect Specifications</span>

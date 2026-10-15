@@ -41,14 +41,14 @@ export function Hero({ onSelectMachine }: HeroProps) {
               Metro Pharma manufactures Vibro Sifters, Fluid Bed Dryers, Auto Coaters, and Granulation trains in certified SS 316L (Ra &lt; 0.38 µm). Delivered with complete DQ, IQ, OQ, and PQ validation dossiers for regulatory cleanrooms.
             </p>
 
-            {/* CTA Buttons - Clean & Uncluttered */}
-            <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto mb-10">
+            {/* CTA Buttons - Clean & Responsive */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto mb-10">
               <button
                 type="button"
                 onClick={() => {
                   document.getElementById("machinery")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-2 bg-[#701a75] hover:bg-[#58135c] text-white text-sm font-semibold px-6 py-3.5 rounded-lg transition-all cursor-pointer shadow-xs hover:shadow-sm active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 bg-[#701a75] hover:bg-[#58135c] text-white text-sm font-semibold px-6 py-3.5 rounded-lg transition-all cursor-pointer shadow-xs hover:shadow-sm active:scale-[0.98] min-h-[46px]"
               >
                 <span>Explore Machinery</span>
                 <ArrowRight className="w-4 h-4 ml-0.5" />
@@ -59,7 +59,7 @@ export function Hero({ onSelectMachine }: HeroProps) {
                 onClick={() => {
                   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-2 bg-white hover:bg-zinc-50 text-zinc-900 border border-zinc-200 text-sm font-semibold px-6 py-3.5 rounded-lg transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-zinc-50 text-zinc-900 border border-zinc-200 text-sm font-semibold px-6 py-3.5 rounded-lg transition-all cursor-pointer shadow-xs active:scale-[0.98] min-h-[46px]"
               >
                 <FileText className="w-4 h-4 text-[#701a75]" />
                 <span>Request Quotation</span>

@@ -102,9 +102,9 @@ export function Heritage() {
                 </span>
               </div>
 
-              {/* Technical Inspection Table */}
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs border-collapse font-mono">
+              {/* Technical Inspection Table - Touch scrollable on mobile */}
+              <div className="overflow-x-auto touch-scroll no-scrollbar -mx-2 px-2 sm:mx-0 sm:px-0">
+                <table className="w-full min-w-[500px] text-left text-xs border-collapse font-mono">
                   <thead>
                     <tr className="border-b border-zinc-200 text-zinc-400 font-medium">
                       <th className="py-2.5 pr-3">Inspection Parameter</th>

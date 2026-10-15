@@ -48,16 +48,16 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
       />
 
       {/* Drawer Panel */}
-      <div className="relative z-10 w-full max-w-[680px] h-full bg-[#fbfbfd] border-l border-zinc-200/90 shadow-[-20px_0_60px_-15px_rgba(0,0,0,0.12)] flex flex-col overflow-hidden">
+      <div className="relative z-10 w-full max-w-full sm:max-w-[680px] h-full bg-[#fbfbfd] border-l border-zinc-200/90 shadow-[-20px_0_60px_-15px_rgba(0,0,0,0.12)] flex flex-col overflow-hidden">
         
         {/* Sticky Header */}
-        <div className="px-6 sm:px-8 pt-6 pb-4 bg-white/90 backdrop-blur-md border-b border-zinc-200/70 z-20 shrink-0">
-          <div className="flex items-start justify-between gap-4">
+        <div className="px-5 sm:px-8 pt-5 sm:pt-6 pb-3.5 sm:pb-4 bg-white/90 backdrop-blur-md border-b border-zinc-200/70 z-20 shrink-0">
+          <div className="flex items-start justify-between gap-3">
             <div>
               <div className="text-[11px] font-mono font-medium tracking-widest text-zinc-400 uppercase mb-1">
                 Metro Pharma · Technical Dossier
               </div>
-              <h2 className="font-heading font-semibold text-2xl sm:text-3xl tracking-tight text-zinc-950">
+              <h2 className="font-heading font-semibold text-xl sm:text-3xl tracking-tight text-zinc-950">
                 {machine.name}
               </h2>
               <p className="text-xs text-zinc-500 font-normal mt-0.5">
@@ -68,19 +68,19 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
             <button
               onClick={onClose}
               type="button"
-              className="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-500 hover:text-zinc-900 flex items-center justify-center transition-colors cursor-pointer shrink-0 mt-1"
+              className="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-500 hover:text-zinc-900 flex items-center justify-center transition-colors cursor-pointer shrink-0 mt-0.5 active:scale-95"
               aria-label="Close specifications drawer"
             >
-              <X className="w-4 h-4" />
+              <X className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
             </button>
           </div>
 
           {/* Apple-Style Segmented Control Tabs */}
-          <div className="mt-5 flex bg-zinc-100/90 p-1 rounded-xl gap-1">
+          <div className="mt-4 sm:mt-5 flex bg-zinc-100/90 p-1 rounded-xl gap-1">
             <button
               type="button"
               onClick={() => setActiveTab("overview")}
-              className={`flex-1 py-1.5 text-xs font-medium rounded-lg transition-all cursor-pointer ${
+              className={`flex-1 py-2 sm:py-1.5 min-h-[36px] text-xs font-medium rounded-lg transition-all cursor-pointer active:scale-[0.98] ${
                 activeTab === "overview"
                   ? "bg-white text-zinc-950 shadow-xs"
                   : "text-zinc-500 hover:text-zinc-900"
@@ -91,7 +91,7 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
             <button
               type="button"
               onClick={() => setActiveTab("specs")}
-              className={`flex-1 py-1.5 text-xs font-medium rounded-lg transition-all cursor-pointer ${
+              className={`flex-1 py-2 sm:py-1.5 min-h-[36px] text-xs font-medium rounded-lg transition-all cursor-pointer active:scale-[0.98] ${
                 activeTab === "specs"
                   ? "bg-white text-zinc-950 shadow-xs"
                   : "text-zinc-500 hover:text-zinc-900"
@@ -102,7 +102,7 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
             <button
               type="button"
               onClick={() => setActiveTab("features")}
-              className={`flex-1 py-1.5 text-xs font-medium rounded-lg transition-all cursor-pointer ${
+              className={`flex-1 py-2 sm:py-1.5 min-h-[36px] text-xs font-medium rounded-lg transition-all cursor-pointer active:scale-[0.98] ${
                 activeTab === "features"
                   ? "bg-white text-zinc-950 shadow-xs"
                   : "text-zinc-500 hover:text-zinc-900"
@@ -114,7 +114,7 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
         </div>
 
         {/* Scrollable Body Content */}
-        <div className="flex-1 overflow-y-auto px-6 sm:px-8 py-6 space-y-6">
+        <div className="flex-1 overflow-y-auto px-5 sm:px-8 py-5 sm:py-6 space-y-6 touch-scroll">
           
           {/* Studio Equipment Stage */}
           <div className="relative rounded-2xl bg-gradient-to-b from-white via-zinc-50/80 to-zinc-100/50 border border-zinc-200/80 p-6 flex flex-col items-center justify-center shadow-xs">
@@ -302,8 +302,8 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
 
         </div>
 
-        {/* Floating Bottom Action Bar */}
-        <div className="px-6 sm:px-8 py-4 bg-white/95 backdrop-blur-md border-t border-zinc-200/80 shrink-0 flex items-center justify-between gap-4">
+        {/* Floating Bottom Action Bar with iOS Safe Area */}
+        <div className="px-5 sm:px-8 pt-3.5 pb-[calc(1rem+env(safe-area-inset-bottom,0px))] bg-white/95 backdrop-blur-md border-t border-zinc-200/80 shrink-0 flex items-center justify-between gap-4">
           <div className="hidden sm:block">
             <span className="block text-xs font-semibold text-zinc-900">
               Custom Engineering &amp; Sizing
@@ -319,7 +319,7 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
               onRequestQuote(machine.name);
             }}
             type="button"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#701a75] hover:bg-[#58135c] text-white font-medium text-xs sm:text-sm px-6 py-3 rounded-xl shadow-xs transition-all cursor-pointer active:scale-[0.98]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#701a75] hover:bg-[#58135c] text-white font-medium text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-xs transition-all cursor-pointer active:scale-[0.98] min-h-[46px]"
           >
             <span>Request Official URS &amp; Pricing</span>
             <ArrowRight className="w-4 h-4 ml-0.5" />
