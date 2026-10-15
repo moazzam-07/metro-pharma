@@ -135,7 +135,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200/90 text-xs font-bold text-[#0f766e] mb-5 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-fuchsia-50 border border-fuchsia-200/90 text-xs font-bold text-[#990099] mb-5 shadow-2xs">
             <Workflow className="w-3.5 h-3.5" />
             <span>SOLID DOSAGE PROCESS FLOW · 7 STAGES</span>
           </div>
@@ -150,7 +150,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
         {/* Quick Stage Jump Ribbon - Wrapped Multi-Pill Grid */}
         <div className="mb-12 sm:mb-14">
           <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-2">
-            <Layers className="w-3.5 h-3.5 text-[#0f766e]" />
+            <Layers className="w-3.5 h-3.5 text-[#990099]" />
             <span>Process Stages (Click to view equipment)</span>
           </div>
           <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
@@ -159,9 +159,9 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                 key={stage.step}
                 type="button"
                 onClick={() => scrollToStage(stage.step)}
-                className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer bg-white hover:bg-slate-50 border border-slate-200 hover:border-teal-300 text-slate-700 hover:text-slate-900 shadow-2xs active:scale-95"
+                className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer bg-white hover:bg-slate-50 border border-slate-200 hover:border-fuchsia-300 text-slate-700 hover:text-slate-900 shadow-2xs active:scale-95"
               >
-                <span className="w-5 h-5 rounded-md bg-teal-50 text-[#0f766e] group-hover:bg-[#0f766e] group-hover:text-white font-mono font-bold text-[11px] flex items-center justify-center transition-colors">
+                <span className="w-5 h-5 rounded-md bg-fuchsia-50 text-[#990099] group-hover:bg-[#990099] group-hover:text-white font-mono font-bold text-[11px] flex items-center justify-center transition-colors">
                   {stage.step}
                 </span>
                 <span>{stage.name}</span>
@@ -185,7 +185,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
               {/* Top Meta Strip */}
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5 mb-8">
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="px-3 py-1 rounded-md bg-teal-50 text-[#0f766e] border border-teal-200/90 text-xs font-bold font-mono">
+                  <span className="px-3 py-1 rounded-md bg-fuchsia-50 text-[#990099] border border-fuchsia-200/90 text-xs font-bold font-mono">
                     STAGE {stage.step} OF 07
                   </span>
                   <span className="px-3 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200 text-xs font-semibold">
@@ -209,8 +209,8 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                     </h3>
 
                     {/* Machine Title */}
-                    <div className="text-sm sm:text-base font-bold text-[#0f766e] mb-4 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#0f766e]"></span>
+                    <div className="text-sm sm:text-base font-bold text-[#990099] mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#990099]"></span>
                       <span>{stage.machine}</span>
                     </div>
 
@@ -242,7 +242,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                     <button
                       type="button"
                       onClick={() => onSelectMachine?.(stage.machineId)}
-                      className="inline-flex items-center gap-2 bg-[#090d16] hover:bg-[#0f766e] text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md active:scale-95"
+                      className="inline-flex items-center gap-2 bg-[#990099] hover:bg-[#800080] text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl transition-all duration-200 cursor-pointer shadow-sm shadow-[#990099]/20 hover:shadow-md active:scale-95"
                     >
                       <span>Inspect Machine Specs</span>
                       <ArrowUpRight className="w-4 h-4 ml-0.5" />
@@ -289,15 +289,15 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
         {/* Turnkey Compliance Strip */}
         <div className="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-200/90 pt-8">
           <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 font-medium bg-slate-50/80 rounded-2xl p-4 border border-slate-200/70">
-            <CheckCircle2 className="w-4 h-4 text-[#0f766e] shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-[#990099] shrink-0" />
             <span>Clean In Place (CIP / WIP) washdown piping</span>
           </div>
           <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 font-medium bg-slate-50/80 rounded-2xl p-4 border border-slate-200/70">
-            <CheckCircle2 className="w-4 h-4 text-[#0f766e] shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-[#990099] shrink-0" />
             <span>21 CFR Part 11 compliant SCADA / PLC options</span>
           </div>
           <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 font-medium bg-slate-50/80 rounded-2xl p-4 border border-slate-200/70">
-            <ShieldCheck className="w-4 h-4 text-[#0f766e] shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-[#990099] shrink-0" />
             <span>Closed-loop powder transfer valves</span>
           </div>
         </div>

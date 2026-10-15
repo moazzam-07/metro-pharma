@@ -10,7 +10,7 @@ export function Heritage() {
           
           {/* Left Column: 20-Year Factory Track Record */}
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/90 text-xs font-bold text-[#0f766e] mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-fuchsia-50 border border-fuchsia-200/90 text-xs font-bold text-[#990099] mb-4">
               <Factory className="w-3.5 h-3.5" />
               <span>MANUFACTURING FACILITY · VASAI EAST</span>
             </div>
@@ -25,7 +25,7 @@ export function Heritage() {
 
             <div className="space-y-5">
               <div className="flex gap-4 items-start">
-                <span className="w-9 h-9 rounded-lg bg-teal-50 text-[#0f766e] font-heading font-bold text-sm flex items-center justify-center shrink-0 border border-teal-200">
+                <span className="w-9 h-9 rounded-lg bg-fuchsia-50 text-[#990099] font-heading font-bold text-sm flex items-center justify-center shrink-0 border border-fuchsia-200">
                   01
                 </span>
                 <div>
@@ -39,7 +39,7 @@ export function Heritage() {
               </div>
 
               <div className="flex gap-4 items-start">
-                <span className="w-9 h-9 rounded-lg bg-teal-50 text-[#0f766e] font-heading font-bold text-sm flex items-center justify-center shrink-0 border border-teal-200">
+                <span className="w-9 h-9 rounded-lg bg-fuchsia-50 text-[#990099] font-heading font-bold text-sm flex items-center justify-center shrink-0 border border-fuchsia-200">
                   02
                 </span>
                 <div>
@@ -53,7 +53,7 @@ export function Heritage() {
               </div>
 
               <div className="flex gap-4 items-start">
-                <span className="w-9 h-9 rounded-lg bg-teal-50 text-[#0f766e] font-heading font-bold text-sm flex items-center justify-center shrink-0 border border-teal-200">
+                <span className="w-9 h-9 rounded-lg bg-fuchsia-50 text-[#990099] font-heading font-bold text-sm flex items-center justify-center shrink-0 border border-fuchsia-200">
                   03
                 </span>
                 <div>
@@ -71,7 +71,7 @@ export function Heritage() {
           {/* Right Column: Factory Capabilities & Inspection Standards */}
           <div className="lg:col-span-5">
             <div className="bg-white border border-slate-200 rounded-3xl p-7 sm:p-9 shadow-sm relative">
-              <div className="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-[#0f766e]">
+              <div className="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-[#990099]">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Shop Floor &amp; Testing Specifications</span>
               </div>
@@ -82,7 +82,7 @@ export function Heritage() {
 
               <div className="space-y-3.5 mb-6 text-xs sm:text-sm text-slate-700">
                 <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80">
-                  <CheckCircle2 className="w-4 h-4 text-[#0f766e] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#990099] shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-slate-900 block font-bold">Positive Material Identification (PMI)</strong>
                     Mill test certificates provided for every stainless steel heat lot.
@@ -90,7 +90,7 @@ export function Heritage() {
                 </div>
 
                 <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80">
-                  <Ruler className="w-4 h-4 text-[#0f766e] shrink-0 mt-0.5" />
+                  <Ruler className="w-4 h-4 text-[#990099] shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-slate-900 block font-bold">Surface Roughness Verification</strong>
                     Mitutoyo calibrated surface profilometer measurement (Ra &lt; 0.38 µm).
@@ -98,7 +98,7 @@ export function Heritage() {
                 </div>
 
                 <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80">
-                  <Wrench className="w-4 h-4 text-[#0f766e] shrink-0 mt-0.5" />
+                  <Wrench className="w-4 h-4 text-[#990099] shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-slate-900 block font-bold">In-House Machining &amp; TIG Welding</strong>
                     Orbital welding and dynamic balancing of eccentric weights on sifter motors.
@@ -108,11 +108,11 @@ export function Heritage() {
 
               <div className="pt-4 border-t border-slate-200 flex flex-wrap justify-between items-center text-xs text-slate-600 gap-2 font-medium">
                 <span className="flex items-center gap-1.5">
-                  <Factory className="w-3.5 h-3.5 text-[#0f766e]" />
+                  <Factory className="w-3.5 h-3.5 text-[#990099]" />
                   Shivam Industrial Estate
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#0f766e]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#990099]" />
                   Vasai East, Palghar - 401208
                 </span>
               </div>

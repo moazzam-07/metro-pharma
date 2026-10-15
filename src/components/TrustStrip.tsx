@@ -15,9 +15,9 @@ export function TrustStrip() {
           {metrics.map((metric, i) => (
             <div
               key={i}
-              className="flex flex-col items-center text-center space-y-2 justify-center transition-transform hover:scale-105 duration-300"
+              className="group flex flex-col items-center text-center space-y-2 justify-center transition-transform hover:scale-105 duration-300"
             >
-              <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-[#090d16] dark:text-white tabular-nums leading-none">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-[#090d16] group-hover:text-[#990099] dark:text-white dark:group-hover:text-[#d946ef] tabular-nums leading-none transition-colors">
                 {metric.value}
               </div>
               <div className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider">

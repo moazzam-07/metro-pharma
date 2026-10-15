@@ -44,7 +44,7 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
         <div className="flex items-center justify-between pb-5 border-b border-slate-200 mb-6">
           <div>
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[12px] uppercase tracking-wider text-teal-800 font-bold bg-teal-50 border border-teal-200/80 px-2.5 py-0.5 rounded">
+              <span className="text-[12px] uppercase tracking-wider text-[#990099] font-bold bg-fuchsia-50 border border-fuchsia-200/80 px-2.5 py-0.5 rounded">
                 {machine.categoryLabel}
               </span>
               <span className="text-[12px] uppercase tracking-wider text-slate-700 font-bold bg-slate-100 border border-slate-200 px-2.5 py-0.5 rounded">
@@ -144,7 +144,7 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
             <ul className="space-y-2 text-[14px] text-slate-700">
               {machine.keyFeatures.map((feat, i) => (
                 <li key={i} className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-600 mt-2 shrink-0"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#990099] mt-2 shrink-0"></span>
                   <span>{feat}</span>
                 </li>
               ))}
@@ -157,7 +157,7 @@ export function TechnicalDrawer({ machine, onClose, onRequestQuote }: TechnicalD
           <button
             onClick={() => onRequestQuote(machine.name)}
             type="button"
-            className="w-full bg-[#090d16] hover:bg-[#0f766e] text-white font-semibold text-[15px] py-3.5 rounded-xl transition-all cursor-pointer shadow-md"
+            className="w-full bg-[#990099] hover:bg-[#800080] text-white font-semibold text-[15px] py-3.5 rounded-xl transition-all cursor-pointer shadow-md shadow-[#990099]/20"
           >
             Request Specific Quote for this Machine &rarr;
           </button>

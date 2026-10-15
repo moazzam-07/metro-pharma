@@ -84,7 +84,7 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3.5 py-1.5 text-sm font-semibold text-slate-700 hover:text-[#0f766e] hover:bg-slate-50 rounded-lg transition-colors"
+                className="px-3.5 py-1.5 text-sm font-semibold text-slate-700 hover:text-[#990099] hover:bg-fuchsia-50/50 rounded-lg transition-colors"
               >
                 {link.name}
               </a>
@@ -111,7 +111,7 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
             <button
               type="button"
               onClick={onOpenQuote}
-              className="inline-flex items-center gap-2 bg-[#090d16] hover:bg-[#0f766e] text-white text-xs font-semibold px-4.5 py-2 rounded-xl transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-2 bg-[#990099] hover:bg-[#800080] text-white text-xs font-semibold px-4.5 py-2 rounded-xl transition-all duration-200 shadow-sm shadow-[#990099]/20 hover:shadow-[#990099]/30 active:scale-95 cursor-pointer"
             >
               <span>Request RFQ</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -138,7 +138,7 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="px-3 py-2 text-sm font-semibold text-slate-800 hover:text-[#0f766e] hover:bg-slate-50 rounded-lg transition-colors"
+                  className="px-3 py-2 text-sm font-semibold text-slate-800 hover:text-[#990099] hover:bg-fuchsia-50/50 rounded-lg transition-colors"
                 >
                   {link.name}
                 </a>
@@ -150,7 +150,7 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
                     setMobileOpen(false);
                     onOpenQuote();
                   }}
-                  className="w-full text-center bg-[#090d16] hover:bg-[#0f766e] text-white text-sm font-semibold py-2.5 rounded-xl transition-colors"
+                  className="w-full text-center bg-[#990099] hover:bg-[#800080] text-white text-sm font-semibold py-2.5 rounded-xl transition-colors shadow-sm shadow-[#990099]/20"
                 >
                   Request Technical Quotation
                 </button>

@@ -47,7 +47,7 @@ export function SearchModal({ isOpen, onClose, onSelectMachine }: SearchModalPro
       {/* Search Dialog Box */}
       <div className="relative z-10 w-full max-w-[620px] bg-white border border-slate-200 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <div className="flex items-center gap-3 px-5 py-4 border-b border-slate-200 bg-slate-50/50">
-          <Search className="w-5 h-5 text-teal-700" />
+          <Search className="w-5 h-5 text-[#990099]" />
           <input
             type="text"
             autoFocus
@@ -79,17 +79,17 @@ export function SearchModal({ isOpen, onClose, onSelectMachine }: SearchModalPro
                   onSelectMachine(m.id);
                   onClose();
                 }}
-                className="group flex items-center justify-between p-3.5 rounded-xl hover:bg-teal-50/70 border border-transparent hover:border-teal-200 cursor-pointer transition-all"
+                className="group flex items-center justify-between p-3.5 rounded-xl hover:bg-fuchsia-50/70 border border-transparent hover:border-fuchsia-200 cursor-pointer transition-all"
               >
                 <div>
-                  <div className="text-[15px] font-semibold text-slate-900 group-hover:text-teal-900 transition-colors">
+                  <div className="text-[15px] font-semibold text-slate-900 group-hover:text-[#990099] transition-colors">
                     {m.name}
                   </div>
                   <div className="text-[12px] text-slate-600 font-medium">
                     {m.categoryLabel} · {m.capacity}
                   </div>
                 </div>
-                <span className="text-[14px] font-bold text-teal-700 group-hover:translate-x-0.5 transition-transform">
+                <span className="text-[14px] font-bold text-[#990099] group-hover:translate-x-0.5 transition-transform">
                   &rarr;
                 </span>
               </div>

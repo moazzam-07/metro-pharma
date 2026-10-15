@@ -28,10 +28,10 @@ export function Hero({ onSelectMachine }: HeroProps) {
             
             {/* Manufacturing Status Badge */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs text-xs font-semibold text-slate-800 mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#0f766e]"></span>
+              <span className="w-2 h-2 rounded-full bg-[#990099]"></span>
               <span>cGMP &amp; Schedule M Compliant</span>
               <span className="text-slate-300">|</span>
-              <span className="text-[#0f766e] font-bold">Est. 2005 · Vasai, Mumbai</span>
+              <span className="text-[#990099] font-bold">Est. 2005 · Vasai, Mumbai</span>
             </div>
 
             {/* Headline */}
@@ -51,7 +51,7 @@ export function Hero({ onSelectMachine }: HeroProps) {
                 onClick={() => {
                   document.getElementById("machinery")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-2 bg-[#090d16] hover:bg-[#0f766e] text-white text-sm font-semibold px-6 py-3.5 rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-md active:scale-95"
+                className="inline-flex items-center gap-2 bg-[#990099] hover:bg-[#800080] text-white text-sm font-semibold px-6 py-3.5 rounded-xl transition-all cursor-pointer shadow-md shadow-[#990099]/20 hover:shadow-lg hover:shadow-[#990099]/30 active:scale-95"
               >
                 <span>View Machinery Catalog</span>
                 <ArrowRight className="w-4 h-4 ml-0.5" />
@@ -64,7 +64,7 @@ export function Hero({ onSelectMachine }: HeroProps) {
                 }}
                 className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 shadow-2xs hover:shadow-xs text-sm font-semibold px-6 py-3.5 rounded-xl transition-all cursor-pointer active:scale-95"
               >
-                <FileText className="w-4 h-4 text-[#0f766e]" />
+                <FileText className="w-4 h-4 text-[#990099]" />
                 <span>Request Technical RFQ</span>
               </button>
 
@@ -73,7 +73,7 @@ export function Hero({ onSelectMachine }: HeroProps) {
                 onClick={() => {
                   document.getElementById("granulation")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-[#0f766e] transition-colors px-3 py-2 cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-[#990099] transition-colors px-3 py-2 cursor-pointer"
               >
                 <span>Granulation Flow</span>
                 <ChevronRight className="w-3.5 h-3.5" />
@@ -83,15 +83,15 @@ export function Hero({ onSelectMachine }: HeroProps) {
             {/* Validation Metrics Strip */}
             <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-200/90 w-full text-xs text-slate-700 font-medium">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0f766e] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#990099] shrink-0" />
                 <span>SS 316L (Ra &lt; 0.38 µm) Contact</span>
               </div>
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#0f766e] shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-[#990099] shrink-0" />
                 <span>100% Factory Acceptance Testing (FAT)</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#0f766e] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#990099] shrink-0" />
                 <span>DQ / IQ / OQ / PQ Documented</span>
               </div>
             </div>
@@ -103,12 +103,12 @@ export function Hero({ onSelectMachine }: HeroProps) {
             {/* Primary Featured Machine: Vibro Sifter (Flagship) */}
             <div
               onClick={() => onSelectMachine("vibro-sifter")}
-              className="absolute left-1/2 top-2 -translate-x-1/2 w-[250px] sm:w-[290px] h-[240px] sm:h-[260px] bg-white border border-slate-200 rounded-2xl p-4 shadow-lg hover:shadow-xl hover:border-teal-400/80 transition-all duration-200 cursor-pointer group z-20"
+              className="absolute left-1/2 top-2 -translate-x-1/2 w-[250px] sm:w-[290px] h-[240px] sm:h-[260px] bg-white border border-slate-200 rounded-2xl p-4 shadow-lg hover:shadow-xl hover:border-fuchsia-400/80 transition-all duration-200 cursor-pointer group z-20"
               title="Click to view Vibro Sifter specifications"
             >
               <div className="w-full h-full bg-slate-50/90 rounded-xl p-3 flex flex-col justify-between border border-slate-100">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold uppercase tracking-wider bg-teal-50 border border-teal-200 px-2.5 py-0.5 rounded-md text-[#0f766e]">
+                  <span className="text-[11px] font-bold uppercase tracking-wider bg-fuchsia-50 border border-fuchsia-200 px-2.5 py-0.5 rounded-md text-[#990099]">
                     Flagship Sifter
                   </span>
                   <span className="text-xs text-slate-600 font-bold">
@@ -136,7 +136,7 @@ export function Hero({ onSelectMachine }: HeroProps) {
                       Screening up to 500 Mesh
                     </p>
                   </div>
-                  <span className="w-6 h-6 rounded-md bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-800 group-hover:bg-[#0f766e] group-hover:text-white group-hover:border-[#0f766e] transition-colors">
+                  <span className="w-6 h-6 rounded-md bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-800 group-hover:bg-[#990099] group-hover:text-white group-hover:border-[#990099] transition-colors">
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
@@ -146,12 +146,12 @@ export function Hero({ onSelectMachine }: HeroProps) {
             {/* Secondary Machine: Metro Auto-Coater */}
             <div
               onClick={() => onSelectMachine("auto-coater")}
-              className="absolute right-0 top-[44%] w-[210px] sm:w-[240px] h-[200px] sm:h-[220px] bg-white border border-slate-200 rounded-2xl p-3.5 shadow-lg hover:shadow-xl hover:border-teal-400/80 transition-all duration-200 cursor-pointer group z-25"
+              className="absolute right-0 top-[44%] w-[210px] sm:w-[240px] h-[200px] sm:h-[220px] bg-white border border-slate-200 rounded-2xl p-3.5 shadow-lg hover:shadow-xl hover:border-fuchsia-400/80 transition-all duration-200 cursor-pointer group z-25"
               title="Click to view Metro Coater specifications"
             >
               <div className="w-full h-full bg-slate-50/90 rounded-xl p-3 flex flex-col justify-between border border-slate-100">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-slate-200/80 px-2 py-0.5 rounded-md text-slate-800">
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-fuchsia-50 border border-fuchsia-200 px-2 py-0.5 rounded-md text-[#990099]">
                     Auto Coater
                   </span>
                   <span className="text-[10px] text-slate-500 font-bold">
@@ -178,7 +178,7 @@ export function Hero({ onSelectMachine }: HeroProps) {
                       Perforated Pan
                     </p>
                   </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#0f766e]" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#990099]" />
                 </div>
               </div>
             </div>
@@ -186,7 +186,7 @@ export function Hero({ onSelectMachine }: HeroProps) {
             {/* Tertiary Machine: Fluid Bed Dryer */}
             <div
               onClick={() => onSelectMachine("fluid-bed-dryer")}
-              className="absolute left-0 bottom-2 w-[200px] sm:w-[230px] h-[190px] sm:h-[210px] bg-white border border-slate-200 rounded-2xl p-3.5 shadow-lg hover:shadow-xl hover:border-teal-400/80 transition-all duration-200 cursor-pointer group z-15"
+              className="absolute left-0 bottom-2 w-[200px] sm:w-[230px] h-[190px] sm:h-[210px] bg-white border border-slate-200 rounded-2xl p-3.5 shadow-lg hover:shadow-xl hover:border-fuchsia-400/80 transition-all duration-200 cursor-pointer group z-15"
               title="Click to view Fluid Bed Dryer specifications"
             >
               <div className="w-full h-full bg-slate-50/90 rounded-xl p-3 flex flex-col justify-between border border-slate-100">
@@ -218,7 +218,7 @@ export function Hero({ onSelectMachine }: HeroProps) {
                       HEPA Fluidization
                     </p>
                   </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#0f766e]" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#990099]" />
                 </div>
               </div>
             </div>

@@ -31,7 +31,7 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/90 text-xs font-bold text-[#0f766e] mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-fuchsia-50 border border-fuchsia-200/90 text-xs font-bold text-[#990099] mb-4">
             <Layers className="w-3.5 h-3.5" />
             <span>EQUIPMENT CATEGORIES</span>
           </div>
@@ -59,13 +59,13 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
                     type="button"
                     className={`flex items-center justify-between p-3.5 sm:p-4 rounded-xl transition-all text-left w-full border cursor-pointer ${
                       isActive
-                        ? "bg-teal-50/80 border-teal-200 text-[#0f766e] shadow-2xs"
+                        ? "bg-fuchsia-50/80 border-fuchsia-200 text-[#990099] shadow-2xs"
                         : "bg-transparent border-transparent text-slate-800 hover:bg-slate-50"
                     }`}
                   >
                     <span
                       className={`text-sm sm:text-base font-heading tracking-tight transition-all ${
-                        isActive ? "font-bold text-[#0f766e]" : "font-medium text-slate-700"
+                        isActive ? "font-bold text-[#990099]" : "font-medium text-slate-700"
                       }`}
                     >
                       {line.title}
@@ -73,7 +73,7 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
                     <span
                       className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-md border transition-all ${
                         isActive
-                          ? "bg-white text-[#0f766e] border-teal-200 font-bold"
+                          ? "bg-white text-[#990099] border-fuchsia-200 font-bold"
                           : "bg-slate-100 text-slate-600 border-slate-200"
                       }`}
                     >
@@ -91,8 +91,8 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
                   <span className="bg-white border border-slate-200 px-3 py-1 rounded-md text-xs font-bold text-slate-800 shadow-2xs">
                     {activeLine.badge}
                   </span>
-                  <span className="text-xs font-semibold text-[#0f766e] flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0f766e]" />
+                  <span className="text-xs font-semibold text-[#990099] flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#990099]" />
                     <span>cGMP Compliant</span>
                   </span>
                 </div>
@@ -139,7 +139,7 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
 
                     <button
                       type="button"
-                      className="inline-flex items-center gap-1.5 bg-[#090d16] hover:bg-[#0f766e] text-white text-xs font-semibold px-4 py-2 rounded-lg cursor-pointer transition-colors"
+                      className="inline-flex items-center gap-1.5 bg-[#990099] hover:bg-[#800080] text-white text-xs font-semibold px-4 py-2 rounded-lg cursor-pointer transition-colors shadow-sm shadow-[#990099]/20"
                       onClick={() => onSelectMachine(activeMachine.id)}
                     >
                       <span>Inspect Specs</span>

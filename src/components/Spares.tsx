@@ -37,7 +37,7 @@ export function Spares() {
           
           {/* Section Header */}
           <div className="max-w-3xl mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/90 text-xs font-bold text-[#0f766e] mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-fuchsia-50 border border-fuchsia-200/90 text-xs font-bold text-[#990099] mb-4">
               <Wrench className="w-3.5 h-3.5" />
               <span>SPARE PARTS &amp; TOOLING</span>
             </div>
@@ -57,11 +57,11 @@ export function Spares() {
               return (
                 <div
                   key={idx}
-                  className="bg-slate-50/70 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-teal-400 hover:bg-white hover:shadow-md transition-all duration-200"
+                  className="bg-slate-50/70 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:border-fuchsia-400 hover:bg-white hover:shadow-md transition-all duration-200"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-teal-50 text-[#0f766e] flex items-center justify-center border border-teal-200">
+                      <div className="w-10 h-10 rounded-xl bg-fuchsia-50 text-[#990099] flex items-center justify-center border border-fuchsia-200">
                         <IconComp className="w-5 h-5" />
                       </div>
                       <span className="text-[11px] font-bold text-slate-800 bg-white px-2.5 py-0.5 rounded-md border border-slate-200">
@@ -80,7 +80,7 @@ export function Spares() {
 
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0f766e] hover:text-[#090d16] transition-colors pt-3 border-t border-slate-200"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#990099] hover:text-[#800080] transition-colors pt-3 border-t border-slate-200"
                   >
                     <span>Inquire Spare Part</span>
                     <ArrowRight className="w-3.5 h-3.5" />

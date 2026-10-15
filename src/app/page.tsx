@@ -35,7 +35,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground selection:bg-teal-600/20 selection:text-teal-900">
+    <div className="relative min-h-screen bg-background text-foreground selection:bg-[#990099]/15 selection:text-[#700070]">
       {/* Floating Glass Navbar */}
       <Navbar
         onOpenSearch={() => setIsSearchOpen(true)}

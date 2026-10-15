@@ -23,7 +23,7 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/90 text-xs font-bold text-[#0f766e] mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-fuchsia-50 border border-fuchsia-200/90 text-xs font-bold text-[#990099] mb-4">
               <Cpu className="w-3.5 h-3.5" />
               <span>MACHINERY CATALOG</span>
             </div>
@@ -47,7 +47,7 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
                 type="button"
                 className={`text-xs sm:text-sm font-semibold px-4 py-2 rounded-xl border transition-all cursor-pointer ${
                   isActive
-                    ? "bg-[#090d16] text-white border-[#090d16] shadow-sm"
+                    ? "bg-[#990099] text-white border-[#990099] shadow-sm shadow-[#990099]/20"
                     : "bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
                 }`}
               >
@@ -63,13 +63,13 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
             <div
               key={machine.id}
               onClick={() => onSelectMachine(machine.id)}
-              className="group relative bg-white border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:border-teal-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer overflow-hidden shadow-2xs"
+              className="group relative bg-white border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:border-fuchsia-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer overflow-hidden shadow-2xs"
             >
               <div>
                 {/* Machine Image Stage */}
                 <div className="relative w-full h-[220px] bg-slate-50/80 rounded-2xl p-4 flex items-center justify-center overflow-hidden mb-5 border border-slate-100">
                   <span className="absolute top-3 left-3 z-10 bg-white border border-slate-200 px-3 py-1 rounded-md text-[11px] font-bold text-slate-900 shadow-2xs flex items-center gap-1.5">
-                    <Shield className="w-3 h-3 text-[#0f766e]" />
+                    <Shield className="w-3 h-3 text-[#990099]" />
                     {machine.badge}
                   </span>
                   
@@ -86,10 +86,10 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
 
                 {/* Metadata & Title */}
                 <div className="mb-5">
-                  <span className="block text-[11px] font-bold uppercase tracking-wider text-[#0f766e] mb-1.5">
+                  <span className="block text-[11px] font-bold uppercase tracking-wider text-[#990099] mb-1.5">
                     {machine.categoryLabel}
                   </span>
-                  <h3 className="text-xl font-heading font-extrabold text-[#090d16] group-hover:text-[#0f766e] transition-colors mb-2 leading-snug">
+                  <h3 className="text-xl font-heading font-extrabold text-[#090d16] group-hover:text-[#990099] transition-colors mb-2 leading-snug">
                     {machine.name}
                   </h3>
                   <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
@@ -109,7 +109,7 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
                   </span>
                 </div>
                 
-                <span className="inline-flex items-center gap-1 text-xs font-bold text-[#0f766e] group-hover:translate-x-0.5 transition-transform">
+                <span className="inline-flex items-center gap-1 text-xs font-bold text-[#990099] group-hover:translate-x-0.5 transition-transform">
                   <span>View Specifications</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </span>

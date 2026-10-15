@@ -41,7 +41,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
             {/* Left Column: Direct Engineering Contact Desk */}
             <div className="lg:col-span-5 flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/90 text-xs font-bold text-[#0f766e] mb-4">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-fuchsia-50 border border-fuchsia-200/90 text-xs font-bold text-[#990099] mb-4">
                   <Send className="w-3.5 h-3.5" />
                   <span>DIRECT FACTORY INQUIRY</span>
                 </div>
@@ -56,7 +56,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
 
                 <div className="space-y-5">
                   <div className="flex items-start gap-3.5 group">
-                    <div className="w-10 h-10 rounded-xl bg-teal-50 text-[#0f766e] flex items-center justify-center shrink-0 border border-teal-200">
+                    <div className="w-10 h-10 rounded-xl bg-fuchsia-50 text-[#990099] flex items-center justify-center shrink-0 border border-fuchsia-200">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
@@ -67,7 +67,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                         href={COMPANY_INFO.whatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-base font-bold text-[#090d16] hover:text-[#0f766e] transition-colors"
+                        className="text-base font-bold text-[#090d16] hover:text-[#990099] transition-colors"
                       >
                         {COMPANY_INFO.phone}
                       </a>
@@ -75,7 +75,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                   </div>
 
                   <div className="flex items-start gap-3.5 group">
-                    <div className="w-10 h-10 rounded-xl bg-teal-50 text-[#0f766e] flex items-center justify-center shrink-0 border border-teal-200">
+                    <div className="w-10 h-10 rounded-xl bg-fuchsia-50 text-[#990099] flex items-center justify-center shrink-0 border border-fuchsia-200">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
@@ -84,7 +84,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                       </span>
                       <a
                         href={`mailto:${COMPANY_INFO.salesEmail}`}
-                        className="text-base font-bold text-[#090d16] hover:text-[#0f766e] transition-colors"
+                        className="text-base font-bold text-[#090d16] hover:text-[#990099] transition-colors"
                       >
                         {COMPANY_INFO.salesEmail}
                       </a>
@@ -92,7 +92,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                   </div>
 
                   <div className="flex items-start gap-3.5 group">
-                    <div className="w-10 h-10 rounded-xl bg-teal-50 text-[#0f766e] flex items-center justify-center shrink-0 border border-teal-200">
+                    <div className="w-10 h-10 rounded-xl bg-fuchsia-50 text-[#990099] flex items-center justify-center shrink-0 border border-fuchsia-200">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
@@ -108,7 +108,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
               </div>
 
               <div className="pt-8 border-t border-slate-200 mt-8 flex items-center gap-2 text-xs text-slate-600 font-medium">
-                <ShieldCheck className="w-4 h-4 text-[#0f766e] shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-[#990099] shrink-0" />
                 <span>NDA &amp; Confidentiality Protected Inquiries</span>
               </div>
             </div>
@@ -117,7 +117,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
             <div className="lg:col-span-7">
               {submitted ? (
                 <div className="text-center py-16 px-6 bg-slate-50 rounded-3xl border border-slate-200">
-                  <div className="w-14 h-14 rounded-2xl bg-[#0f766e] text-white flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <div className="w-14 h-14 rounded-2xl bg-[#990099] text-white flex items-center justify-center mx-auto mb-4 shadow-md">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
                   <h3 className="text-2xl font-heading font-extrabold text-[#090d16] mb-2">
@@ -129,7 +129,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                   <button
                     onClick={() => setSubmitted(false)}
                     type="button"
-                    className="bg-[#090d16] hover:bg-[#0f766e] text-white text-xs font-semibold px-6 py-3 rounded-full transition-all cursor-pointer"
+                    className="bg-[#990099] hover:bg-[#800080] text-white text-xs font-semibold px-6 py-3 rounded-full transition-all cursor-pointer shadow-md shadow-[#990099]/20"
                   >
                     Send Another Request
                   </button>
@@ -148,7 +148,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Dr. Rajesh Sharma"
-                        className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#0f766e] focus:ring-2 focus:ring-teal-500/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all shadow-xs"
+                        className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#990099] focus:ring-2 focus:ring-[#990099]/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all shadow-xs"
                       />
                     </div>
 
@@ -163,7 +163,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="e.g. Apex Pharma Laboratories"
-                        className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#0f766e] focus:ring-2 focus:ring-teal-500/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all shadow-xs"
+                        className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#990099] focus:ring-2 focus:ring-[#990099]/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all shadow-xs"
                       />
                     </div>
                   </div>
@@ -180,7 +180,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="rajesh@apexpharma.com"
-                        className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#0f766e] focus:ring-2 focus:ring-teal-500/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all shadow-xs"
+                        className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#990099] focus:ring-2 focus:ring-[#990099]/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all shadow-xs"
                       />
                     </div>
 
@@ -195,7 +195,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 98765 43210"
-                        className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#0f766e] focus:ring-2 focus:ring-teal-500/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all shadow-xs"
+                        className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#990099] focus:ring-2 focus:ring-[#990099]/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all shadow-xs"
                       />
                     </div>
                   </div>
@@ -209,7 +209,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                       required
                       value={formData.machine}
                       onChange={(e) => setFormData({ ...formData, machine: e.target.value })}
-                      className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#0f766e] focus:ring-2 focus:ring-teal-500/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white outline-none transition-all shadow-xs"
+                      className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#990099] focus:ring-2 focus:ring-[#990099]/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white outline-none transition-all shadow-xs"
                     >
                       <option value="">Select equipment model...</option>
                       {MACHINES.map((m) => (
@@ -230,7 +230,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                       value={formData.batchSize}
                       onChange={(e) => setFormData({ ...formData, batchSize: e.target.value })}
                       placeholder="e.g. 500 kg/hr or 150 kg per batch"
-                      className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#0f766e] focus:ring-2 focus:ring-teal-500/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all shadow-xs"
+                      className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#990099] focus:ring-2 focus:ring-[#990099]/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all shadow-xs"
                     />
                   </div>
 
@@ -244,14 +244,14 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       placeholder="Describe target particle mesh size, flameproof ATEX requirements, CIP washdown, or containment level..."
-                      className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#0f766e] focus:ring-2 focus:ring-teal-500/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all resize-y shadow-xs"
+                      className="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:border-[#990099] focus:ring-2 focus:ring-[#990099]/20 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 outline-none transition-all resize-y shadow-xs"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 text-sm font-bold bg-[#090d16] hover:bg-[#0f766e] text-white rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer active:scale-98"
+                    className="w-full py-4 text-sm font-bold bg-[#990099] hover:bg-[#800080] text-white rounded-full shadow-lg shadow-[#990099]/25 hover:shadow-xl transition-all cursor-pointer active:scale-98"
                   >
                     {loading ? "Transmitting Specification Request..." : "Submit Technical RFQ & Proposal Request →"}
                   </button>

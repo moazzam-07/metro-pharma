@@ -7,11 +7,11 @@ export function CinematicBanner() {
   return (
     <section className="py-16 sm:py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
-        <div className="relative w-full rounded-3xl bg-[#090d16] text-white p-8 sm:p-14 lg:p-16 overflow-hidden shadow-xl border border-slate-800">
+        <div className="relative w-full rounded-3xl bg-[#130718] text-white p-8 sm:p-14 lg:p-16 overflow-hidden shadow-xl border border-[#990099]/30">
           
           <div className="relative z-10 max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-950/80 border border-teal-800 text-xs font-bold text-teal-300 mb-6">
-              <Factory className="w-3.5 h-3.5 text-teal-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#990099]/20 border border-[#990099]/40 text-xs font-bold text-fuchsia-300 mb-6">
+              <Factory className="w-3.5 h-3.5 text-fuchsia-400" />
               <span>CUSTOM FABRICATION · VASAI EAST, MUMBAI</span>
             </div>
 
@@ -26,15 +26,15 @@ export function CinematicBanner() {
             {/* Quick Proof Points */}
             <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-xs text-slate-400">
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-fuchsia-400" />
                 Raw Material Test Certificates (SS 316L)
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-fuchsia-400" />
                 Calibrated Surface Roughness Ra &lt; 0.38 µm
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-fuchsia-400" />
                 Factory Dry &amp; Water Trials Included
               </span>
             </div>
@@ -55,7 +55,7 @@ export function CinematicBanner() {
                 href={COMPANY_INFO.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#0f766e] hover:bg-teal-600 text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl transition-all cursor-pointer shadow-sm active:scale-95"
+                className="inline-flex items-center gap-2 bg-[#990099] hover:bg-[#800080] text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl transition-all cursor-pointer shadow-sm shadow-[#990099]/30 active:scale-95"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Chat with Design Desk</span>
