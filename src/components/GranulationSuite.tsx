@@ -20,14 +20,14 @@ const GRANULATION_PIPELINE = [
     stageTag: "Raw Material Preparation",
     machine: "Vibro Sifter / Vacumet",
     machineId: "vibro-sifter",
-    desc: "Raw active pharmaceutical ingredients and excipients are classified and screened to eliminate agglomerates, guaranteeing uniform particle fraction entry into the granulation suite.",
+    desc: "Active ingredients and excipients are de-lumped and classified to guarantee uniform particle size before binder addition.",
     parameters: [
       { label: "Mesh Precision", value: "Up to 500 Mesh" },
       { label: "Throughput", value: "100 to 3,000 kg/hr" },
-      { label: "Containment", value: "OEB 4 / Closed-Loop" }
+      { label: "Containment", value: "Closed-Loop OEB 4" }
     ],
     image: "/assets/machines/vibro-sifter.png",
-    highlight: "Zero Contamination Screening"
+    highlight: "Screening & De-Lumping"
   },
   {
     step: "02",
@@ -35,14 +35,14 @@ const GRANULATION_PIPELINE = [
     stageTag: "Wet Mass Formation",
     machine: "Rapid Mixer Granulator (RMG)",
     machineId: "rapid-mixer-granulator",
-    desc: "Intensive dry blending followed by pressurized liquid binder atomization. Specially profiled dual-speed bottom impellers and side choppers generate high-shear vortex agglomeration in minutes.",
+    desc: "Dry powder blending followed by pressurized binder addition. Dual-speed bottom impeller and side chopper form wet granules in 8 to 15 minutes.",
     parameters: [
       { label: "Granulation Time", value: "8 to 15 Minutes" },
       { label: "Vessel Capacity", value: "2 to 400 kg/batch" },
-      { label: "End-Point Control", value: "Automated Power Amp" }
+      { label: "End-Point Control", value: "Current / Power Amp" }
     ],
     image: "/assets/machines/rapid-mixer-granulator.png",
-    highlight: "High-Shear Binder Dispersion"
+    highlight: "High-Shear Mixing"
   },
   {
     step: "03",
@@ -50,14 +50,14 @@ const GRANULATION_PIPELINE = [
     stageTag: "Pre-Drying Conditioning",
     machine: "Co-Mill (Cone Mill)",
     machineId: "co-mill",
-    desc: "Gentle low-heat sizing of oversized moist wet granules discharged from RMG. Calibrated low-shear conical action creates even granule surface area for rapid, uniform fluidization in the dryer.",
+    desc: "Conical screen milling sizes oversized wet lumps discharging from RMG, preventing wet spots and ensuring uniform drying in the FBD.",
     parameters: [
-      { label: "Granule Quality", value: "Uniform Surface Area" },
-      { label: "Thermal Impact", value: "Near-Zero Heat Rise" },
-      { label: "Tooling", value: "Interchangeable Screens" }
+      { label: "Granule Profile", value: "Uniform Surface Area" },
+      { label: "Temperature Rise", value: "Near-Zero Delta T" },
+      { label: "Tooling", value: "Conical Screens (0.5–10 mm)" }
     ],
     image: "/assets/machines/co-mill.png",
-    highlight: "Low-Heat Particle Sizing"
+    highlight: "Conical Wet Milling"
   },
   {
     step: "04",
@@ -65,14 +65,14 @@ const GRANULATION_PIPELINE = [
     stageTag: "Moisture Desorption",
     machine: "Fluid Bed Dryer (FBD)",
     machineId: "fluid-bed-dryer",
-    desc: "Conditioned, HEPA-filtered hot air is drawn upwards through the perforated product container, lifting wet granules into a turbulent boiling state for rapid, homogenous moisture evaporation.",
+    desc: "Conditioned, HEPA-filtered hot air fluidizes wet granules to achieve target Loss On Drying (LOD) within 20 to 45 minutes.",
     parameters: [
-      { label: "Drying Duration", value: "20 to 45 Minutes" },
-      { label: "Air Filtration", value: "0.3 µm Terminal HEPA" },
-      { label: "Batch Sizing", value: "5 to 500 kg/batch" }
+      { label: "Drying Time", value: "20 to 45 Minutes" },
+      { label: "Inlet Air", value: "0.3 µm HEPA Filtered" },
+      { label: "Batch Size", value: "5 to 500 kg/batch" }
     ],
     image: "/assets/machines/fluid-bed-dryer.png",
-    highlight: "Gentle Rapid Fluidization"
+    highlight: "Fluidized Bed Drying"
   },
   {
     step: "05",
@@ -80,14 +80,14 @@ const GRANULATION_PIPELINE = [
     stageTag: "Compression Calibration",
     machine: "Multi Mill",
     machineId: "multi-mill",
-    desc: "Controlled pulverization and calibration of dried granules using reversible knife and impact blades. Ensures consistent bulk density and exact mesh distribution required for high-speed tablet presses.",
+    desc: "Reversible knife and impact blades calibrate dried granules to the exact mesh distribution required for high-speed tablet presses.",
     parameters: [
-      { label: "Blade Options", value: "12 Reversible Blades" },
-      { label: "Speed Selection", value: "750 to 3,000 RPM" },
+      { label: "Blade Assembly", value: "12 Reversible Blades" },
+      { label: "Rotor Speed", value: "750 to 3,000 RPM" },
       { label: "Output Mesh", value: "0.5 mm to 12 mm" }
     ],
     image: "/assets/machines/multi-mill.png",
-    highlight: "Calibrated Reversible Sizing"
+    highlight: "Dry Particle Calibration"
   },
   {
     step: "06",
@@ -95,14 +95,14 @@ const GRANULATION_PIPELINE = [
     stageTag: "Final Lubrication",
     machine: "Octagonal / Double Cone Blender",
     machineId: "octagonal-blender",
-    desc: "Slow-speed, gentle multi-dimensional tumbling action lubricates calibrated granules with magnesium stearate and disintegrants with zero particle attrition or shear degradation.",
+    desc: "Slow tumbling lubricates dried granules with magnesium stearate and disintegrants without crushing granules or generating fines.",
     parameters: [
       { label: "Blending Action", value: "Zero-Shear Tumbling" },
-      { label: "Volume Capacity", value: "50 to 5,000 Liters" },
-      { label: "Discharge", value: "Sanitary Butterfly" }
+      { label: "Working Volume", value: "50 to 5,000 Liters" },
+      { label: "Discharge", value: "Sanitary Butterfly Valve" }
     ],
     image: "/assets/machines/octagonal-blender.png",
-    highlight: "Gentle Attrition-Free Blending"
+    highlight: "Low-Shear Lubrication"
   },
   {
     step: "07",
@@ -110,14 +110,14 @@ const GRANULATION_PIPELINE = [
     stageTag: "Final Dosage Finishing",
     machine: "Metro Coater (Auto Coater)",
     machineId: "auto-coater",
-    desc: "Fully automated perforated pan coating with anti-bearding spray guns and negative-pressure airflow. Applies ultra-smooth, uniform film, enteric, or sugar coatings with zero tablet attrition.",
+    desc: "Perforated pan coating with automated spray guns and negative-pressure airflow for aqueous, organic solvent, or enteric film coating.",
     parameters: [
-      { label: "Pan Sizes", value: "24\" to 66\" Perforated" },
-      { label: "Spray Technology", value: "Anti-Bearding Guns" },
-      { label: "Automation", value: "SCADA PLC (21 CFR Part 11)" }
+      { label: "Pan Sizes", value: "24″ to 66″ Perforated" },
+      { label: "Spray System", value: "Anti-Bearding Guns" },
+      { label: "Automation", value: "PLC with 21 CFR Part 11" }
     ],
     image: "/assets/machines/auto-coater.png",
-    highlight: "Precision cGMP Film Coating"
+    highlight: "Perforated Pan Coating"
   }
 ];
 
@@ -135,23 +135,23 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200/90 text-xs font-bold text-[#0f766e] mb-5 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200/90 text-xs font-bold text-[#0f766e] mb-5 shadow-2xs">
             <Workflow className="w-3.5 h-3.5" />
-            <span>TURNKEY PROCESS PIPELINE · 7 STAGES</span>
+            <span>SOLID DOSAGE PROCESS FLOW · 7 STAGES</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold tracking-tight text-[#090d16] leading-[1.12] mb-5">
-            The Metro Pharma Granulation Suite
+            The 7-Stage Granulation Line
           </h2>
           <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
-            A synchronized 7-stage pharmaceutical pipeline engineering raw API powders into compressed solid dosage forms with minimum human intervention and full cGMP compliance.
+            How our solid dosage equipment connects across each stage of wet granulation—from raw powder screening to drying, milling, blending, and automated pan coating.
           </p>
         </div>
 
-        {/* Quick Stage Jump Ribbon - Wrapped Multi-Pill Grid (No Horizontal Scrollbar) */}
-        <div className="mb-12 sm:mb-16">
+        {/* Quick Stage Jump Ribbon - Wrapped Multi-Pill Grid */}
+        <div className="mb-12 sm:mb-14">
           <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-2">
             <Layers className="w-3.5 h-3.5 text-[#0f766e]" />
-            <span>Process Stages (Click to Jump Directly)</span>
+            <span>Process Stages (Click to view equipment)</span>
           </div>
           <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
             {GRANULATION_PIPELINE.map((stage) => (
@@ -159,7 +159,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                 key={stage.step}
                 type="button"
                 onClick={() => scrollToStage(stage.step)}
-                className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer bg-white hover:bg-slate-50 border border-slate-200/90 hover:border-teal-300 text-slate-700 hover:text-slate-900 shadow-2xs hover:shadow-xs active:scale-95"
+                className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer bg-white hover:bg-slate-50 border border-slate-200 hover:border-teal-300 text-slate-700 hover:text-slate-900 shadow-2xs active:scale-95"
               >
                 <span className="w-5 h-5 rounded-md bg-teal-50 text-[#0f766e] group-hover:bg-[#0f766e] group-hover:text-white font-mono font-bold text-[11px] flex items-center justify-center transition-colors">
                   {stage.step}
@@ -193,14 +193,14 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                   </span>
                 </div>
                 <div className="text-xs sm:text-sm font-medium text-slate-500">
-                  Designated Unit: <strong className="text-slate-900 font-bold">{stage.machine}</strong>
+                  Equipment: <strong className="text-slate-900 font-bold">{stage.machine}</strong>
                 </div>
               </div>
 
               {/* Card Body: 2 Columns */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
-                {/* Left Column: Process Intelligence, Metrics, Narrative */}
+                {/* Left Column: Specifications & Narrative */}
                 <div className="lg:col-span-7 flex flex-col justify-between">
                   <div>
                     {/* Headline */}
@@ -208,13 +208,13 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                       {stage.name}
                     </h3>
 
-                    {/* Primary Machine Designation */}
-                    <div className="text-sm sm:text-base font-bold text-[#0f766e] mb-5 flex items-center gap-2">
+                    {/* Machine Title */}
+                    <div className="text-sm sm:text-base font-bold text-[#0f766e] mb-4 flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#0f766e]"></span>
                       <span>{stage.machine}</span>
                     </div>
 
-                    {/* In-depth Engineering Narrative */}
+                    {/* Narrative Description */}
                     <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-8 font-normal">
                       {stage.desc}
                     </p>
@@ -224,7 +224,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                       {stage.parameters.map((param, i) => (
                         <div 
                           key={i} 
-                          className="bg-slate-50/80 border border-slate-200/80 rounded-xl p-3.5 shadow-2xs"
+                          className="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 shadow-2xs"
                         >
                           <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
                             {param.label}
@@ -237,7 +237,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                     </div>
                   </div>
 
-                  {/* Actions */}
+                  {/* Action */}
                   <div className="pt-2">
                     <button
                       type="button"
@@ -261,7 +261,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                       </span>
                     </div>
 
-                    {/* High-Resolution Machinery Cutout */}
+                    {/* Machinery Cutout */}
                     <div className="relative w-full h-[220px] sm:h-[260px] my-2 flex items-center justify-center">
                       <Image
                         src={stage.image}
@@ -272,7 +272,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                       />
                     </div>
 
-                    {/* Contact Metallurgy Certification Tag */}
+                    {/* Metallurgy Tag */}
                     <div className="self-end mt-2">
                       <span className="inline-flex items-center gap-1 text-[11px] font-mono font-medium text-slate-500">
                         <span>SS 316L Ra &lt; 0.38 µm</span>
@@ -290,15 +290,15 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
         <div className="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-200/90 pt-8">
           <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 font-medium bg-slate-50/80 rounded-2xl p-4 border border-slate-200/70">
             <CheckCircle2 className="w-4 h-4 text-[#0f766e] shrink-0" />
-            <span>Full CIP/WIP (Clean-In-Place) washdown automated integration</span>
+            <span>Clean In Place (CIP / WIP) washdown piping</span>
           </div>
           <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 font-medium bg-slate-50/80 rounded-2xl p-4 border border-slate-200/70">
             <CheckCircle2 className="w-4 h-4 text-[#0f766e] shrink-0" />
-            <span>21 CFR Part 11 compliant SCADA / PLC control options</span>
+            <span>21 CFR Part 11 compliant SCADA / PLC options</span>
           </div>
           <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-700 font-medium bg-slate-50/80 rounded-2xl p-4 border border-slate-200/70">
             <ShieldCheck className="w-4 h-4 text-[#0f766e] shrink-0" />
-            <span>Zero Cross-Contamination Closed Transfer Valves</span>
+            <span>Closed-loop powder transfer valves</span>
           </div>
         </div>
 

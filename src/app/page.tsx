@@ -42,25 +42,25 @@ export default function Home() {
         onOpenQuote={() => handleOpenQuote()}
       />
 
-      {/* Hero with InfiniteGridBackground and BorderBeam Machinery */}
+      {/* Hero Section */}
       <Hero onSelectMachine={(id) => setSelectedMachineId(id)} />
 
-      {/* Trust & Engineering Standards Metrics Strip */}
+      {/* Engineering Standards Strip */}
       <TrustStrip />
 
-      {/* Interactive Category Explorer */}
+      {/* Category Explorer */}
       <CategoryExplorer onSelectMachine={(id) => setSelectedMachineId(id)} />
 
-      {/* Full 3-Column Equipment Repertoire Grid */}
+      {/* Equipment Catalog Grid */}
       <MachineGrid onSelectMachine={(id) => setSelectedMachineId(id)} />
 
-      {/* Turnkey Granulation Suite Process Flow */}
+      {/* Granulation Line Process Flow */}
       <GranulationSuite onSelectMachine={(id) => setSelectedMachineId(id)} />
 
-      {/* Cinematic Media Container Signature */}
+      {/* Factory Trials & Commissioning Banner */}
       <CinematicBanner />
 
-      {/* Heritage & 2005 Craftsmanship */}
+      {/* Manufacturing Standards & Testing */}
       <Heritage />
 
       {/* Spares & Change Parts */}

@@ -49,7 +49,7 @@ export interface CompanyInfo {
 export const COMPANY_INFO: CompanyInfo = {
   name: "Metro Pharma",
   legalName: "Metro Pharma Machines",
-  tagline: "Engineering Solutions, Shaping Health Since 2005",
+  tagline: "Pharmaceutical & Chemical Process Machinery Since 2005",
   establishedYear: 2005,
   yearsOfExcellence: "20+",
   address: "Unit No. 17, Civic Industrial Estate, Walivnaka, Fanaspada, Vasai (East), Maharashtra - 401208, India",

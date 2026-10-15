@@ -24,8 +24,8 @@ export function Footer() {
                 Metro Pharma
               </span>
             </div>
-            <p className="text-[14px] text-slate-400 max-w-[340px] leading-relaxed mb-6">
-              Premier manufacturer of cGMP pharmaceutical, chemical, and food processing machinery. Engineering Precision, Shaping Health Since 2005.
+            <p className="text-[14px] text-slate-400 max-w-[360px] leading-relaxed mb-6">
+              Manufacturer of cGMP solid dosage and liquid processing machinery in SS 316L. Based in Vasai East, Mumbai since 2005.
             </p>
             <div className="text-[13px] text-slate-400 leading-relaxed">
               <span className="font-semibold text-slate-300">Works &amp; Headquarters:</span><br />

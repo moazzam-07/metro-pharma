@@ -41,22 +41,22 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
             {/* Left Column: Direct Engineering Contact Desk */}
             <div className="lg:col-span-5 flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 dark:bg-teal-950/50 border border-teal-200/80 dark:border-teal-800 text-xs font-bold text-[#0f766e] dark:text-[#14b8a6] mb-4">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/90 text-xs font-bold text-[#0f766e] mb-4">
                   <Send className="w-3.5 h-3.5" />
-                  TECHNICAL RFQ &amp; PROPOSALS
+                  <span>DIRECT FACTORY INQUIRY</span>
                 </div>
                 
-                <h2 className="text-3xl sm:text-4xl font-heading font-extrabold tracking-tight text-[#090d16] dark:text-white leading-tight mb-4">
-                  Request Detailed Engineering Specs &amp; Quotation
+                <h2 className="text-3xl sm:text-4xl font-heading font-extrabold tracking-tight text-[#090d16] leading-tight mb-4">
+                  Request Equipment Specifications &amp; Quotation
                 </h2>
                 
-                <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-8 font-normal">
-                  Our machine design specialists evaluate your formulation bulk density, sieve mesh parameters, flameproof ATEX zones, and batch throughput to recommend the exact equipment configuration.
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-8 font-normal">
+                  Share your required batch capacity, material bulk density, and cleanroom requirements. Our technical team in Vasai East will respond with GA drawings, motor ratings, and pricing within 24 hours.
                 </p>
 
                 <div className="space-y-5">
                   <div className="flex items-start gap-3.5 group">
-                    <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/60 text-[#0f766e] dark:text-[#14b8a6] flex items-center justify-center shrink-0 border border-teal-200/80 dark:border-teal-800 group-hover:bg-[#0f766e] group-hover:text-white transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-teal-50 text-[#0f766e] flex items-center justify-center shrink-0 border border-teal-200">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
@@ -67,7 +67,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                         href={COMPANY_INFO.whatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-base font-bold text-[#090d16] dark:text-white hover:text-[#0f766e] dark:hover:text-[#14b8a6] transition-colors"
+                        className="text-base font-bold text-[#090d16] hover:text-[#0f766e] transition-colors"
                       >
                         {COMPANY_INFO.phone}
                       </a>
@@ -75,7 +75,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                   </div>
 
                   <div className="flex items-start gap-3.5 group">
-                    <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/60 text-[#0f766e] dark:text-[#14b8a6] flex items-center justify-center shrink-0 border border-teal-200/80 dark:border-teal-800 group-hover:bg-[#0f766e] group-hover:text-white transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-teal-50 text-[#0f766e] flex items-center justify-center shrink-0 border border-teal-200">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
@@ -84,7 +84,7 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                       </span>
                       <a
                         href={`mailto:${COMPANY_INFO.salesEmail}`}
-                        className="text-base font-bold text-[#090d16] dark:text-white hover:text-[#0f766e] dark:hover:text-[#14b8a6] transition-colors"
+                        className="text-base font-bold text-[#090d16] hover:text-[#0f766e] transition-colors"
                       >
                         {COMPANY_INFO.salesEmail}
                       </a>
@@ -92,14 +92,14 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                   </div>
 
                   <div className="flex items-start gap-3.5 group">
-                    <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/60 text-[#0f766e] dark:text-[#14b8a6] flex items-center justify-center shrink-0 border border-teal-200/80 dark:border-teal-800 group-hover:bg-[#0f766e] group-hover:text-white transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-teal-50 text-[#0f766e] flex items-center justify-center shrink-0 border border-teal-200">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
                       <span className="block text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-0.5">
                         Factory Facility
                       </span>
-                      <span className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed block font-medium">
+                      <span className="text-xs text-slate-700 leading-relaxed block font-medium">
                         {COMPANY_INFO.address}
                       </span>
                     </div>
@@ -107,24 +107,24 @@ export function ContactForm({ preselectedMachine }: ContactFormProps) {
                 </div>
               </div>
 
-              <div className="pt-8 border-t border-slate-200/80 dark:border-slate-800 mt-8 flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 font-medium">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>NDA &amp; Confidentiality Protected Specification Inquiries</span>
+              <div className="pt-8 border-t border-slate-200 mt-8 flex items-center gap-2 text-xs text-slate-600 font-medium">
+                <ShieldCheck className="w-4 h-4 text-[#0f766e] shrink-0" />
+                <span>NDA &amp; Confidentiality Protected Inquiries</span>
               </div>
             </div>
 
             {/* Right Column: High-Tech RFQ Form */}
             <div className="lg:col-span-7">
               {submitted ? (
-                <div className="text-center py-16 px-6 bg-slate-50 dark:bg-slate-800/40 rounded-3xl border border-slate-200 dark:border-slate-800">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-600/25">
+                <div className="text-center py-16 px-6 bg-slate-50 rounded-3xl border border-slate-200">
+                  <div className="w-14 h-14 rounded-2xl bg-[#0f766e] text-white flex items-center justify-center mx-auto mb-4 shadow-md">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
-                  <h3 className="text-2xl font-heading font-extrabold text-[#090d16] dark:text-white mb-2">
-                    Inquiry Transmitted Successfully
+                  <h3 className="text-2xl font-heading font-extrabold text-[#090d16] mb-2">
+                    Inquiry Received
                   </h3>
-                  <p className="text-sm text-slate-700 dark:text-slate-300 max-w-md mx-auto mb-6 leading-relaxed">
-                    Thank you for contacting Metro Pharma. Our machine engineering division will prepare a comprehensive technical parameter sheet and quote within 24 hours.
+                  <p className="text-sm text-slate-700 max-w-md mx-auto mb-6 leading-relaxed">
+                    Thank you for contacting Metro Pharma. Our engineering team in Vasai East will review your specifications and send general arrangement drawings and a formal quotation within 24 hours.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
