@@ -82,13 +82,12 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
             {/* Right Machine Preview Stage */}
             <div className="lg:col-span-6">
               <div className="bg-zinc-50/60 border border-zinc-200/80 rounded-xl p-6 sm:p-8 flex flex-col justify-between min-h-[440px] relative transition-all">
-                <div className="flex items-center justify-between">
-                  <span className="bg-white border border-zinc-200/90 px-3 py-1 rounded-md text-xs font-semibold text-zinc-800 shadow-2xs">
+                <div className="flex items-center justify-between pb-3 border-b border-zinc-200/60">
+                  <span className="text-xs font-mono font-medium text-zinc-500 uppercase tracking-wider">
                     {activeLine.badge}
                   </span>
-                  <span className="text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2.5 py-0.5 rounded flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>cGMP Compliant</span>
+                  <span className="text-xs font-mono text-zinc-500">
+                    SS 316L Contact · cGMP
                   </span>
                 </div>
 

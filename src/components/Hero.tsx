@@ -2,11 +2,8 @@
 
 import Image from "next/image";
 import { 
-  ShieldCheck, 
   ArrowRight, 
   FileText, 
-  ChevronRight, 
-  CheckCircle2, 
   ArrowUpRight
 } from "lucide-react";
 
@@ -70,19 +67,19 @@ export function Hero({ onSelectMachine }: HeroProps) {
             </div>
 
             {/* Technical Proof Points */}
-            <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-zinc-200/80 w-full text-xs text-zinc-600 font-medium">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#701a75] shrink-0" />
-                <span>SS 316L (Ra &lt; 0.38 µm) Metallurgy</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#701a75] shrink-0" />
-                <span>100% Factory Acceptance Testing</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#701a75] shrink-0" />
-                <span>cGMP &amp; Schedule M Compliant</span>
-              </div>
+            <div className="flex flex-wrap items-center gap-y-2 gap-x-6 pt-6 border-t border-zinc-200/80 w-full text-xs font-mono text-zinc-500">
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
+                <span>SS 316L (Ra &lt; 0.38 µm) Contact</span>
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
+                <span>FAT Water &amp; Dry Run Validated</span>
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
+                <span>cGMP / Schedule M Dossiers</span>
+              </span>
             </div>
           </div>
 

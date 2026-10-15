@@ -67,8 +67,7 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
               <div>
                 {/* Machine Image Stage */}
                 <div className="relative w-full h-[200px] bg-zinc-50/70 rounded-xl p-4 flex items-center justify-center overflow-hidden mb-5 border border-zinc-100">
-                  <span className="absolute top-3 left-3 z-10 bg-white/95 border border-zinc-200/90 px-2.5 py-0.5 rounded text-[11px] font-medium text-zinc-700 shadow-2xs flex items-center gap-1.5">
-                    <Shield className="w-3 h-3 text-[#701a75]" />
+                  <span className="absolute top-3 left-3 z-10 bg-white/95 border border-zinc-200/90 px-2.5 py-0.5 rounded text-[11px] font-mono text-zinc-600 shadow-2xs">
                     {machine.badge}
                   </span>
                   

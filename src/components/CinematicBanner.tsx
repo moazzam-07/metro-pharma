@@ -1,7 +1,7 @@
 "use client";
 
 import { COMPANY_INFO } from "@/data/machinery";
-import { ArrowRight, MessageSquare, Factory, CheckCircle2 } from "lucide-react";
+import { ArrowRight, MessageSquare, Factory } from "lucide-react";
 
 export function CinematicBanner() {
   return (
@@ -25,20 +25,20 @@ export function CinematicBanner() {
               Whether you require a standalone vibro sifter or a complete multi-tier fluid bed granulation train, our engineering team manufactures to your exact User Requirement Specification (URS) with documented Factory Acceptance Testing (FAT) before dispatch.
             </p>
 
-            {/* Quick Proof Points */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-9 text-xs text-zinc-300">
-              <span className="flex items-center gap-1.5 bg-zinc-900/90 border border-zinc-800 px-3 py-1.5 rounded-lg">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                Raw Material Test Certificates (SS 316L)
-              </span>
-              <span className="flex items-center gap-1.5 bg-zinc-900/90 border border-zinc-800 px-3 py-1.5 rounded-lg">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                Roughness Ra &lt; 0.38 µm Certified
-              </span>
-              <span className="flex items-center gap-1.5 bg-zinc-900/90 border border-zinc-800 px-3 py-1.5 rounded-lg">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                Dry &amp; Water Trials FAT Included
-              </span>
+            {/* Engineering Standards Strip */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-zinc-800/80 mb-8 max-w-2xl mx-auto text-left">
+              <div>
+                <span className="block text-[11px] font-mono uppercase tracking-wider text-zinc-500">Contact Metallurgy</span>
+                <span className="text-xs text-zinc-300 font-medium">SS 316L Mill Certified</span>
+              </div>
+              <div>
+                <span className="block text-[11px] font-mono uppercase tracking-wider text-zinc-500">Surface Roughness</span>
+                <span className="text-xs text-zinc-300 font-medium">Ra &lt; 0.38 µm Certified</span>
+              </div>
+              <div>
+                <span className="block text-[11px] font-mono uppercase tracking-wider text-zinc-500">Validation Protocol</span>
+                <span className="text-xs text-zinc-300 font-medium">Full FAT Trials Included</span>
+              </div>
             </div>
 
             <div className="flex items-center justify-center gap-3.5 flex-wrap">

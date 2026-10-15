@@ -4,8 +4,6 @@ import Image from "next/image";
 import { 
   Workflow, 
   ArrowUpRight, 
-  ShieldCheck, 
-  CheckCircle2, 
   Layers
 } from "lucide-react";
 
@@ -282,19 +280,23 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
         </div>
 
         {/* Turnkey Compliance Strip */}
-        <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-zinc-200/80 pt-6">
-          <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-700 font-medium bg-zinc-50/70 rounded-xl p-4 border border-zinc-200/60">
-            <CheckCircle2 className="w-4 h-4 text-[#701a75] shrink-0" />
-            <span>Clean In Place (CIP / WIP) washdown piping</span>
-          </div>
-          <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-700 font-medium bg-zinc-50/70 rounded-xl p-4 border border-zinc-200/60">
-            <CheckCircle2 className="w-4 h-4 text-[#701a75] shrink-0" />
-            <span>21 CFR Part 11 compliant SCADA / PLC options</span>
-          </div>
-          <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-700 font-medium bg-zinc-50/70 rounded-xl p-4 border border-zinc-200/60">
-            <ShieldCheck className="w-4 h-4 text-[#701a75] shrink-0" />
-            <span>Closed-loop powder transfer valves</span>
-          </div>
+        <div className="mt-12 pt-6 border-t border-zinc-200/80 flex flex-wrap items-center justify-between text-xs font-mono text-zinc-500 gap-4">
+          <span className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
+            <span>CIP / WIP Washdown Piping</span>
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
+            <span>21 CFR Part 11 SCADA / PLC</span>
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
+            <span>Closed-Loop Powder Transfer</span>
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
+            <span>cGMP Schedule M Validation</span>
+          </span>
         </div>
 
       </div>

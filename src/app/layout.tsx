@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Newsreader, Plus_Jakarta_Sans } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const newsreader = Newsreader({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-serif",
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"]
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-grotesk",
   weight: ["300", "400", "500", "600", "700"]
 });
 
@@ -31,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${plusJakartaSans.variable}`}>
+    <html lang="en" className={spaceGrotesk.variable}>
       <body className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary antialiased">
         {children}
       </body>
