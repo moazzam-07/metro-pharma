@@ -148,10 +148,8 @@ export function Footer() {
           <div>
             &copy; 2005–2026 Metro Pharma Machines. All rights reserved.
           </div>
-          <div className="flex flex-wrap gap-2 text-xs font-mono">
-            <span className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">cGMP Certified</span>
-            <span className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">ISO 9001 Compliant</span>
-            <span className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">SS 316L Contact</span>
+          <div className="text-zinc-600 font-mono text-[11px]">
+            Vasai East, Palghar District, Maharashtra 401208, India
           </div>
         </div>
       </div>

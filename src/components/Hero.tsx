@@ -65,22 +65,6 @@ export function Hero({ onSelectMachine }: HeroProps) {
                 <span>Request Quotation</span>
               </button>
             </div>
-
-            {/* Technical Proof Points */}
-            <div className="flex flex-wrap items-center gap-y-2 gap-x-6 pt-6 border-t border-zinc-200/80 w-full text-xs font-mono text-zinc-500">
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
-                <span>SS 316L (Ra &lt; 0.38 µm) Contact</span>
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
-                <span>FAT Water &amp; Dry Run Validated</span>
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
-                <span>cGMP / Schedule M Dossiers</span>
-              </span>
-            </div>
           </div>
 
           {/* Right Column: Clean, High-Precision Equipment Showcase */}

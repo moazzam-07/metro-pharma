@@ -278,27 +278,6 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
             </div>
           ))}
         </div>
-
-        {/* Turnkey Compliance Strip */}
-        <div className="mt-12 pt-6 border-t border-zinc-200/80 flex flex-wrap items-center justify-between text-xs font-mono text-zinc-500 gap-4">
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
-            <span>CIP / WIP Washdown Piping</span>
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
-            <span>21 CFR Part 11 SCADA / PLC</span>
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
-            <span>Closed-Loop Powder Transfer</span>
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#701a75] shrink-0"></span>
-            <span>cGMP Schedule M Validation</span>
-          </span>
-        </div>
-
       </div>
     </section>
   );

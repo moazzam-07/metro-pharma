@@ -1,7 +1,7 @@
 "use client";
 
 import { COMPANY_INFO } from "@/data/machinery";
-import { ArrowRight, MessageSquare, Factory } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 
 export function CinematicBanner() {
   return (
@@ -12,9 +12,8 @@ export function CinematicBanner() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/40 via-zinc-950 to-zinc-950 pointer-events-none" />
 
           <div className="relative z-10 max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-700/80 text-xs font-mono text-zinc-300 mb-6">
-              <Factory className="w-3.5 h-3.5 text-fuchsia-400" />
-              <span>CUSTOM FABRICATION · VASAI EAST, MUMBAI</span>
+            <div className="text-xs font-mono font-medium text-zinc-400 tracking-wider uppercase mb-4">
+              Custom Fabrication · Vasai East, Mumbai
             </div>
 
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-semibold tracking-tight leading-[1.15] text-white mb-5">
