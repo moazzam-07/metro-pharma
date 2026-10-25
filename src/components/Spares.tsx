@@ -303,11 +303,11 @@ export function Spares() {
       id="spares"
       className="relative w-full bg-white select-none border-t border-zinc-200/80"
     >
-      {/* Sticky Full-Viewport Horizontal Experience */}
-      <div className="h-[calc(100vh-4rem)] lg:h-screen w-full sticky top-16 lg:top-0 flex flex-col justify-between pt-4 sm:pt-6 lg:pt-10 pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-8 lg:px-12 overflow-hidden bg-gradient-to-b from-white via-zinc-50/40 to-white">
+      {/* Pinned Full-Viewport Horizontal Experience with absolute Navbar clearance */}
+      <div className="h-screen w-full flex flex-col justify-between pt-20 sm:pt-24 lg:pt-24 pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-8 lg:px-12 overflow-hidden bg-gradient-to-b from-white via-zinc-50/40 to-white">
         
         {/* Top Header Bar */}
-        <div className="max-w-7xl w-full mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4 z-20 pb-3 sm:pb-4 border-b border-zinc-200/70">
+        <div className="max-w-7xl w-full mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 z-20 pb-3 sm:pb-4 border-b border-zinc-200/70 shrink-0">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2 h-2 rounded-full bg-[#701a75]" />
@@ -331,14 +331,14 @@ export function Spares() {
         </div>
 
         {/* Central Moving Horizontal Track */}
-        <div className="relative w-full flex-1 flex items-center my-auto">
+        <div className="relative w-full flex-1 flex items-center my-auto overflow-visible">
           <div
             ref={wholeSliderRef}
-            className="flex items-center gap-10 sm:gap-14 lg:gap-16 pl-4 sm:pl-8 pr-16 sm:pr-24 will-change-transform"
+            className="flex items-center gap-8 sm:gap-14 lg:gap-16 pl-2 sm:pl-8 pr-16 sm:pr-24 will-change-transform"
           >
             
             {/* Lead-in Workshop Certification Card */}
-            <div className="w-[280px] sm:w-[320px] lg:w-[340px] shrink-0 bg-white border border-zinc-200/90 rounded-2xl p-5 sm:p-6 shadow-xs flex flex-col justify-between h-[340px] sm:h-[380px] relative overflow-hidden">
+            <div className="w-[260px] sm:w-[320px] lg:w-[340px] shrink-0 bg-white border border-zinc-200/90 rounded-2xl p-4 sm:p-6 shadow-xs flex flex-col justify-between h-[310px] sm:h-[370px] relative overflow-hidden">
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[10px] font-mono font-bold tracking-wider text-[#701a75] uppercase bg-[#701a75]/10 px-2.5 py-1 rounded-full border border-[#701a75]/20">
@@ -391,7 +391,7 @@ export function Spares() {
             </div>
 
             {/* Alternating Top/Bottom Pipeline Track */}
-            <div className="relative flex flex-col justify-between h-[420px] sm:h-[460px] min-w-[1500px] sm:min-w-[1750px] lg:min-w-[1900px]">
+            <div className="relative flex flex-col justify-between h-[360px] sm:h-[420px] lg:h-[460px] min-w-[1500px] sm:min-w-[1750px] lg:min-w-[1900px]">
               
               {/* Central Horizontal Axis Line */}
               <div className="w-full absolute left-0 top-1/2 -translate-y-1/2 flex items-center z-10 pointer-events-none">
@@ -410,7 +410,7 @@ export function Spares() {
               </div>
 
               {/* Top Row Cards */}
-              <div className="flex items-end justify-start gap-12 sm:gap-16 lg:gap-20 h-[190px] sm:h-[205px] z-20">
+              <div className="flex items-end justify-start gap-12 sm:gap-16 lg:gap-20 h-[165px] sm:h-[190px] lg:h-[205px] z-20">
                 {topToolingData.map((item, idx) => {
                   const Icon = item.icon;
                   return (
@@ -475,7 +475,7 @@ export function Spares() {
               </div>
 
               {/* Bottom Row Cards */}
-              <div className="flex items-start justify-start gap-12 sm:gap-16 lg:gap-20 h-[190px] sm:h-[205px] z-20 pl-24 sm:pl-32 lg:pl-36">
+              <div className="flex items-start justify-start gap-12 sm:gap-16 lg:gap-20 h-[165px] sm:h-[190px] lg:h-[205px] z-20 pl-20 sm:pl-32 lg:pl-36">
                 {bottomToolingData.map((item, idx) => {
                   const Icon = item.icon;
                   return (
