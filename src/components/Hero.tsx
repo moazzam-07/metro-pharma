@@ -1,7 +1,7 @@
 "use client";
 
 import { TiltedGridHero } from "@/components/ui/tilted-grid-hero";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight, FileText, MapPin, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
 
 interface HeroProps {
   onSelectMachine: (id: string) => void;
@@ -67,26 +67,18 @@ export function Hero({ onSelectMachine }: HeroProps) {
         fade={14}
         className="w-full h-[680px] sm:h-[720px] lg:h-[760px] relative"
       >
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-5xl z-10 relative flex flex-col items-center text-center justify-between h-full pt-4 sm:pt-6 pb-2 pointer-events-none">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-5xl z-10 relative flex flex-col items-center text-center justify-between h-full pt-6 sm:pt-8 pb-2 pointer-events-none">
           
           {/* Top Hero Authority Block */}
           <div className="pointer-events-auto flex flex-col items-center">
-            {/* Clean Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-white/95 border border-zinc-200 shadow-2xs backdrop-blur-md mb-4 sm:mb-5">
-              <span className="w-2 h-2 rounded-full bg-[#701a75]" />
-              <span className="text-[11px] sm:text-xs font-mono font-medium text-zinc-700 uppercase tracking-wider">
-                Vasai East, Mumbai · Established 2005 · cGMP SS 316L
-              </span>
-            </div>
-
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold text-zinc-950 tracking-tight leading-[1.1] max-w-4xl text-balance">
               Precision Pharmaceutical &amp; Process Machinery
             </h1>
 
-            {/* Subtitle */}
+            {/* Subtitle with facility & engineering heritage integrated naturally */}
             <p className="mt-3.5 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed max-w-2xl text-balance font-normal">
-              Metro Pharma manufactures Vibro Sifters, Fluid Bed Dryers, Auto Coaters, and Granulation trains in certified SS 316L (Ra &lt; 0.38 µm). Delivered with complete DQ, IQ, OQ, and PQ validation dossiers for regulatory cleanrooms.
+              Engineered at our Vasai East facility (Est. 2005), Metro Pharma fabricates Vibro Sifters, Fluid Bed Dryers, Auto Coaters, and Granulation trains in certified cGMP SS 316L (Ra &lt; 0.38 µm) with complete DQ, IQ, OQ, and PQ validation dossiers for regulatory cleanrooms.
             </p>
 
             {/* Primary & Secondary CTAs */}
@@ -117,20 +109,25 @@ export function Hero({ onSelectMachine }: HeroProps) {
 
           {/* Bottom Trust & Compliance Strip */}
           <div className="pointer-events-auto w-full pt-6 sm:pt-8">
-            <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-10 gap-y-2 text-xs font-mono text-zinc-500 py-3 px-4 rounded-xl bg-white/90 border border-zinc-200/90 backdrop-blur-md shadow-2xs">
-              <span className="flex items-center gap-1.5 font-medium text-zinc-800">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#701a75]" />
-                SS 316 / 316L Contact Metallurgy
+            <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-7 gap-y-2 text-xs font-medium text-zinc-700 py-3 px-5 rounded-xl bg-white/95 border border-zinc-200/90 backdrop-blur-md shadow-2xs">
+              <span className="flex items-center gap-1.5 text-zinc-800">
+                <MapPin className="w-3.5 h-3.5 text-[#701a75]" />
+                <span>Vasai East Works · Est. 2005</span>
               </span>
               <span className="hidden sm:inline text-zinc-300">·</span>
-              <span className="flex items-center gap-1.5 font-medium text-zinc-800">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#701a75]" />
-                Mirror Electropolish Ra &lt; 0.38 µm
+              <span className="flex items-center gap-1.5 text-zinc-800">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#701a75]" />
+                <span>cGMP SS 316 / 316L Contact Metallurgy</span>
               </span>
               <span className="hidden sm:inline text-zinc-300">·</span>
-              <span className="flex items-center gap-1.5 font-medium text-zinc-800">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#701a75]" />
-                USFDA 21 CFR Part 11 Compliant
+              <span className="flex items-center gap-1.5 text-zinc-800">
+                <Sparkles className="w-3.5 h-3.5 text-[#701a75]" />
+                <span>Mirror Electropolish Ra &lt; 0.38 µm</span>
+              </span>
+              <span className="hidden sm:inline text-zinc-300">·</span>
+              <span className="flex items-center gap-1.5 text-zinc-800">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#701a75]" />
+                <span>USFDA 21 CFR Part 11</span>
               </span>
             </div>
           </div>

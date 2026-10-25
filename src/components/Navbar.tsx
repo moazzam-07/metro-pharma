@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Search, Menu, X, ArrowRight } from "lucide-react";
+import { Search, Menu, X, ArrowRight, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
@@ -52,21 +52,30 @@ export function Navbar({ onOpenSearch, onOpenQuote }: NavbarProps) {
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
-          {/* Brand Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-3 hover:opacity-90 transition-opacity cursor-pointer"
-          >
-            <div className="relative w-[140px] sm:w-[155px] h-[32px]">
-              <Image
-                src="/assets/logo/logo.png"
-                alt="Metro Pharma Logo"
-                fill
-                className="object-contain"
-                priority
-              />
+          {/* Brand Logo & Plant Indicator */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/"
+              className="flex items-center gap-3 hover:opacity-90 transition-opacity cursor-pointer"
+            >
+              <div className="relative w-[140px] sm:w-[155px] h-[32px]">
+                <Image
+                  src="/assets/logo/logo.png"
+                  alt="Metro Pharma Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
+
+            <div className="hidden xl:flex items-center gap-1.5 pl-3 border-l border-zinc-200 text-[11px] font-medium text-zinc-500">
+              <MapPin className="w-3 h-3 text-[#701a75]" />
+              <span>Vasai East, Mumbai</span>
+              <span className="text-zinc-300">·</span>
+              <span className="text-zinc-700 font-semibold">Est. 2005</span>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-8">
