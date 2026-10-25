@@ -69,7 +69,7 @@ function measure(
   );
   const radius = width * arc(bend);
   if (!(h > 0) || !(radius > 0))
-    return { columns: 2, sweep: 0, unit: 0, limit: 0 };
+    return { columns: 2, sweep: 0, unit: 0, limit: 0, tilePx: 160 };
   const deg = (rad: number) => (rad * 180) / Math.PI;
   const unit = deg(h / radius);
   const pitch = (aspect + gap / 100) * unit;
@@ -83,6 +83,7 @@ function measure(
     sweep,
     unit: round(unit),
     limit: round(Math.min(sweep, limit)),
+    tilePx: round(h),
   };
 }
 
@@ -186,15 +187,21 @@ export function TiltedGridHero({
     }
   }, [images]);
 
-  const { columns, sweep, unit, limit } =
-    layout ?? measure(1200, 560, tileHeight, aspectRatio, gap, bend);
+  const fallbackLayout = React.useMemo(
+    () => measure(1200, 560, tileHeight, aspectRatio, gap, bend),
+    [tileHeight, aspectRatio, gap, bend],
+  );
+
+  const activeLayout = layout ?? fallbackLayout;
+  const { columns, sweep, unit, limit } = activeLayout;
 
   // Every length is a multiple of the tile's height, which follows the
   // hero's height until MAX_WIDTH caps it on narrow screens.
+  // We use var(--tgh-unit) with container query fallback to prevent 0px collapse.
   const u = (n: number) =>
-    `calc(${+n.toFixed(4)} * min(${tileHeight}cqh, ${+(
+    `calc(${+n.toFixed(4)} * var(--tgh-unit, min(${tileHeight}cqh, ${+(
       MAX_WIDTH / aspectRatio
-    ).toFixed(4)}cqw))`;
+    ).toFixed(4)}cqw)))`;
 
   const r = 100 * arc(bend);
   const radius = `${+r.toFixed(3)}cqw`;
@@ -228,7 +235,13 @@ export function TiltedGridHero({
       ref={ref}
       className={cn("relative overflow-hidden", className)}
       {...props}
-      style={{ containerType: "size", ...props.style }}
+      style={
+        {
+          containerType: "size",
+          "--tgh-unit": `${activeLayout.tilePx}px`,
+          ...props.style,
+        } as React.CSSProperties
+      }
     >
       <style>{css}</style>
 
@@ -236,7 +249,7 @@ export function TiltedGridHero({
         aria-hidden
         className="pointer-events-none absolute inset-0 transition-opacity duration-500"
         style={{
-          opacity: layout ? 1 : 0,
+          opacity: 1,
           // A shared vanishing point on the row's centre line, so the ends
           // grow evenly above and below it as they come toward the viewer.
           perspective: `${+(r * CAMERA).toFixed(3)}cqw`,

@@ -65,7 +65,7 @@ export function Hero({ onSelectMachine }: HeroProps) {
         axis={62}
         curve={76}
         fade={14}
-        className="w-full min-h-[640px] sm:min-h-[700px] lg:min-h-[740px] relative"
+        className="w-full h-[640px] sm:h-[700px] lg:h-[740px] relative"
       >
         <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-5xl z-10 relative flex flex-col items-center text-center justify-between h-full pt-4 sm:pt-6 pb-2 pointer-events-none">
           
