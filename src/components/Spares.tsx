@@ -304,7 +304,7 @@ export function Spares() {
       className="relative w-full bg-white select-none border-t border-zinc-200/80"
     >
       {/* Sticky Full-Viewport Horizontal Experience */}
-      <div className="h-screen w-full sticky top-0 flex flex-col justify-between py-6 sm:py-8 lg:py-10 px-4 sm:px-8 lg:px-12 overflow-hidden bg-gradient-to-b from-white via-zinc-50/40 to-white">
+      <div className="h-screen w-full sticky top-0 flex flex-col justify-between pt-20 sm:pt-24 lg:pt-10 pb-6 sm:pb-8 lg:pb-10 px-4 sm:px-8 lg:px-12 overflow-hidden bg-gradient-to-b from-white via-zinc-50/40 to-white">
         
         {/* Top Header Bar */}
         <div className="max-w-7xl w-full mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-4 z-20 pb-4 border-b border-zinc-200/70">
