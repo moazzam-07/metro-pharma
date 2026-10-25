@@ -100,7 +100,7 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
 
             {/* Right Machine Preview Stage with DepthCarousel */}
             <div className="lg:col-span-7">
-              <div className="bg-zinc-50/60 border border-zinc-200/80 rounded-2xl p-5 sm:p-7 flex flex-col justify-between min-h-[510px] relative transition-all overflow-hidden">
+              <div className="bg-zinc-50/60 border border-zinc-200/80 rounded-2xl p-5 sm:p-6 lg:p-7 flex flex-col justify-between relative transition-all">
                 
                 {/* Header strip */}
                 <div className="flex items-center justify-between pb-3 border-b border-zinc-200/70 z-10 relative">
@@ -117,21 +117,21 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
                 </div>
 
                 {/* 3D Depth Carousel Stage */}
-                <div className="relative w-full h-[310px] sm:h-[340px] my-1 flex items-center justify-center overflow-visible">
+                <div className="relative w-full h-[275px] sm:h-[295px] my-1 flex items-center justify-center overflow-visible">
                   <DepthCarousel
                     items={carouselItems}
                     selectedIndex={activeIndex}
-                    cardWidth={240}
-                    cardHeight={300}
-                    radius={18}
-                    depth={170}
-                    spread={70}
-                    tilt={18}
+                    cardWidth={220}
+                    cardHeight={255}
+                    radius={16}
+                    depth={150}
+                    spread={60}
+                    tilt={16}
                     tiltDirection="right"
-                    perspective={1150}
+                    perspective={1100}
                     visibleCards={4}
                     falloff={0.22}
-                    blur={4}
+                    blur={3.5}
                     autoplay={false}
                     loop={true}
                     showControls={true}
