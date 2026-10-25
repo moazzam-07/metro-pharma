@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useMemo } from "react";
 import { MACHINES } from "@/data/machinery";
-import { ArrowRight, Layers, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Layers, Sparkles } from "lucide-react";
+import DepthCarousel from "@/components/ui/DepthCarousel";
 
 interface CategoryExplorerProps {
   onSelectMachine: (id: string) => void;
 }
 
 export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
-  const explorerLines = [
+  const explorerLines = useMemo(() => [
     { id: "vibro-sifter", title: "Vibro Sifters & Classifiers", badge: "Screening & Sieving" },
     { id: "vacuum-vibro-sifter", title: "Vacumet Closed Loop Sifters", badge: "Dust-Free Containment" },
     { id: "multi-mill", title: "Multi Mills & Granulators", badge: "Reversible Milling" },
@@ -19,12 +19,31 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
     { id: "rapid-mixer-granulator", title: "Rapid Mixer Granulators (RMG)", badge: "High-Shear Mixing" },
     { id: "colloid-mill", title: "Colloid Mills & Emulsifiers", badge: "Liquid Homogenization" },
     { id: "octagonal-blender", title: "Gentle Powder Blenders", badge: "Zero-Attrition Tumbling" }
-  ];
+  ], []);
 
   const [activeId, setActiveId] = useState(explorerLines[0].id);
 
+  const activeIndex = useMemo(() => {
+    const idx = explorerLines.findIndex((l) => l.id === activeId);
+    return idx >= 0 ? idx : 0;
+  }, [explorerLines, activeId]);
+
   const activeMachine = MACHINES.find((m) => m.id === activeId) || MACHINES[0];
   const activeLine = explorerLines.find((l) => l.id === activeId) || explorerLines[0];
+
+  const carouselItems = useMemo(() => {
+    return explorerLines.map((line) => {
+      const machine = MACHINES.find((m) => m.id === line.id) || MACHINES[0];
+      return {
+        id: line.id,
+        image: machine.image,
+        alt: machine.name,
+        title: machine.name,
+        badge: line.badge,
+        capacity: machine.capacity
+      };
+    });
+  }, [explorerLines]);
 
   return (
     <section className="py-16 sm:py-24 relative scroll-mt-24" id="explorer">
@@ -38,7 +57,7 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
             Equipment for Solid Dosage &amp; Liquid Lines
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">
-            Select an equipment line to review standard batch capacities, contact metallurgy, and technical specifications.
+            Select an equipment line to review standard batch capacities, contact metallurgy, and technical specifications in interactive 3D depth.
           </p>
         </div>
 
@@ -47,7 +66,7 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left Nav List: Horizontal swipeable on mobile, vertical stack on desktop */}
-            <div className="lg:col-span-6 flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 pb-2 lg:pb-0 no-scrollbar touch-scroll snap-x">
+            <div className="lg:col-span-5 flex lg:flex-col overflow-x-auto lg:overflow-visible gap-2 pb-2 lg:pb-0 no-scrollbar touch-scroll snap-x">
               {explorerLines.map((line) => {
                 const isActive = line.id === activeId;
                 return (
@@ -79,39 +98,71 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
               })}
             </div>
 
-            {/* Right Machine Preview Stage */}
-            <div className="lg:col-span-6">
-              <div className="bg-zinc-50/60 border border-zinc-200/80 rounded-xl p-6 sm:p-8 flex flex-col justify-between min-h-[440px] relative transition-all">
-                <div className="flex items-center justify-between pb-3 border-b border-zinc-200/60">
-                  <span className="text-xs font-mono font-medium text-zinc-500 uppercase tracking-wider">
-                    {activeLine.badge}
-                  </span>
-                  <span className="text-xs font-mono text-zinc-500">
-                    SS 316L Contact · cGMP
-                  </span>
+            {/* Right Machine Preview Stage with DepthCarousel */}
+            <div className="lg:col-span-7">
+              <div className="bg-zinc-50/60 border border-zinc-200/80 rounded-2xl p-5 sm:p-7 flex flex-col justify-between min-h-[510px] relative transition-all overflow-hidden">
+                
+                {/* Header strip */}
+                <div className="flex items-center justify-between pb-3 border-b border-zinc-200/70 z-10 relative">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#701a75]" />
+                    <span className="text-xs font-mono font-medium text-zinc-700 uppercase tracking-wider">
+                      {activeLine.badge}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs font-mono text-zinc-500">
+                    <span className="hidden sm:inline">Drag to rotate 3D stack ·</span>
+                    <span>SS 316L Contact</span>
+                  </div>
                 </div>
 
-                {/* Machine Image */}
-                <div className="relative w-full h-[220px] my-4 flex items-center justify-center">
-                  <Image
-                    src={activeMachine.image}
-                    alt={activeMachine.name}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-contain"
+                {/* 3D Depth Carousel Stage */}
+                <div className="relative w-full h-[310px] sm:h-[340px] my-1 flex items-center justify-center overflow-visible">
+                  <DepthCarousel
+                    items={carouselItems}
+                    selectedIndex={activeIndex}
+                    cardWidth={240}
+                    cardHeight={300}
+                    radius={18}
+                    depth={170}
+                    spread={70}
+                    tilt={18}
+                    tiltDirection="right"
+                    perspective={1150}
+                    visibleCards={4}
+                    falloff={0.22}
+                    blur={4}
+                    autoplay={false}
+                    loop={true}
+                    showControls={true}
+                    showIndicators={true}
+                    onChange={(idx, item) => {
+                      if (item.id && item.id !== activeId) {
+                        setActiveId(item.id);
+                      }
+                    }}
+                    onCardSelect={(idx, item) => {
+                      if (item.id) {
+                        onSelectMachine(item.id);
+                      }
+                    }}
                   />
                 </div>
 
                 {/* Machine Details & Action */}
-                <div className="pt-4 border-t border-zinc-200/80">
-                  <h3 className="text-xl font-heading font-bold text-zinc-950 mb-1.5">
-                    {activeMachine.name}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-zinc-600 mb-5 leading-relaxed font-normal">
-                    {activeMachine.description}
-                  </p>
+                <div className="pt-4 border-t border-zinc-200/80 z-10 relative bg-zinc-50/60">
+                  <div className="flex items-start justify-between gap-4 mb-1">
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-heading font-bold text-zinc-950">
+                        {activeMachine.name}
+                      </h3>
+                      <p className="text-xs text-zinc-600 line-clamp-2 leading-relaxed font-normal mt-0.5 max-w-xl">
+                        {activeMachine.description}
+                      </p>
+                    </div>
+                  </div>
 
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-3 pt-3 border-t border-zinc-200/50">
                     <div className="flex gap-6 text-xs">
                       <div>
                         <span className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-400">
@@ -127,6 +178,14 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
                         </span>
                         <span className="font-semibold text-zinc-900">
                           SS 316 / 316L
+                        </span>
+                      </div>
+                      <div>
+                        <span className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-400">
+                          Finish
+                        </span>
+                        <span className="font-semibold text-zinc-900">
+                          Ra &lt; 0.38 µm
                         </span>
                       </div>
                     </div>
@@ -151,3 +210,4 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
     </section>
   );
 }
+
