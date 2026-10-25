@@ -132,3 +132,22 @@ button, a, [role="button"], input[type="submit"], input[type="button"] {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Magic UI Meteor Animation */
+@keyframes meteor {
+  0% {
+    transform: rotate(var(--angle, -215deg)) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle, -215deg)) translateX(-500px);
+    opacity: 0;
+  }
+}
+
+.animate-meteor {
+  animation: meteor 5s linear infinite;
+}

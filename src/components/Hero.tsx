@@ -1,6 +1,7 @@
 "use client";
 
 import { TiltedGridHero } from "@/components/ui/tilted-grid-hero";
+import { Meteors } from "@/components/ui/meteors";
 import { ArrowRight, FileText, MapPin, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
 
 interface HeroProps {
@@ -55,6 +56,9 @@ export function Hero({ onSelectMachine }: HeroProps) {
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-zinc-50/80 via-white to-white pt-20 sm:pt-24 pb-8 sm:pb-12 border-b border-zinc-200/80">
       {/* Precision technical background grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none -z-10" />
+      
+      {/* Magic UI Meteors Shower Effect */}
+      <Meteors number={22} />
 
       <TiltedGridHero
         images={HERO_MACHINES}
@@ -71,8 +75,8 @@ export function Hero({ onSelectMachine }: HeroProps) {
           
           {/* Top Hero Authority Block */}
           <div className="pointer-events-auto flex flex-col items-center">
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold text-zinc-950 tracking-tight leading-[1.1] max-w-4xl text-balance">
+            {/* Main Headline with Magic UI Gradient Fill */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold tracking-tight leading-[1.1] max-w-4xl text-balance bg-gradient-to-b from-black via-zinc-900 to-zinc-400/80 bg-clip-text text-transparent pb-1">
               Precision Pharmaceutical &amp; Process Machinery
             </h1>
 
