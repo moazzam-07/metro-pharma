@@ -52,7 +52,7 @@ const HERO_MACHINES = [
 
 export function Hero({ onSelectMachine }: HeroProps) {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-zinc-50/80 via-white to-white pt-24 sm:pt-28 pb-12 sm:pb-16 border-b border-zinc-200/80">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-zinc-50/80 via-white to-white pt-20 sm:pt-24 pb-8 sm:pb-12 border-b border-zinc-200/80">
       {/* Precision technical background grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none -z-10" />
 
@@ -62,10 +62,10 @@ export function Hero({ onSelectMachine }: HeroProps) {
         tileHeight={30}
         aspectRatio={16 / 10}
         gap={5}
-        axis={62}
+        axis={66}
         curve={76}
         fade={14}
-        className="w-full h-[640px] sm:h-[700px] lg:h-[740px] relative"
+        className="w-full h-[680px] sm:h-[720px] lg:h-[760px] relative"
       >
         <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-5xl z-10 relative flex flex-col items-center text-center justify-between h-full pt-4 sm:pt-6 pb-2 pointer-events-none">
           
