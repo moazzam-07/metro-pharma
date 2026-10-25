@@ -304,21 +304,21 @@ export function Spares() {
       className="relative w-full bg-white select-none border-t border-zinc-200/80"
     >
       {/* Sticky Full-Viewport Horizontal Experience */}
-      <div className="h-screen w-full sticky top-0 flex flex-col justify-between pt-20 sm:pt-24 lg:pt-10 pb-6 sm:pb-8 lg:pb-10 px-4 sm:px-8 lg:px-12 overflow-hidden bg-gradient-to-b from-white via-zinc-50/40 to-white">
+      <div className="h-[calc(100vh-4rem)] lg:h-screen w-full sticky top-16 lg:top-0 flex flex-col justify-between pt-4 sm:pt-6 lg:pt-10 pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-8 lg:px-12 overflow-hidden bg-gradient-to-b from-white via-zinc-50/40 to-white">
         
         {/* Top Header Bar */}
-        <div className="max-w-7xl w-full mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-4 z-20 pb-4 border-b border-zinc-200/70">
+        <div className="max-w-7xl w-full mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4 z-20 pb-3 sm:pb-4 border-b border-zinc-200/70">
           <div>
-            <div className="flex items-center gap-2 mb-1.5">
+            <div className="flex items-center gap-2 mb-1">
               <span className="w-2 h-2 rounded-full bg-[#701a75]" />
-              <span className="text-xs font-mono font-medium text-[#701a75] uppercase tracking-wider">
+              <span className="text-[11px] sm:text-xs font-mono font-medium text-[#701a75] uppercase tracking-wider">
                 Precision Tooling &amp; Change Parts Pipeline
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold tracking-tight text-zinc-950">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold tracking-tight text-zinc-950 leading-tight">
               Replacement Screens, Sieves &amp; Change Parts
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-600 max-w-2xl mt-1 font-normal leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-600 max-w-2xl mt-0.5 sm:mt-1 font-normal leading-relaxed line-clamp-2 sm:line-clamp-none">
               Certified SS 316L sifter screens, perforated mill sieves, USP Class VI gaskets, and atomizing spray assemblies engineered for zero-contamination cGMP operation.
             </p>
           </div>
