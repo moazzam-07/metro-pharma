@@ -191,7 +191,7 @@ export function Spares() {
       allToolingItems.forEach((item) => {
         gsap.set(`.jl-${item.id}`, { scaleY: 1 });
         gsap.set(`.jd-${item.id}`, { scale: 1 });
-        gsap.set(`.card-${item.id}`, { opacity: 1, y: 0 });
+        gsap.set(`.card-${item.id}`, { opacity: 1, filter: "blur(0px)", scale: 1, y: 0 });
       });
       return;
     }
@@ -232,7 +232,7 @@ export function Spares() {
       }
     );
 
-    // Initial state for connecting stems and cards
+    // Initial state: upcoming cards start blurred with subtle offset
     allToolingItems.forEach((item) => {
       const isTop = topToolingData.some((t) => t.id === item.id);
       gsap.set(`.jl-${item.id}`, {
@@ -240,48 +240,55 @@ export function Spares() {
         transformOrigin: isTop ? "bottom bottom" : "top top",
       });
       gsap.set(`.jd-${item.id}`, { scale: 0 });
-      gsap.set(`.card-${item.id}`, { opacity: 0.2, y: isTop ? -15 : 15 });
+      gsap.set(`.card-${item.id}`, {
+        opacity: 0.28,
+        filter: "blur(9px)",
+        scale: 0.94,
+        y: isTop ? -14 : 14,
+      });
     });
 
-    // Sequential trigger for each tooling station
-    const totalItems = allToolingItems.length;
-    allToolingItems.forEach((item, index) => {
-      const fraction = index / (totalItems - 0.5);
-      const isTop = topToolingData.some((t) => t.id === item.id);
+    // As each tooling station traverses into view, slowly and smoothly unblur it
+    allToolingItems.forEach((item) => {
+      const stationEl = section.querySelector(`.card-station-${item.id}`);
+      if (!stationEl) return;
 
       const itemTl = gsap.timeline({
         scrollTrigger: {
-          trigger: section,
-          start: () => `top+=${fraction * getScrollDistance() * 0.8} top`,
-          end: () => `top+=${(fraction + 0.18) * getScrollDistance() * 0.8 + 200} top`,
-          scrub: true,
+          trigger: stationEl,
+          containerAnimation: horizontalTween,
+          start: "left 95%",
+          end: "left 42%",
+          scrub: 1,
         },
       });
 
       itemTl
-        .to(`.jl-${item.id}`, {
-          scaleY: 1,
-          duration: 0.35,
-          ease: "power2.out",
+        .to(`.card-${item.id}`, {
+          filter: "blur(0px)",
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power1.out",
         })
+        .to(
+          `.jl-${item.id}`,
+          {
+            scaleY: 1,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "<0.15"
+        )
         .to(
           `.jd-${item.id}`,
           {
             scale: 1,
-            duration: 0.35,
+            duration: 0.6,
             ease: "back.out(2)",
           },
-          "<"
-        )
-        .to(
-          `.card-${item.id}`,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.4,
-            ease: "power2.out",
-          },
-          "<"
+          "<0.2"
         );
     });
 
@@ -416,11 +423,12 @@ export function Spares() {
                   return (
                     <div
                       key={`top-${item.id}`}
-                      className="relative w-[280px] sm:w-[310px] lg:w-[330px] shrink-0 flex flex-col justify-end"
+                      className={`card-station-${item.id} relative w-[280px] sm:w-[310px] lg:w-[330px] shrink-0 flex flex-col justify-end`}
                     >
                       {/* Card Content */}
                       <div
-                        className={`card-${item.id} bg-white border border-zinc-200/90 rounded-xl p-4 sm:p-5 shadow-xs transition-all hover:border-[#701a75]/40 hover:shadow-sm mb-4`}
+                        className={`card-${item.id} bg-white border border-zinc-200/90 rounded-xl p-4 sm:p-5 shadow-xs transition-[border-color,box-shadow] duration-300 hover:border-[#701a75]/40 hover:shadow-sm mb-4`}
+                        style={{ willChange: "filter, opacity, transform" }}
                       >
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-[10px] font-mono font-bold text-[#701a75] uppercase">
@@ -481,7 +489,7 @@ export function Spares() {
                   return (
                     <div
                       key={`bottom-${item.id}`}
-                      className="relative w-[280px] sm:w-[310px] lg:w-[330px] shrink-0 flex flex-col justify-start"
+                      className={`card-station-${item.id} relative w-[280px] sm:w-[310px] lg:w-[330px] shrink-0 flex flex-col justify-start`}
                     >
                       {/* Stem and Node to Central Line */}
                       <div className="absolute left-8 -top-[1px] flex flex-col items-center">
@@ -497,7 +505,8 @@ export function Spares() {
 
                       {/* Card Content */}
                       <div
-                        className={`card-${item.id} bg-white border border-zinc-200/90 rounded-xl p-4 sm:p-5 shadow-xs transition-all hover:border-[#701a75]/40 hover:shadow-sm mt-4`}
+                        className={`card-${item.id} bg-white border border-zinc-200/90 rounded-xl p-4 sm:p-5 shadow-xs transition-[border-color,box-shadow] duration-300 hover:border-[#701a75]/40 hover:shadow-sm mt-4`}
+                        style={{ willChange: "filter, opacity, transform" }}
                       >
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-[10px] font-mono font-bold text-[#701a75] uppercase">
