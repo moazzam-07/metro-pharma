@@ -14,11 +14,11 @@ export interface MeteorsProps {
 }
 
 export const Meteors = ({
-  number = 24,
+  number = 26,
   minDelay = 0.2,
   maxDelay = 1.2,
-  minDuration = 2,
-  maxDuration = 8,
+  minDuration = 3,
+  maxDuration = 7,
   angle = 215,
   className,
 }: MeteorsProps) => {
@@ -27,30 +27,29 @@ export const Meteors = ({
   useEffect(() => {
     const width = typeof window !== "undefined" ? window.innerWidth : 1200;
     const styles = [...new Array(number)].map(() => ({
-      "--angle": -angle + "deg",
-      top: "-5%",
-      left: `calc(0% + ${Math.floor(Math.random() * width)}px)`,
-      animationDelay: (Math.random() * (maxDelay - minDelay) + minDelay).toFixed(2) + "s",
-      animationDuration:
-        (Math.floor(Math.random() * (maxDuration - minDuration) + minDuration)) + "s",
-    }));
+      "--angle": `${angle}deg`,
+      top: `${Math.floor(Math.random() * 200) - 50}px`,
+      left: `${Math.floor(Math.random() * width)}px`,
+      animationDelay: `${(Math.random() * (maxDelay - minDelay) + minDelay).toFixed(2)}s`,
+      animationDuration: `${Math.floor(Math.random() * (maxDuration - minDuration) + minDuration)}s`,
+    } as React.CSSProperties));
     setMeteorStyles(styles);
   }, [number, minDelay, maxDelay, minDuration, maxDuration, angle]);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {meteorStyles.map((style, idx) => (
-        // Meteor Head
+        // Meteor Head - Dark charcoal on light background as shown in Magic UI preview
         <span
           key={idx}
           style={style}
           className={cn(
-            "animate-meteor pointer-events-none absolute h-0.5 w-0.5 rounded-full bg-zinc-400 shadow-[0_0_0_1px_#ffffff20]",
+            "animate-meteor pointer-events-none absolute size-1 rounded-full bg-zinc-600 shadow-[0_0_2px_1px_rgba(0,0,0,0.18)]",
             className
           )}
         >
           {/* Meteor Tail */}
-          <div className="pointer-events-none absolute top-1/2 -z-10 h-px w-16 -translate-y-1/2 bg-gradient-to-r from-zinc-400/60 to-transparent" />
+          <div className="pointer-events-none absolute top-1/2 -z-10 h-[1.5px] w-24 -translate-y-1/2 bg-gradient-to-r from-zinc-600/80 via-zinc-400/40 to-transparent" />
         </span>
       ))}
     </div>

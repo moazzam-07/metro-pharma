@@ -56,9 +56,6 @@ export function Hero({ onSelectMachine }: HeroProps) {
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-zinc-50/80 via-white to-white pt-20 sm:pt-24 pb-8 sm:pb-12 border-b border-zinc-200/80">
       {/* Precision technical background grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none -z-10" />
-      
-      {/* Magic UI Meteors Shower Effect */}
-      <Meteors number={22} />
 
       <TiltedGridHero
         images={HERO_MACHINES}
@@ -71,13 +68,22 @@ export function Hero({ onSelectMachine }: HeroProps) {
         fade={14}
         className="w-full h-[680px] sm:h-[720px] lg:h-[760px] relative"
       >
+        {/* Magic UI Meteors Shower Effect */}
+        <Meteors number={26} />
+
         <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-5xl z-10 relative flex flex-col items-center text-center justify-between h-full pt-6 sm:pt-8 pb-2 pointer-events-none">
           
           {/* Top Hero Authority Block */}
           <div className="pointer-events-auto flex flex-col items-center">
-            {/* Main Headline with Magic UI Gradient Fill */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold tracking-tight leading-[1.1] max-w-4xl text-balance bg-gradient-to-b from-black via-zinc-900 to-zinc-400/80 bg-clip-text text-transparent pb-1">
-              Precision Pharmaceutical &amp; Process Machinery
+            {/* Main Headline with Magic UI Metallic Gradient Fill */}
+            <h1 className="text-[1.75rem] xs:text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold tracking-tight leading-[1.12] max-w-4xl text-center">
+              <span className="inline-block bg-gradient-to-b from-black via-zinc-800 to-zinc-400/85 bg-clip-text text-transparent pb-1">
+                Precision Pharmaceutical
+              </span>{" "}
+              <br className="hidden sm:inline" />
+              <span className="inline-block bg-gradient-to-b from-black via-zinc-800 to-zinc-400/85 bg-clip-text text-transparent pb-1">
+                &amp; Process Machinery
+              </span>
             </h1>
 
             {/* Subtitle with facility & engineering heritage integrated naturally */}

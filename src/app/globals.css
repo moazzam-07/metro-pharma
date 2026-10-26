@@ -136,18 +136,19 @@ button, a, [role="button"], input[type="submit"], input[type="button"] {
 /* Magic UI Meteor Animation */
 @keyframes meteor {
   0% {
-    transform: rotate(var(--angle, -215deg)) translateX(0);
+    transform: rotate(var(--angle, 215deg)) translateX(0);
     opacity: 1;
   }
   70% {
     opacity: 1;
   }
   100% {
-    transform: rotate(var(--angle, -215deg)) translateX(-500px);
+    transform: rotate(var(--angle, 215deg)) translateX(-600px);
     opacity: 0;
   }
 }
 
 .animate-meteor {
-  animation: meteor 5s linear infinite;
+  animation: meteor linear infinite;
 }
+
