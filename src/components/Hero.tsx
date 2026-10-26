@@ -1,7 +1,6 @@
 "use client";
 
 import { TiltedGridHero } from "@/components/ui/tilted-grid-hero";
-import { Meteors } from "@/components/ui/meteors";
 import { ArrowRight, FileText, MapPin, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
 
 interface HeroProps {
@@ -68,9 +67,6 @@ export function Hero({ onSelectMachine }: HeroProps) {
         fade={14}
         className="w-full h-[520px] sm:h-[680px] lg:h-[740px] relative"
       >
-        {/* Magic UI Meteors Shower Effect */}
-        <Meteors number={24} />
-
         <div className="container mx-auto px-3 sm:px-6 md:px-8 max-w-5xl z-10 relative flex flex-col items-center text-center justify-between h-full pt-4 sm:pt-8 pb-2 pointer-events-none">
           
           {/* Top Hero Authority Block */}
