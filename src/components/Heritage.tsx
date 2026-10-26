@@ -262,8 +262,36 @@ export function Heritage() {
                 </div>
               </div>
 
-              {/* Technical Inspection Table in Mobbin compare-table style */}
-              <div className="overflow-x-auto touch-scroll no-scrollbar -mx-2 px-2 sm:mx-0 sm:px-0">
+              {/* Mobile-Friendly Cards View (sm:hidden) */}
+              <div className="sm:hidden space-y-2.5">
+                {activeRows.map((item, idx) => (
+                  <div key={idx} className="p-3.5 rounded-xl bg-[#f8f8f9] border border-[#e4e4e7]">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="font-semibold text-[#141414] text-xs">
+                        {item.test}
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#141414] bg-white px-2 py-0.5 rounded-full border border-[#e0e0e0]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                        {item.status}
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-[#707070] mb-2 leading-tight">
+                      {item.method}
+                    </div>
+                    <div className="flex items-center justify-between pt-2 border-t border-[#e8e8ea] text-[10.5px]">
+                      <span className="font-mono text-[#141414] font-medium bg-white px-2 py-0.5 rounded border border-[#e0e0e0]">
+                        {item.criterion}
+                      </span>
+                      <span className="font-mono text-[#707070] text-[10px]">
+                        {item.document}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Technical Inspection Table for Tablet/Desktop (hidden sm:block) */}
+              <div className="hidden sm:block overflow-x-auto touch-scroll no-scrollbar -mx-2 px-2 sm:mx-0 sm:px-0">
                 <table className="w-full min-w-[520px] text-left text-xs border-collapse">
                   <thead>
                     <tr className="border-b border-[#e0e0e0] text-[#707070] text-[11px] font-medium">

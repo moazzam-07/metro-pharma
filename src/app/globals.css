@@ -77,6 +77,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -85,6 +87,7 @@ body {
   font-family: var(--font-sans);
   min-height: 100dvh;
   position: relative;
+  max-width: 100%;
   overflow-x: hidden;
 }
 

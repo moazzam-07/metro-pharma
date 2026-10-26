@@ -146,7 +146,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
 
         {/* Quick Stage Jump Ribbon - Swipeable on mobile, wrapping on sm+ */}
         <div className="mb-8 sm:mb-12">
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar touch-scroll flex-nowrap sm:flex-wrap pb-2 snap-x">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar touch-scroll flex-nowrap sm:flex-wrap pb-2 snap-x -mx-4 px-4 sm:mx-0 sm:px-0">
             {GRANULATION_PIPELINE.map((stage) => (
               <button
                 key={stage.step}
@@ -160,6 +160,7 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                 <span>{stage.name}</span>
               </button>
             ))}
+            <div className="w-2 shrink-0 sm:hidden" />
           </div>
         </div>
 
@@ -169,93 +170,43 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
             <div
               key={stage.step}
               id={`stage-${stage.step}`}
-              className="relative md:sticky rounded-2xl border border-zinc-200/90 bg-white shadow-sm p-5 sm:p-8 lg:p-10 transition-all duration-300 scroll-mt-24"
+              className="relative md:sticky rounded-2xl border border-zinc-200/90 bg-white shadow-sm p-4 sm:p-8 lg:p-10 transition-all duration-300 scroll-mt-24"
               style={{
                 top: `calc(84px + ${idx * 14}px)`,
                 zIndex: idx + 10,
               }}
             >
               {/* Top Meta Strip */}
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-100 pb-4 mb-6">
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="px-2.5 py-0.5 rounded-md bg-[#701a75]/10 text-[#701a75] text-xs font-semibold font-mono">
+              <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-zinc-100 pb-3 sm:pb-4 mb-4 sm:mb-6">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-2 py-0.5 rounded-md bg-[#701a75]/10 text-[#701a75] text-[11px] sm:text-xs font-semibold font-mono">
                     STAGE {stage.step} OF 07
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-md bg-zinc-100 text-zinc-700 text-xs font-medium">
+                  <span className="px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-700 text-[11px] sm:text-xs font-medium">
                     {stage.stageTag}
                   </span>
                 </div>
-                <div className="text-xs text-zinc-500">
+                <div className="text-[11px] sm:text-xs text-zinc-500">
                   Equipment: <strong className="text-zinc-900 font-semibold">{stage.machine}</strong>
                 </div>
               </div>
 
               {/* Card Body: 2 Columns */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
                 
-                {/* Left Column: Specifications & Narrative */}
-                <div className="lg:col-span-7 flex flex-col justify-between">
-                  <div>
-                    {/* Headline */}
-                    <h3 className="text-xl sm:text-2xl font-heading font-bold text-zinc-950 tracking-tight mb-2">
-                      {stage.name}
-                    </h3>
-
-                    {/* Machine Title */}
-                    <div className="text-sm font-semibold text-[#701a75] mb-3 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#701a75]"></span>
-                      <span>{stage.machine}</span>
-                    </div>
-
-                    {/* Narrative Description */}
-                    <p className="text-zinc-600 text-sm leading-relaxed mb-6 font-normal">
-                      {stage.desc}
-                    </p>
-
-                    {/* Critical Parameter Matrix */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mb-6">
-                      {stage.parameters.map((param, i) => (
-                        <div 
-                          key={i} 
-                          className="bg-zinc-50/80 border border-zinc-200/70 rounded-xl p-3"
-                        >
-                          <div className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400 mb-0.5">
-                            {param.label}
-                          </div>
-                          <div className="text-xs font-bold text-zinc-900">
-                            {param.value}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Action */}
-                  <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={() => onSelectMachine?.(stage.machineId)}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#701a75] hover:bg-[#58135c] text-white text-xs font-semibold px-4.5 py-3 rounded-lg transition-all cursor-pointer shadow-xs active:scale-[0.98] min-h-[44px]"
-                    >
-                      <span>Inspect Machine Specifications</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Right Column: Transparent Machine Showcase Pedestal */}
-                <div className="lg:col-span-5">
-                  <div className="relative bg-zinc-50/60 rounded-xl border border-zinc-200/70 p-6 flex flex-col items-center justify-center min-h-[260px] sm:min-h-[290px] group">
+                {/* Machine Showcase Pedestal (ordered first on mobile for immediate visual recognition) */}
+                <div className="lg:col-span-5 order-1 lg:order-2">
+                  <div className="relative bg-zinc-50/70 rounded-xl border border-zinc-200/70 p-4 sm:p-6 flex flex-col items-center justify-center min-h-[200px] sm:min-h-[290px] group">
                     
                     {/* Top Feature Pill */}
-                    <div className="self-start mb-2">
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-white border border-zinc-200/80 text-[11px] font-medium text-zinc-700 shadow-2xs">
+                    <div className="self-start mb-1 sm:mb-2">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-white border border-zinc-200/80 text-[10.5px] sm:text-[11px] font-medium text-zinc-700 shadow-2xs">
                         {stage.highlight}
                       </span>
                     </div>
 
                     {/* Machinery Cutout */}
-                    <div className="relative w-full h-[180px] sm:h-[220px] my-2 flex items-center justify-center">
+                    <div className="relative w-full h-[150px] sm:h-[220px] my-1 sm:my-2 flex items-center justify-center">
                       <Image
                         src={stage.image}
                         alt={stage.machine}
@@ -266,11 +217,61 @@ export function GranulationSuite({ onSelectMachine }: GranulationSuiteProps) {
                     </div>
 
                     {/* Metallurgy Tag */}
-                    <div className="self-end mt-2">
-                      <span className="text-[11px] text-zinc-400 font-medium">
+                    <div className="self-end mt-1 sm:mt-2">
+                      <span className="text-[10px] sm:text-[11px] text-zinc-400 font-medium font-mono">
                         SS 316L Ra &lt; 0.38 µm
                       </span>
                     </div>
+                  </div>
+                </div>
+
+                {/* Left Column: Specifications & Narrative */}
+                <div className="lg:col-span-7 flex flex-col justify-between order-2 lg:order-1">
+                  <div>
+                    {/* Headline */}
+                    <h3 className="text-lg sm:text-2xl font-heading font-bold text-zinc-950 tracking-tight mb-1.5 sm:mb-2">
+                      {stage.name}
+                    </h3>
+
+                    {/* Machine Title */}
+                    <div className="text-xs sm:text-sm font-semibold text-[#701a75] mb-2.5 sm:mb-3 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#701a75]"></span>
+                      <span>{stage.machine}</span>
+                    </div>
+
+                    {/* Narrative Description */}
+                    <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 font-normal">
+                      {stage.desc}
+                    </p>
+
+                    {/* Critical Parameter Matrix */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-6">
+                      {stage.parameters.map((param, i) => (
+                        <div 
+                          key={i} 
+                          className="bg-zinc-50/80 border border-zinc-200/70 rounded-xl p-2.5 sm:p-3"
+                        >
+                          <div className="text-[9.5px] sm:text-[10px] font-semibold uppercase tracking-wider text-zinc-400 mb-0.5">
+                            {param.label}
+                          </div>
+                          <div className="text-[11.5px] sm:text-xs font-bold text-zinc-900 leading-snug">
+                            {param.value}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action */}
+                  <div className="pt-1 sm:pt-2">
+                    <button
+                      type="button"
+                      onClick={() => onSelectMachine?.(stage.machineId)}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#701a75] hover:bg-[#58135c] text-white text-xs font-semibold px-4.5 py-3 rounded-lg transition-all cursor-pointer shadow-xs active:scale-[0.98] min-h-[44px]"
+                    >
+                      <span>Inspect Machine Specifications</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
                   </div>
                 </div>
 

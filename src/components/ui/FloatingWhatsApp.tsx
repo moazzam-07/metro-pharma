@@ -48,7 +48,7 @@ export function FloatingWhatsApp() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.5, y: 20 }}
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
-          className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom,0px))] right-4 sm:right-6 z-40 flex items-center gap-3"
+          className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] right-3.5 sm:right-6 z-40 flex items-center gap-3"
         >
           {/* Tooltip */}
           <AnimatePresence>
@@ -73,10 +73,12 @@ export function FloatingWhatsApp() {
           <button
             onClick={openWhatsApp}
             aria-label="Direct WhatsApp Consultation with Metro Pharma"
-            className="group relative w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl shadow-[#25D366]/40 hover:shadow-[#25D366]/60 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer border-none"
+            className="group relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl shadow-[#25D366]/40 hover:shadow-[#25D366]/60 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer border-none"
           >
-            <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25" />
-            <WhatsAppSvg />
+            <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20 pointer-events-none" />
+            <span className="scale-85 sm:scale-100 flex items-center justify-center">
+              <WhatsAppSvg />
+            </span>
           </button>
         </motion.div>
       )}

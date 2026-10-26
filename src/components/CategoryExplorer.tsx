@@ -116,8 +116,20 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
                   </div>
                 </div>
 
-                {/* 3D Depth Carousel Stage */}
-                <div className="relative w-full h-[275px] sm:h-[295px] my-1 flex items-center justify-center overflow-visible">
+                {/* Mobile Direct Machine View (sm:hidden) */}
+                <div className="sm:hidden relative w-full h-[200px] my-2 flex items-center justify-center bg-white rounded-xl border border-zinc-200/80 p-3">
+                  <img
+                    src={activeMachine.image}
+                    alt={activeMachine.name}
+                    className="max-h-[175px] max-w-[85%] object-contain drop-shadow-sm"
+                  />
+                  <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-zinc-400">
+                    SS 316L Contact
+                  </span>
+                </div>
+
+                {/* Desktop 3D Depth Carousel Stage (hidden sm:flex) */}
+                <div className="hidden sm:flex relative w-full h-[275px] sm:h-[295px] my-1 items-center justify-center overflow-visible">
                   <DepthCarousel
                     items={carouselItems}
                     selectedIndex={activeIndex}
@@ -150,10 +162,10 @@ export function CategoryExplorer({ onSelectMachine }: CategoryExplorerProps) {
                 </div>
 
                 {/* Machine Details & Action */}
-                <div className="pt-4 border-t border-zinc-200/80 z-10 relative bg-zinc-50/60">
+                <div className="pt-3 sm:pt-4 border-t border-zinc-200/80 z-10 relative bg-zinc-50/60">
                   <div className="flex items-start justify-between gap-4 mb-1">
                     <div>
-                      <h3 className="text-lg sm:text-xl font-heading font-bold text-zinc-950">
+                      <h3 className="text-base sm:text-xl font-heading font-bold text-zinc-950">
                         {activeMachine.name}
                       </h3>
                       <p className="text-xs text-zinc-600 line-clamp-2 leading-relaxed font-normal mt-0.5 max-w-xl">

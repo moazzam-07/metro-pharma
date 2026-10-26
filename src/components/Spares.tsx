@@ -186,12 +186,14 @@ export function Spares() {
     const slider = wholeSliderRef.current;
     if (!section || !slider) return;
 
-    if (reducedMotion) {
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
+    if (isMobile || reducedMotion) {
       gsap.set(".journey-line", { width: "100%" });
       allToolingItems.forEach((item) => {
         gsap.set(`.jl-${item.id}`, { scaleY: 1 });
         gsap.set(`.jd-${item.id}`, { scale: 1 });
-        gsap.set(`.card-${item.id}`, { opacity: 1, filter: "blur(0px)", scale: 1, y: 0 });
+        gsap.set(`.card-${item.id}`, { opacity: 1, filter: "none", scale: 1, y: 0 });
       });
       return;
     }
@@ -310,8 +312,97 @@ export function Spares() {
       id="spares"
       className="relative w-full bg-white select-none border-t border-zinc-200/80"
     >
-      {/* Pinned Full-Viewport Horizontal Experience with absolute Navbar clearance */}
-      <div className="h-screen w-full flex flex-col justify-between pt-20 sm:pt-24 lg:pt-24 pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-8 lg:px-12 overflow-hidden bg-gradient-to-b from-white via-zinc-50/40 to-white">
+      {/* Mobile Native Touch-Swipeable Tooling Cards (md:hidden) */}
+      <div className="md:hidden py-14 px-4 bg-gradient-to-b from-white via-zinc-50/50 to-white">
+        <div className="mb-6">
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#701a75]" />
+            <span className="text-[11px] font-mono font-medium text-[#701a75] uppercase tracking-wider">
+              Tooling &amp; Change Parts
+            </span>
+          </div>
+          <h2 className="text-xl font-heading font-extrabold tracking-tight text-zinc-950 leading-tight">
+            Replacement Screens, Sieves &amp; Tooling
+          </h2>
+          <p className="text-xs text-zinc-600 mt-1.5 leading-relaxed">
+            Certified SS 316L sifter screens, perforated mill sieves, USP Class VI gaskets, and spray assemblies. Swipe cards to inspect.
+          </p>
+        </div>
+
+        {/* Swipeable track */}
+        <div className="flex gap-3.5 overflow-x-auto touch-scroll snap-x no-scrollbar pb-3 -mx-4 px-4">
+          {/* Workshop Card */}
+          <div className="w-[260px] shrink-0 snap-start bg-zinc-950 text-white rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+            <div>
+              <span className="text-[10px] font-mono font-bold tracking-wider text-fuchsia-300 uppercase bg-fuchsia-950/80 px-2 py-0.5 rounded border border-fuchsia-800/60 inline-block mb-3">
+                Tooling Desk
+              </span>
+              <h3 className="text-base font-heading font-bold text-white mb-2 leading-snug">
+                Zero-Tolerance cGMP Machining
+              </h3>
+              <p className="text-xs text-zinc-400 leading-relaxed mb-3">
+                Every screen and gasket is serialized with MTR 3.1 certs and mirror electropolish Ra &lt; 0.38 µm.
+              </p>
+            </div>
+            <div className="pt-3 border-t border-zinc-800 text-xs flex items-center justify-between">
+              <span className="text-zinc-400 font-mono text-[10px]">48-Hr Dispatch</span>
+              <a href="#contact" className="text-fuchsia-400 font-semibold text-xs flex items-center gap-1">
+                RFQ Desk &rarr;
+              </a>
+            </div>
+          </div>
+
+          {/* All Tooling Items */}
+          {allToolingItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={`mobile-${item.id}`}
+                className="w-[270px] shrink-0 snap-start bg-white border border-zinc-200/90 rounded-2xl p-4.5 shadow-xs flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-mono font-bold text-[#701a75] uppercase">
+                      {item.step}
+                    </span>
+                    <span className="text-[10px] font-mono font-semibold text-zinc-600 bg-zinc-100 px-2 py-0.5 rounded border border-zinc-200">
+                      {item.tag}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-8 rounded-lg bg-zinc-100 text-[#701a75] flex items-center justify-center border border-zinc-200 shrink-0">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <h4 className="text-sm font-heading font-bold text-zinc-950 leading-tight">
+                      {item.title}
+                    </h4>
+                  </div>
+
+                  <p className="text-xs text-zinc-600 leading-relaxed mb-3 line-clamp-3">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-zinc-100 flex items-center justify-between">
+                  <span className="text-[10.5px] font-mono text-zinc-500 truncate max-w-[170px]">
+                    {item.fitment}
+                  </span>
+                  <a
+                    href="#contact"
+                    className="text-xs font-semibold text-[#701a75] hover:text-[#58135c]"
+                  >
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Pinned Full-Viewport Horizontal Experience with absolute Navbar clearance (Desktop only) */}
+      <div className="hidden md:flex h-screen w-full flex-col justify-between pt-20 sm:pt-24 lg:pt-24 pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-8 lg:px-12 overflow-hidden bg-gradient-to-b from-white via-zinc-50/40 to-white">
         
         {/* Top Header Bar */}
         <div className="max-w-7xl w-full mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 z-20 pb-3 sm:pb-4 border-b border-zinc-200/70 shrink-0">

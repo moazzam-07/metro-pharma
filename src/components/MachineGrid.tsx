@@ -36,7 +36,7 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
         </div>
 
         {/* Filter Pills Bar - Swipeable track on mobile, wrapping on sm+ */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar touch-scroll flex-nowrap sm:flex-wrap mb-8 sm:mb-10 pb-1.5 snap-x">
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar touch-scroll flex-nowrap sm:flex-wrap mb-8 sm:mb-10 pb-2 snap-x -mx-4 px-4 sm:mx-0 sm:px-0">
           {CATEGORIES.map((cat) => {
             const isActive = cat.key === activeCategory;
             return (
@@ -54,20 +54,21 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
               </button>
             );
           })}
+          <div className="w-2 shrink-0 sm:hidden" />
         </div>
 
         {/* 3-Column Equipment Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {filteredMachines.map((machine) => (
             <div
               key={machine.id}
               onClick={() => onSelectMachine(machine.id)}
-              className="group bg-white border border-zinc-200/90 rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-zinc-300 hover:shadow-md transition-all duration-200 cursor-pointer overflow-hidden shadow-xs"
+              className="group bg-white border border-zinc-200/90 rounded-2xl p-4.5 sm:p-6 flex flex-col justify-between hover:border-zinc-300 hover:shadow-md transition-all duration-200 cursor-pointer overflow-hidden shadow-xs active:scale-[0.99]"
             >
               <div>
                 {/* Machine Image Stage */}
-                <div className="relative w-full h-[200px] bg-zinc-50/70 rounded-xl p-4 flex items-center justify-center overflow-hidden mb-5 border border-zinc-100">
-                  <span className="absolute top-3 left-3 z-10 bg-white/95 border border-zinc-200/90 px-2.5 py-0.5 rounded text-[11px] font-mono text-zinc-600 shadow-2xs">
+                <div className="relative w-full h-[190px] sm:h-[200px] bg-zinc-50/70 rounded-xl p-3 sm:p-4 flex items-center justify-center overflow-hidden mb-4 sm:mb-5 border border-zinc-100">
+                  <span className="absolute top-2.5 left-2.5 z-10 bg-white/95 border border-zinc-200/90 px-2 py-0.5 rounded text-[10.5px] font-mono text-zinc-600 shadow-2xs">
                     {machine.badge}
                   </span>
                   
@@ -87,7 +88,7 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
                   <span className="block text-[11px] font-semibold uppercase tracking-wider text-[#701a75] mb-1">
                     {machine.categoryLabel}
                   </span>
-                  <h3 className="text-lg font-heading font-bold text-zinc-950 group-hover:text-[#701a75] transition-colors mb-2 leading-snug">
+                  <h3 className="text-base sm:text-lg font-heading font-bold text-zinc-950 group-hover:text-[#701a75] transition-colors mb-1.5 leading-snug">
                     {machine.name}
                   </h3>
                   <p className="text-xs text-zinc-600 line-clamp-2 leading-relaxed font-normal">
@@ -97,7 +98,7 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
               </div>
 
               {/* Bottom Specs Summary */}
-              <div className="pt-4 border-t border-zinc-100 flex items-center justify-between text-xs">
+              <div className="pt-3.5 border-t border-zinc-100 flex items-center justify-between text-xs">
                 <div>
                   <span className="block text-[10px] font-semibold uppercase tracking-wider text-zinc-400">
                     Capacity
@@ -107,7 +108,7 @@ export function MachineGrid({ onSelectMachine }: MachineGridProps) {
                   </span>
                 </div>
                 
-                <span className="inline-flex items-center gap-1 font-semibold text-[#701a75] group-hover:translate-x-0.5 transition-transform">
+                <span className="inline-flex items-center gap-1 font-semibold text-[#701a75] group-hover:translate-x-0.5 transition-transform bg-zinc-50/80 px-2.5 py-1 rounded-md border border-zinc-200/60 sm:border-0 sm:bg-transparent">
                   <span>Specifications</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
